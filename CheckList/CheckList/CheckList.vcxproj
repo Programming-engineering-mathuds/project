@@ -10,6 +10,13 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CheckList.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CheckList.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4E8ACFF3-BD53-4478-B133-1C355E0745FA}</ProjectGuid>
     <RootNamespace>CheckList</RootNamespace>
@@ -63,13 +70,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\CheckList.cpp" />
-    <ClCompile Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\CheckList.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

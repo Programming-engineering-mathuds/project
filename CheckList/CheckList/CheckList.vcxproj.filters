@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\CheckList.cpp">
+    <ClCompile Include="CheckList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Apps Data\Visual Studio 2013\Projects\CheckList\CheckList\CheckList.h">
+    <ClInclude Include="CheckList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
