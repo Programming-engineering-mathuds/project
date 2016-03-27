@@ -40,10 +40,10 @@ int main(VOID)
 
 	// Loop to read and handle the next 100 input events. 
 	Box.printBox();
-	while (true)
+	while (counter++ <= 1000)
 	{
 		// Wait for the events. 
-		//if (counter >= 900) counter = 0;
+		if (counter >= 900) counter = 0;
 		if (!ReadConsoleInput(
 			hStdin,      // input buffer handle 
 			irInBuf,     // buffer to read into 

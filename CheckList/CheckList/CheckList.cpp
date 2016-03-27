@@ -14,7 +14,7 @@ string checked = "[X]";
 CheckList::CheckList(string name, int place)
 {
 	//set cursor initial position
-	COORD c = { 35, place };
+	COORD c = { 10, place };
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, c);
 
