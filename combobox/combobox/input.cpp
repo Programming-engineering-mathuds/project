@@ -42,7 +42,6 @@ int main(VOID)
 	while (true)
 	{
 		// Wait for the events. 
-		//if (counter >= 900) counter = 0;
 		if (!ReadConsoleInput(
 			hStdin,      // input buffer handle 
 			irInBuf,     // buffer to read into 
@@ -59,7 +58,7 @@ int main(VOID)
 			switch (irInBuf[i].EventType)
 			{
 			case KEY_EVENT: // keyboard input 
-				//label.handelInput(irInBuf[i]);
+				
 				KeyEventProc(irInBuf[i].Event.KeyEvent);
 				break;
 
@@ -119,6 +118,6 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD wbsr)
 {
-	printf("Resize event\n");
-	printf("Console screen buffer is %d columns by %d rows.\n", wbsr.dwSize.X, wbsr.dwSize.Y);
+	//printf("Resize event\n");
+	//printf("Console screen buffer is %d columns by %d rows.\n", wbsr.dwSize.X, wbsr.dwSize.Y);
 }
