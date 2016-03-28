@@ -36,6 +36,7 @@ box::~box()
 
 void box::printlist()
 {
+	open = true;
 	SBInfo.dwCursorPosition.X = beforePrint.X;
 	SBInfo.dwCursorPosition.Y = beforePrint.Y;
 	for (i = myList.begin(); i != myList.end(); i++)
@@ -121,8 +122,8 @@ void box::printBotton()
 	COORD co;
 	co.X = ++SBInfo.dwCursorPosition.X;
 	co.Y = --SBInfo.dwCursorPosition.Y;
-	if(first==true)XL = (co.X-1);
-	if (first == true)YU = co.Y;
+	XL = (co.X-1);
+	YU = co.Y;
 	SetConsoleCursorPosition(h, co);
 	putchar('\xC4'); //top
 	co.X = --SBInfo.dwCursorPosition.X;
@@ -135,13 +136,12 @@ void box::printBotton()
 	co.Y = ++SBInfo.dwCursorPosition.Y;
 	SetConsoleCursorPosition(h, co);
 	putchar('\xC4'); //bottom
-	if (first == true)YD = co.Y;
+	YD = co.Y;
 	co.X = ++SBInfo.dwCursorPosition.X;
 	co.Y = --SBInfo.dwCursorPosition.Y;
 	SetConsoleCursorPosition(h, co);
 	putchar('\xB3');//right edge
-	if (first == true)XR = co.X;
-	if (first == true)first = false;
+	XR = co.X;
 }
 void box::addCombo(combo a)
 {
@@ -174,7 +174,11 @@ void box::getInput(INPUT_RECORD in)
 	switch (in.EventType)
 	{
 	case KEY_EVENT: // keyboard input 
-		//KeyEvent(in.Event.KeyEvent);
+		/////////////////////////////TO DELETE  
+		if (in.Event.KeyEvent.bKeyDown)
+		{
+			openBox();
+		}
 		break;
 
 	case MOUSE_EVENT: // mouse input 
@@ -182,16 +186,9 @@ void box::getInput(INPUT_RECORD in)
 		break;
 
 	case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing 
-		//ResizeEvent(in.Event.WindowBufferSizeEvent);
-		break;
-
 	case FOCUS_EVENT:  // disregard focus events 
-
 	case MENU_EVENT:   // disregard menu events 
-		break;
-
 	default:
-		exit(8);
 		break;
 	}
 }
@@ -208,19 +205,20 @@ void box::MouseEvent(MOUSE_EVENT_RECORD in)
 				if (((XL <= in.dwMousePosition.X) && (in.dwMousePosition.X <= XR)) && ((YU <= in.dwMousePosition.Y) && (in.dwMousePosition.Y <= YD)))
 				{
 					openBox();
+					break;
 				}
 				else
 				{
 					for (i = myList.begin(); i != myList.end(); ++i)
 					{
-						if ((i->getXL() <= in.dwMousePosition.X) && (in.dwMousePosition.X <= i->getXR()) && (i->getYU() <= in.dwMousePosition.Y) && (in.dwMousePosition.Y <= i->getYD()))
+						if (((i->getXL() <= in.dwMousePosition.X) && (in.dwMousePosition.X <= i->getXR())) && ((i->getYU() <= in.dwMousePosition.Y) && (in.dwMousePosition.Y <= i->getYD())))
 						{
 							printf("here");
-							//if (system("CLS")) system("clear");
+							
 							selectedCombo = i._Ptr;
-							//open = !(open);
+							
 							closeBox();
-							//printBox();
+							
 
 						}
 					}
@@ -237,20 +235,18 @@ void box::MouseEvent(MOUSE_EVENT_RECORD in)
 }
 void box::KeyEvent(KEY_EVENT_RECORD in)
 {
-
 }
 void box::ResizeEvent(WINDOW_BUFFER_SIZE_RECORD in)
 {
-
 }
+
 void box::openBox()
 {
 	if (open == false)
 	{
-		open = true;
 		printlist();
 	}
-	else
+	else if(open == true)
 	{
 		closeBox();
 	}

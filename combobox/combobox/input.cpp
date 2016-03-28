@@ -64,9 +64,9 @@ int main(VOID)
 				break;
 
 			case MOUSE_EVENT: // mouse input 
-				//label.handelInput(irInBuf[i]);
+				Box.MouseEvent(irInBuf[i].Event.MouseEvent);
 
-				MouseEventProc(irInBuf[i].Event.MouseEvent);
+				//MouseEventProc(irInBuf[i].Event.MouseEvent);
 				break;
 
 			case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing 
@@ -82,7 +82,7 @@ int main(VOID)
 				ErrorExit("Unknown event type");
 				break;
 			}
-			*/
+		*/
 		}
 	}
 

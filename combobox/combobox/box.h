@@ -40,6 +40,5 @@ public:
 	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
 	int getStartY();
 	void closeBox();
-	bool first = true;
 };
 
