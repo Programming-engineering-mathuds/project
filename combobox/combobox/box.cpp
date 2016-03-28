@@ -181,7 +181,7 @@ void box::getInput(INPUT_RECORD in)
 			if (in.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)openBox();
 			else
 			{
-				if (myList.size() < 10)
+				if (myList.size() < 9)
 				{
 					for (int i = 1; i <= 9; i++)
 					{
