@@ -58,7 +58,6 @@ int main(VOID)
 		for (i = 0; i < cNumRead; i++)
 		{
 			Box.getInput(irInBuf[i]);
-
 		}
 	}
 

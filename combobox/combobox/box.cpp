@@ -239,10 +239,9 @@ void box::KeyEvent(KEY_EVENT_RECORD in)
 					if (in.wVirtualKeyCode == (i + 0x30))
 					{
 						selectedCombo = &myList[i - 1];
-
+						closeBox();
 					}
 				}
-				closeBox();
 			}
 		}
 	}
