@@ -79,7 +79,8 @@ void combo::print()
 	//end of bottom of frame
 	*/
 
-	XL = co.X;
+	//XL = co.X;
+	XL = 0;
 	YU = co.Y;
 	//SetConsoleCursorPosition(h, co);
 	putchar('\xDA');//corner
@@ -101,7 +102,8 @@ void combo::print()
 		putchar(comboText[i]);//text
 	}
 	putchar('\xB3');//right edge
-	XR = SBInfo.dwCursorPosition.X;
+	//XR = SBInfo.dwCursorPosition.X;
+	XR = (XL+size + 2);
 
 	co.Y = ++SBInfo.dwCursorPosition.Y;
 	co.X = st.X;

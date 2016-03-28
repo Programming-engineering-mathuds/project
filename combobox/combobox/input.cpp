@@ -41,6 +41,10 @@ int main(VOID)
 	Box.printBox();
 	while (true)
 	{
+		fdwMode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
+		if (!SetConsoleMode(hStdin, fdwMode))
+			ErrorExit("SetConsoleMode");
+
 		// Wait for the events. 
 		if (!ReadConsoleInput(
 			hStdin,      // input buffer handle 
@@ -54,34 +58,7 @@ int main(VOID)
 		for (i = 0; i < cNumRead; i++)
 		{
 			Box.getInput(irInBuf[i]);
-			/*
-			switch (irInBuf[i].EventType)
-			{
-			case KEY_EVENT: // keyboard input 
-				
-				KeyEventProc(irInBuf[i].Event.KeyEvent);
-				break;
 
-			case MOUSE_EVENT: // mouse input 
-				Box.MouseEvent(irInBuf[i].Event.MouseEvent);
-
-				//MouseEventProc(irInBuf[i].Event.MouseEvent);
-				break;
-
-			case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing 
-				ResizeEventProc(irInBuf[i].Event.WindowBufferSizeEvent);
-				break;
-
-			case FOCUS_EVENT:  // disregard focus events 
-
-			case MENU_EVENT:   // disregard menu events 
-				break;
-
-			default:
-				ErrorExit("Unknown event type");
-				break;
-			}
-		*/
 		}
 	}
 

@@ -179,25 +179,18 @@ void box::getInput(INPUT_RECORD in)
 		if (in.Event.KeyEvent.bKeyDown)
 		{
 			if (in.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)openBox();
-			if (in.Event.KeyEvent.wVirtualKeyCode == 0x31)
+			else
 			{
-				selectedCombo = &myList[0];
-				closeBox();
-			}
-			if (in.Event.KeyEvent.wVirtualKeyCode == 0x32) 
-			{
-				selectedCombo = &myList[1];
-				closeBox();
-			}
-			if (in.Event.KeyEvent.wVirtualKeyCode == 0x33)
-			{
-				selectedCombo = &myList[2];
-				closeBox();
-			}
-			if (in.Event.KeyEvent.wVirtualKeyCode == 0x34)
-			{
+				if (myList.size() < 10)
 				{
-					selectedCombo = &myList[3];
+					for (int i = 1; i <= 9; i++)
+					{
+						if (in.Event.KeyEvent.wVirtualKeyCode == (i + 0x30))
+						{
+							selectedCombo = &myList[i - 1];
+
+						}
+					}
 					closeBox();
 				}
 			}
@@ -236,13 +229,8 @@ void box::MouseEvent(MOUSE_EVENT_RECORD in)
 					{
 						if (((i->getXL() <= in.dwMousePosition.X) && (in.dwMousePosition.X <= i->getXR())) && ((i->getYU() <= in.dwMousePosition.Y) && (in.dwMousePosition.Y <= i->getYD())))
 						{
-							printf("here");
-							
 							selectedCombo = i._Ptr;
-							
-							closeBox();
-							
-
+						    closeBox();
 						}
 					}
 				}
