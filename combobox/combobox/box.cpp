@@ -174,16 +174,15 @@ void box::getInput(INPUT_RECORD in)
 	switch (in.EventType)
 	{
 	case KEY_EVENT: // keyboard input 
-		/////////////////////////////TO DELETE  
 		
 		if (in.Event.KeyEvent.bKeyDown)
 		{
 			if (in.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)openBox();
 			else
 			{
-				if (myList.size() < 9)
+				if ((myList.size() < 9)&&(open == true))
 				{
-					for (int i = 1; i <= 9; i++)
+					for (int i = 1; i <= myList.size(); i++)
 					{
 						if (in.Event.KeyEvent.wVirtualKeyCode == (i + 0x30))
 						{

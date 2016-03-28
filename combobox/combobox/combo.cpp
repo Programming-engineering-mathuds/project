@@ -45,44 +45,10 @@ void combo::print()
 	co.Y = SBInfo.dwCursorPosition.Y;
 	st = co;
 	SetConsoleCursorPosition(h, co);
-	/*
-	putchar('\xDA');
-	for (int i = 0; i < size; i++)
-	{
-		putchar('\xC4');
-	}
-	putchar('\xBF');
-	//end of the top of the frame
-	//putchar('\n');
-	//c = { 15, 8 };
-	co.Y++;
-	SetConsoleCursorPosition(h, co);
-	putchar('\xB3');
-
-	for (int i = 0; i < size; i++)
-	{
-		putchar(comboText[i]);
-	}
-	putchar('\xB3');
-	//end of text
-	//putchar('\n');
-	//c = { 15, 9 };
-	co.Y++;
-	SetConsoleCursorPosition(h, co);
-
-	putchar('\xC0');
-	for (int i = 0; i < size; i++)
-	{
-		putchar('\xC4');
-	}
-	putchar('\xD9');
-	//end of bottom of frame
-	*/
 
 	//XL = co.X;
-	XL = 0;
+	XL = st.X;
 	YU = co.Y;
-	//SetConsoleCursorPosition(h, co);
 	putchar('\xDA');//corner
 	for (int i = 0; i < size; i++)
 	{
