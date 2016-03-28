@@ -175,9 +175,32 @@ void box::getInput(INPUT_RECORD in)
 	{
 	case KEY_EVENT: // keyboard input 
 		/////////////////////////////TO DELETE  
+		
 		if (in.Event.KeyEvent.bKeyDown)
 		{
-			openBox();
+			if (in.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)openBox();
+			if (in.Event.KeyEvent.wVirtualKeyCode == 0x31)
+			{
+				selectedCombo = &myList[0];
+				closeBox();
+			}
+			if (in.Event.KeyEvent.wVirtualKeyCode == 0x32) 
+			{
+				selectedCombo = &myList[1];
+				closeBox();
+			}
+			if (in.Event.KeyEvent.wVirtualKeyCode == 0x33)
+			{
+				selectedCombo = &myList[2];
+				closeBox();
+			}
+			if (in.Event.KeyEvent.wVirtualKeyCode == 0x34)
+			{
+				{
+					selectedCombo = &myList[3];
+					closeBox();
+				}
+			}
 		}
 		break;
 
@@ -259,7 +282,7 @@ int box::getStartY()
 void box::closeBox()
 {
 	open = false;
-	if (system("CLS")) system("clear");
+	system("CLS");
 	printBox();
 	
 }

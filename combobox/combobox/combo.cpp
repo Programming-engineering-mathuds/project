@@ -114,7 +114,4 @@ void combo::print()
 	putchar('\xD9');
 	//end of bottom of frame
 	YD = co.Y;
-
-
-
 }
