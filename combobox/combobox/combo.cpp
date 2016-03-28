@@ -40,10 +40,13 @@ void combo::print()
 
 	int size = strlen(comboText);
 	COORD co;
+	COORD st;
 	co.X = SBInfo.dwCursorPosition.X;
 	co.Y = SBInfo.dwCursorPosition.Y;
+	st = co;
 	//COORD c = { 15, 7 };
 	SetConsoleCursorPosition(h, co);
+	/*
 	putchar('\xDA');
 	for (int i = 0; i < size; i++)
 	{
@@ -75,4 +78,46 @@ void combo::print()
 	}
 	putchar('\xD9');
 	//end of bottom of frame
+	*/
+
+	XL = co.X;
+	YU = co.Y;
+	SetConsoleCursorPosition(h, co);
+	putchar('\xDA');//corner
+	for (int i = 0; i < size; i++)
+	{
+		putchar('\xC4'); //top
+	}
+	putchar('\xBF');
+	//end of the top of the frame
+
+	co.X = st.X;
+	co.Y = ++SBInfo.dwCursorPosition.Y;
+	SetConsoleCursorPosition(h, co);
+
+	putchar('\xB3');//left edge
+
+	//co.X = ++SBInfo.dwCursorPosition.X;
+	//SetConsoleCursorPosition(h, co);
+	for (int i = 0; i < size; i++)
+	{
+		putchar(comboText[i]);//text
+	}
+	putchar('\xB3');//right edge
+	XR = co.X;
+
+	co.Y = ++SBInfo.dwCursorPosition.Y;
+	co.X = st.X;
+	SetConsoleCursorPosition(h, co);
+	putchar('\xC0');//corner
+	for (int i = 0; i < size; i++)
+	{
+		putchar('\xC4'); //bottom
+	}
+	putchar('\xD9');
+	//end of bottom of frame
+	YD = co.Y;
+
+
+
 }

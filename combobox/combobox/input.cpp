@@ -9,7 +9,6 @@ VOID ErrorExit(LPSTR);
 VOID KeyEventProc(KEY_EVENT_RECORD);
 VOID MouseEventProc(MOUSE_EVENT_RECORD);
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
-//combo a = "hey!";
 box Box;
 int main(VOID)
 {
@@ -107,7 +106,6 @@ VOID ErrorExit(LPSTR lpszMessage)
 
 VOID KeyEventProc(KEY_EVENT_RECORD ker)
 {
-	//label.getInput(ker);
 
 }
 
