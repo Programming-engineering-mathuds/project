@@ -174,26 +174,7 @@ void box::getInput(INPUT_RECORD in)
 	switch (in.EventType)
 	{
 	case KEY_EVENT: // keyboard input 
-		
-		if (in.Event.KeyEvent.bKeyDown)
-		{
-			if (in.Event.KeyEvent.wVirtualKeyCode == VK_SPACE)openBox();
-			else
-			{
-				if ((myList.size() < 9)&&(open == true))
-				{
-					for (int i = 1; i <= myList.size(); i++)
-					{
-						if (in.Event.KeyEvent.wVirtualKeyCode == (i + 0x30))
-						{
-							selectedCombo = &myList[i - 1];
-
-						}
-					}
-					closeBox();
-				}
-			}
-		}
+		KeyEvent(in.Event.KeyEvent);
 		break;
 
 	case MOUSE_EVENT: // mouse input 
@@ -245,6 +226,26 @@ void box::MouseEvent(MOUSE_EVENT_RECORD in)
 }
 void box::KeyEvent(KEY_EVENT_RECORD in)
 {
+
+	if (in.bKeyDown)
+	{
+		if (in.wVirtualKeyCode == VK_SPACE)openBox();
+		else
+		{
+			if ((myList.size() < 9) && (open == true))
+			{
+				for (int i = 1; i <= myList.size(); i++)
+				{
+					if (in.wVirtualKeyCode == (i + 0x30))
+					{
+						selectedCombo = &myList[i - 1];
+
+					}
+				}
+				closeBox();
+			}
+		}
+	}
 }
 void box::ResizeEvent(WINDOW_BUFFER_SIZE_RECORD in)
 {
