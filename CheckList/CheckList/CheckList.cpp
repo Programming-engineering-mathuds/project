@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int rowCount = 5; // used to addvance rows - unused at the moment
+int rowCount = 5; // addvances rows - unused at the moment
 string unchecked = "[ ]";
 string checked = "[X]";
 

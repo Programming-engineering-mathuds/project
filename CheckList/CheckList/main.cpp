@@ -70,7 +70,7 @@ void borders()
 	}
 }
 
-//Returns cursor's X position (used for mouse detection)
+//Returns cursor's X position (not used but might be of use later)
 int wherex()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -84,7 +84,7 @@ int wherex()
 	return result.X;
 }
 
-//Returns cursor's Y position (used for mouse detection)
+//Returns cursor's Y position (not used but might be of use later)
 int wherey()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -113,35 +113,30 @@ int main(VOID)
 	borders();
 
 	//set cursor size and visibility example
-
 	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
 	SetConsoleCursorInfo(h, &cci);
 
 	// Get the standard input handle. 
-
 	hStdin = GetStdHandle(STD_INPUT_HANDLE);
 	if (hStdin == INVALID_HANDLE_VALUE)
 		ErrorExit("GetStdHandle");
 
 	// Save the current input mode, to be restored on exit. 
-
 	if (!GetConsoleMode(hStdin, &fdwSaveOldMode))
 		ErrorExit("GetConsoleMode");
 
 	// Enable the window and mouse input events. 
-
 	fdwMode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
 	if (!SetConsoleMode(hStdin, fdwMode))
 		ErrorExit("SetConsoleMode");
 
+	//Sets the first cell (at first run) to active
 	cList[0].setActive(cur);
 
 	// Loop to read and handle the next input events. 
-
 	while (true)
 	{
 		// Wait for the events. 
-
 		if (!ReadConsoleInput(
 			hStdin,      // input buffer handle 
 			irInBuf,     // buffer to read into 
@@ -150,13 +145,8 @@ int main(VOID)
 			ErrorExit("ReadConsoleInput");
 
 		// Dispatch the events to the appropriate handler. 
-
 		for (i = 0; i < cNumRead; i++)
 		{
-			int tempX = wherex();
-			int tempY = wherey();
-			//cout << " ( " << tempX << " , " << tempY << " )";
-
 			switch (irInBuf[i].EventType)
 			{
 			case KEY_EVENT: // keyboard input 
