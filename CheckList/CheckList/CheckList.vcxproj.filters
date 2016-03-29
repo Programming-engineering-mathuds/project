@@ -28,6 +28,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="D:\Users\Peleg\Studies\שיטות בהנדסת תוכנה\CheckBox readme.txt" />
+    <Text Include="..\CheckBox readme.txt" />
   </ItemGroup>
 </Project>

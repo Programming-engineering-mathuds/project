@@ -1,9 +1,9 @@
-שימוש בפקד - CheckList
+Using "CheckList" Object
 
-1. מקלדת
-   - חיציי הUP וDOWN (לא מה-Numpad) - משמשים על מנת לזוז על הרשימה
-   - מקשי Enter, Spacebar ו- X - מאפשרים בחירה (או ביטולה)
-
-2. עכבר
-   - תזוזה של העכבר מעל הרשימה תראה את הפריט הפעיל (עליו מצביע העכבר)
-   - לחיצה על כפתור העכבר השמאלי מאפשרת בחירה (או ביטולה)
+   1. Keyboard
+	* Up/Down arrows - navigate on the list (not Numpad arrows)
+	* Enter, Spacebar and X, keys - Makes a selection (or unseletion) of an item on the list
+	
+   2. Mouse
+	* Moving the mouse cursor above the list - shows on which list item we stand on (active item indication)
+	* Left mouse button - Makes a selection (or unseletion) of an item on the list
