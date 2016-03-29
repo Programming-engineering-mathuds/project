@@ -8,8 +8,11 @@ box::box()
 	h = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
 	GetConsoleScreenBufferInfo(h, &SBInfo);
-	start.X = SBInfo.dwCursorPosition.X;
-	start.Y = SBInfo.dwCursorPosition.Y;
+	//start.X = SBInfo.dwCursorPosition.X;
+	//start.Y = SBInfo.dwCursorPosition.Y;
+	start.X = 5;
+	start.Y = 5;
+	SetConsoleCursorPosition(h, start);
 	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
 	SetConsoleCursorInfo(h, &cci);
 
@@ -50,8 +53,10 @@ void box::printlist()
 void box::printBox()
 {
 	GetConsoleScreenBufferInfo(h, &SBInfo);
-	SBInfo.dwCursorPosition.X = start.X;
-	SBInfo.dwCursorPosition.Y = start.Y;
+	COORD po;
+	po.X = start.X;
+	po.Y = start.Y;
+	SetConsoleCursorPosition(h, start);
 	if (selectedCombo == NULL)
 	{
 		putchar('\xDA');
@@ -61,7 +66,9 @@ void box::printBox()
 		}
 		putchar('\xBF');
 		//print the middle
-		putchar('\n');
+		po.X = start.X;
+		++po.Y;
+		SetConsoleCursorPosition(h, po);
 		putchar('\xB3');
 
 		for (int i = 0; i < longestWord; i++)
@@ -70,7 +77,9 @@ void box::printBox()
 		}
 		putchar('\xB3');
 		printBotton();
-		putchar('\n');
+		po.X = start.X;
+		++po.Y;
+		SetConsoleCursorPosition(h, po);
 		//printing the bottom
 		putchar('\xC0');
 		for (int i = 0; i < longestWord; i++)
@@ -88,7 +97,9 @@ void box::printBox()
 		}
 		putchar('\xBF');
 		//print the middle
-		putchar('\n');
+		po.X = start.X;
+		++po.Y;
+		SetConsoleCursorPosition(h, po);
 		putchar('\xB3');
 
 		for (int i = 0; i < selectedCombo->getSize(); i++)
@@ -97,7 +108,9 @@ void box::printBox()
 		}
 		putchar('\xB3');
 		printBotton();
-		putchar('\n');
+		po.X = start.X;
+		++po.Y;
+		SetConsoleCursorPosition(h, po);
 		//printing the bottom
 		putchar('\xC0');
 		for (int i = 0; i < selectedCombo->getSize(); i++)
