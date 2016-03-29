@@ -7,6 +7,7 @@ using namespace std;
 
 class CheckList
 {
+private:
 	string bName;
 	int iLenght;
 	int curY;
