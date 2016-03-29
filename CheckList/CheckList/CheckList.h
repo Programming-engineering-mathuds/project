@@ -14,7 +14,7 @@ private:
 	bool pressed;
 	bool active;
 public:
-	CheckList(string name, int place);
+	CheckList(string name, COORD cur);
 	void coordinator(COORD& cur, string upDown);
 	void checkSwitch(COORD cur);
 	bool isActive();

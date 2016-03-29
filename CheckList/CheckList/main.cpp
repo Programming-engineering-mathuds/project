@@ -14,6 +14,7 @@ VOID KeyEventProc(KEY_EVENT_RECORD);
 VOID MouseEventProc(MOUSE_EVENT_RECORD);
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
 
+//Initial cursor position (where the CheckList would be print at)
 COORD cur = { 35, 10 };
 
 //Prints a Border and title inside the console 
@@ -104,10 +105,10 @@ int wherey()
 }
 
 //CheckList object declaration
-CheckList cList[] = { { "Item01", cur.Y },
-					 { "Item02", cur.Y + 1 },
-					 { "Item03", cur.Y + 2 },
-					 { "Item04", cur.Y + 3 } };
+CheckList cList[] = { { "Item01", cur },
+					  { "Item02", cur },
+					  { "Item03", cur },
+					  { "Item04", cur } };
 
 int main(VOID)
 {

@@ -6,15 +6,19 @@
 
 using namespace std;
 
-int rowCount = 5; // addvances rows - unused at the moment
+int rowCount = 0;
 string unchecked = "[ ]";
 string checked = "[X]";
 
 //Constructor
-CheckList::CheckList(string name, int place)
+CheckList::CheckList(string name, COORD cur)
 {
+	//Saves each time the Y position on the initial position set and 
+	//Adds the rowCount counter to it (thus advances each cell)
+	int place = cur.Y + rowCount++;
+	
 	//set cursor initial position
-	COORD c = { 35, place };
+	COORD c = { cur.X, place };
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, c);
 
