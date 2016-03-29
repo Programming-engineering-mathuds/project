@@ -113,6 +113,7 @@ string CheckList::getName() { return bName; }
 //Returns Cell's lenght (from the first char "[" to the last)
 int CheckList::getLenght() { return iLenght; }
 
+//Destructor
 CheckList::~CheckList()
 {
 }
