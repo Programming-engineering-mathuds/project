@@ -27,4 +27,3 @@ public:
 	void setActiveFalse(COORD cur);
 	~CheckList();
 };
-

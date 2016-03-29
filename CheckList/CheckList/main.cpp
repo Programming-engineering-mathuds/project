@@ -28,10 +28,13 @@ void borders()
 	SetConsoleCursorPosition(h, c);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 
+	//Prints Title
 	cout << "CheckList demo for console with C++";
 
+	//Prints Borders
 	for (int i = yInit; i <= yEnd; i++)
 	{
+		//Upper row
 		if (i == yInit)
 		{
 			c = { xInit, yInit };
@@ -45,6 +48,7 @@ void borders()
 			}
 			cout << '\xBB';
 		}
+		//Middle columns (first and last only) 
 		if ((i > yInit) && (i < yEnd))
 		{
 			c = { xEnd, i };
@@ -54,6 +58,7 @@ void borders()
 			SetConsoleCursorPosition(h, c);
 			cout << '\xBA';
 		}
+		//Lower row
 		if (i == yEnd)
 		{
 			c = { xInit, i };
@@ -109,7 +114,8 @@ int main(VOID)
 	DWORD cNumRead, fdwMode, i;
 	INPUT_RECORD irInBuf[128];
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	int counter = 0;
+
+	//Calls borders function (for borders print)
 	borders();
 
 	//set cursor size and visibility example
@@ -174,7 +180,6 @@ int main(VOID)
 	}
 
 	// Restore input mode on exit.
-
 	SetConsoleMode(hStdin, fdwSaveOldMode);
 
 	return 0;

@@ -18,19 +18,22 @@ CheckList::CheckList(string name, int place)
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, c);
 
+	//Initializes cells vars
 	bName = name;
 	iLenght = name.length() + 4;
 	active = false;
 	pressed = false;
 	curY = place;
+
+	//Prints an initialized cell (just "[ ]" and its name)
 	cout << unchecked << " " << bName;
 }
 
 //Switching position of rows
 void CheckList::coordinator(COORD& cur, string upDown)
 {
-	if (upDown == "down") cur.Y = cur.Y + 1;
-	else cur.Y = cur.Y - 1;
+	if (upDown == "down") cur.Y = cur.Y + 1; //Sets Global Y position to Y+1
+	else cur.Y = cur.Y - 1; // Sets Global Y position to Y-1
 }
 
 //Gets "Acvite" State
@@ -42,8 +45,11 @@ int CheckList::getPlace() { return curY; }
 //Sets a Cell's "Acvite" to ture/false {Keyboard Use}
 void CheckList::setActive(COORD cur)
 {
+	//Sets cursors position
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, cur);
+
+	//Swithces cell's "Active" state and color scheme (true becomes false and vice versa)
 	if (active)
 	{
 		active = false;
@@ -54,6 +60,8 @@ void CheckList::setActive(COORD cur)
 		active = true;
 		SetConsoleTextAttribute(h, 240);
 	}
+
+	//Checks if the cell is selected ("[X]") or not and reprints the cell in the acording colors
 	if (pressed) cout << checked << " " << bName;
 	else cout << unchecked << " " << bName;
 }
@@ -61,13 +69,16 @@ void CheckList::setActive(COORD cur)
 //Sets a Cell's "Active" to true {Mouse Use}
 void CheckList::setActiveTrue(COORD& cur)
 {
-	COORD tempCur;
-	tempCur.X = cur.X;
-	tempCur.Y = getPlace();
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), tempCur);
+	//Changes the GLOBAL cursor's Y position to the objects position
+	//And sets the colors to chosen scheme
+	cur.Y = getPlace();
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+
+	//Sets the cell to "Active"
 	active = true;
-	cur = tempCur;
+
+	//Checks if the cell is selected ("[X]") or not and reprints the cell in "Active" colors
 	if (pressed) cout << checked << " " << getName();
 	else cout << unchecked << " " << getName();
 }
@@ -75,12 +86,16 @@ void CheckList::setActiveTrue(COORD& cur)
 //Sets a Cell's "Active" to false {Mouse Use}
 void CheckList::setActiveFalse(COORD cur)
 {
-	COORD tempCur;
-	tempCur.X = cur.X;
-	tempCur.Y = getPlace();
-	active = false;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), tempCur);
+	//Changes the LOCAL cursor's Y position to the objects position
+	//And sets the colors to chosen scheme
+	cur.Y = getPlace();
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+	//Sets the cell to "Active"
+	active = false;
+
+	//Checks if the cell is selected ("[X]") or not and reprints the cell in NON-"Active" colors
 	if (pressed) cout << checked << " " << getName();
 	else cout << unchecked << " " << getName();
 }
@@ -89,9 +104,12 @@ void CheckList::setActiveFalse(COORD cur)
 //If Cell is unselected ("[ ]") then the function changes it to selected ("[X]"), and vice versa
 void CheckList::checkSwitch(COORD cur)
 {
+	//Sets cursors position and color scheme
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, cur);
-	SetConsoleTextAttribute(h, 240);
+	SetConsoleTextAttribute(h, 240); //Active = on, color scheme
+
+	//Swithces cell's "Pressed" state (true becomes false and vice versa) and reprints it
 	if (pressed)
 	{
 		pressed = false;
@@ -114,6 +132,4 @@ string CheckList::getName() { return bName; }
 int CheckList::getLenght() { return iLenght; }
 
 //Destructor
-CheckList::~CheckList()
-{
-}
+CheckList::~CheckList() {}
