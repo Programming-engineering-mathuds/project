@@ -16,6 +16,7 @@ VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
 
 COORD cur = { 35, 10 };
 
+//Prints a Border and title inside the console 
 void borders()
 {
 	int xInit = 20;
@@ -69,6 +70,7 @@ void borders()
 	}
 }
 
+//Returns cursor's X position (used for mouse detection)
 int wherex()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -82,6 +84,7 @@ int wherex()
 	return result.X;
 }
 
+//Returns cursor's Y position (used for mouse detection)
 int wherey()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
