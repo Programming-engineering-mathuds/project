@@ -8,6 +8,7 @@ using namespace std;
 class CheckList
 {
 	string bName;
+	int iLenght;
 	int curY;
 	bool pressed;
 	bool active;
@@ -19,6 +20,7 @@ public:
 	int getPlace();
 	bool getSwitchState();
 	string getName();
+	int getLenght();
 	void setActive(COORD cur);
 	void setActiveTrue(COORD& cur);
 	void setActiveFalse(COORD cur);

@@ -19,6 +19,7 @@ CheckList::CheckList(string name, int place)
 	SetConsoleCursorPosition(h, c);
 
 	bName = name;
+	iLenght = name.length() + 4;
 	active = false;
 	pressed = false;
 	curY = place;
@@ -38,7 +39,7 @@ bool CheckList::isActive() { return active; }
 //Gets the Y position of a cell
 int CheckList::getPlace() { return curY; }
 
-//Sets a Cell's "Acvite" to ture/false
+//Sets a Cell's "Acvite" to ture/false {Keyboard Use}
 void CheckList::setActive(COORD cur)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -57,7 +58,7 @@ void CheckList::setActive(COORD cur)
 	else cout << unchecked << " " << bName;
 }
 
-//Sets a Cell's "Active" to true
+//Sets a Cell's "Active" to true {Mouse Use}
 void CheckList::setActiveTrue(COORD& cur)
 {
 	COORD tempCur;
@@ -71,7 +72,7 @@ void CheckList::setActiveTrue(COORD& cur)
 	else cout << unchecked << " " << getName();
 }
 
-//Sets a Cell's "Active" to false
+//Sets a Cell's "Active" to false {Mouse Use}
 void CheckList::setActiveFalse(COORD cur)
 {
 	COORD tempCur;
@@ -84,6 +85,8 @@ void CheckList::setActiveFalse(COORD cur)
 	else cout << unchecked << " " << getName();
 }
 
+//Selection switch that checks whether a Cell has been selected or not (has "X")
+//If Cell is unselected ("[ ]") then the function changes it to selected ("[X]"), and vice versa
 void CheckList::checkSwitch(COORD cur)
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -101,9 +104,14 @@ void CheckList::checkSwitch(COORD cur)
 	}
 }
 
+//Returns Cell's selected/unselected status
 bool CheckList::getSwitchState() { return pressed; }
 
+//Returns Cell's name/label
 string CheckList::getName() { return bName; }
+
+//Returns Cell's lenght (from the first char "[" to the last)
+int CheckList::getLenght() { return iLenght; }
 
 CheckList::~CheckList()
 {

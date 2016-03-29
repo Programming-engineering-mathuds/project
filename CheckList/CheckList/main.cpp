@@ -95,11 +95,11 @@ int wherey()
 	return result.Y;
 }
 
-//CheckList
-CheckList cBox[] = { { "Item01", cur.Y },
-{ "Item02", cur.Y + 1 },
-{ "Item03", cur.Y + 2 },
-{ "Item04", cur.Y + 3 } };
+//CheckList object declaration
+CheckList cList[] = { { "Item01", cur.Y },
+					 { "Item02", cur.Y + 1 },
+					 { "Item03", cur.Y + 2 },
+					 { "Item04", cur.Y + 3 } };
 
 int main(VOID)
 {
@@ -131,7 +131,7 @@ int main(VOID)
 	if (!SetConsoleMode(hStdin, fdwMode))
 		ErrorExit("SetConsoleMode");
 
-	cBox[0].setActive(cur);
+	cList[0].setActive(cur);
 
 	// Loop to read and handle the next input events. 
 
@@ -207,13 +207,13 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		//printf("key pressed\n");
 		if (ker.wVirtualKeyCode == VK_UP)
 		{
-			for (i = 0; i < ARRAYSIZE(cBox); i++)
+			for (i = 0; i < ARRAYSIZE(cList); i++)
 			{
-				if ((cBox[i].isActive() == true) && (i > 0))
+				if ((cList[i].isActive() == true) && (i > 0))
 				{
-					cBox[i].setActive(cur);
-					cBox[i].coordinator(cur, "up");
-					cBox[i - 1].setActive(cur);
+					cList[i].setActive(cur);
+					cList[i].coordinator(cur, "up");
+					cList[i - 1].setActive(cur);
 					break;
 				}
 			}
@@ -221,13 +221,13 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		}
 		if (ker.wVirtualKeyCode == VK_DOWN)
 		{
-			for (i = 0; i < ARRAYSIZE(cBox); i++)
+			for (i = 0; i < ARRAYSIZE(cList); i++)
 			{
-				if ((cBox[i].isActive() == true) && (i + 1 < ARRAYSIZE(cBox)))
+				if ((cList[i].isActive() == true) && (i + 1 < ARRAYSIZE(cList)))
 				{
-					cBox[i].setActive(cur);
-					cBox[i].coordinator(cur, "down");
-					cBox[i + 1].setActive(cur);
+					cList[i].setActive(cur);
+					cList[i].coordinator(cur, "down");
+					cList[i + 1].setActive(cur);
 					break;
 				}
 			}
@@ -235,11 +235,11 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		}
 		if ((ker.wVirtualKeyCode == 0x58) || (ker.wVirtualKeyCode == VK_SPACE) || (ker.wVirtualKeyCode == VK_RETURN))
 		{
-			for (i = 0; i < ARRAYSIZE(cBox); i++)
+			for (i = 0; i < ARRAYSIZE(cList); i++)
 			{
-				if ((cBox[i].isActive() == true))
+				if ((cList[i].isActive() == true))
 				{
-					cBox[i].checkSwitch(cur);
+					cList[i].checkSwitch(cur);
 					break;
 				}
 			}
@@ -263,11 +263,11 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 
 		if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 		{
-			for (int i = 0; i < ARRAYSIZE(cBox); i++)
+			for (int i = 0; i < ARRAYSIZE(cList); i++)
 			{
-				if (mer.dwMousePosition.Y == cBox[i].getPlace())
+				if ((mer.dwMousePosition.Y == cList[i].getPlace()) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList[i].getLenght())))
 				{
-					cBox[i].checkSwitch(cur);
+					cList[i].checkSwitch(cur);
 					break;
 				}
 			}
@@ -283,11 +283,11 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		}
 		break;
 	case DOUBLE_CLICK:
-		for (int i = 0; i < ARRAYSIZE(cBox); i++)
+		for (int i = 0; i < ARRAYSIZE(cList); i++)
 		{
-			if (mer.dwMousePosition.Y == cBox[i].getPlace())
+			if ((mer.dwMousePosition.Y == cList[i].getPlace()) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList[i].getLenght())))
 			{
-				cBox[i].checkSwitch(cur);
+				cList[i].checkSwitch(cur);
 				break;
 			}
 		}
@@ -297,16 +297,16 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		//printf("horizontal mouse wheel\n");
 		break;
 	case MOUSE_MOVED:
-		for (int i = 0; i < ARRAYSIZE(cBox); i++)
+		for (int i = 0; i < ARRAYSIZE(cList); i++)
 		{
-			if (mer.dwMousePosition.Y == cBox[i].getPlace())
+			if ((mer.dwMousePosition.Y == cList[i].getPlace()) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList[i].getLenght())))
 			{
 				//COORD tempCur;
 				//tempCur.X = cur.X;
-				for (int j = 0; j < ARRAYSIZE(cBox); j++)
+				for (int j = 0; j < ARRAYSIZE(cList); j++)
 				{
-					if (j != i)	cBox[j].setActiveFalse(cur);
-					else cBox[i].setActiveTrue(cur);
+					if (j != i)	cList[j].setActiveFalse(cur);
+					else cList[i].setActiveTrue(cur);
 				}
 			}
 		}
