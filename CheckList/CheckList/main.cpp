@@ -258,8 +258,6 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 #define MOUSE_HWHEELED 0x0008
 #endif
 	//printf("Mouse event: ");
-	//cout << mer.dwMousePosition.Y;
-
 	switch (mer.dwEventFlags)
 	{
 	case 0:
@@ -304,8 +302,6 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		{
 			if ((mer.dwMousePosition.Y == cList[i].getPlace()) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList[i].getLenght())))
 			{
-				//COORD tempCur;
-				//tempCur.X = cur.X;
 				for (int j = 0; j < ARRAYSIZE(cList); j++)
 				{
 					if (j != i)	cList[j].setActiveFalse(cur);
