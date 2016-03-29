@@ -17,6 +17,9 @@
   <ItemGroup>
     <ClInclude Include="CheckList.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="D:\Users\Peleg\Studies\שיטות בהנדסת תוכנה\CheckBox readme.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4E8ACFF3-BD53-4478-B133-1C355E0745FA}</ProjectGuid>
     <RootNamespace>CheckList</RootNamespace>

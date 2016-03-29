@@ -14,7 +14,60 @@ VOID KeyEventProc(KEY_EVENT_RECORD);
 VOID MouseEventProc(MOUSE_EVENT_RECORD);
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
 
-COORD cur = { 10, 5 };
+COORD cur = { 35, 10 };
+
+void borders()
+{
+	int xInit = 20;
+	int xEnd = 60;
+	int yInit = 2;
+	int yEnd = 18;
+	COORD c = { xInit + 3, yInit + 2 };
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleCursorPosition(h, c);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+
+	cout << "CheckList demo for console with C++";
+
+	for (int i = yInit; i <= yEnd; i++)
+	{
+		if (i == yInit)
+		{
+			c = { xInit, yInit };
+			SetConsoleCursorPosition(h, c);
+			cout << '\xC9';
+			for (int j = xInit + 1; j < xEnd; j++)
+			{
+				c = { j, i };
+				SetConsoleCursorPosition(h, c);
+				cout << '\xCD';
+			}
+			cout << '\xBB';
+		}
+		if ((i > yInit) && (i < yEnd))
+		{
+			c = { xEnd, i };
+			SetConsoleCursorPosition(h, c);
+			cout << '\xBA';
+			c = { xInit, i };
+			SetConsoleCursorPosition(h, c);
+			cout << '\xBA';
+		}
+		if (i == yEnd)
+		{
+			c = { xInit, i };
+			SetConsoleCursorPosition(h, c);
+			cout << '\xC8';
+			for (int j = xInit + 1; j < xEnd; j++)
+			{
+				c = { j, i };
+				SetConsoleCursorPosition(h, c);
+				cout << '\xCD';
+			}
+			cout << '\xBC';
+		}
+	}
+}
 
 int wherex()
 {
@@ -54,7 +107,7 @@ int main(VOID)
 	INPUT_RECORD irInBuf[128];
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	int counter = 0;
-
+	borders();
 
 	//set cursor size and visibility example
 
