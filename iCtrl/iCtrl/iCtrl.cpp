@@ -66,7 +66,7 @@ void iCtrl::frame(int size)
 	}
 }
 
-void iCtrl::color(int clrNum)
+void iCtrl::color(int clrNumFont, int clrNumBG)
 {
 	SetConsoleTextAttribute(hndl, clrNum);
 }
