@@ -14,7 +14,7 @@ iCtrl::iCtrl(int arrSize)
 	SetConsoleCursorPosition(hndl, pos);
 }
 
-iCtrl::~iCtrl() {}
+iCtrl::~iCtrl(){}
 
 void iCtrl::frame(int size)
 {
