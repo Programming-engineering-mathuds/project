@@ -1,5 +1,4 @@
 #include "iCtrl.h"
-
 #include <iostream>
 using namespace std;
 
@@ -69,4 +68,9 @@ void iCtrl::frame(int size)
 void iCtrl::color(int clrNumFont, int clrNumBG)
 {
 	SetConsoleTextAttribute(hndl, clrNum);
+}
+
+void iCtrl::color2(Foreground clrNumFont, Background clrNumBG)
+{
+	SetConsoleTextAttribute(hndl,clrNum);
 }

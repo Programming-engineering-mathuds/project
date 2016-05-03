@@ -12,8 +12,8 @@ void Label::print()
 {
 	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
 	SetConsoleCursorInfo(hndl, &cci);
-
-	color(ConsoleForeground::WHITE, ConsoleBackground::BLACK);
+	
+	color2(Foreground::WHITE, Background::BLACK);
 
 	////////
 	//SetCurrentConsoleFontEx

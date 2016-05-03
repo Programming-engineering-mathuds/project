@@ -1,7 +1,6 @@
 #pragma once
-namespace ConsoleBackground
-{
-	enum {
+
+	enum class Background {
 		BLACK = 0,
 		DARKBLUE = BACKGROUND_BLUE,
 		DARKGREEN = BACKGROUND_GREEN,
@@ -19,4 +18,3 @@ namespace ConsoleBackground
 		YELLOW = BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN,
 		WHITE = BACKGROUND_INTENSITY | BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE,
 	};
-}
