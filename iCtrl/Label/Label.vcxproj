@@ -124,6 +124,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>"C:\Users\Gonen\Source\Repos\project\iCtrl\iCtrl\";%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,6 +150,11 @@
   <ItemGroup>
     <ClCompile Include="input.cpp" />
     <ClCompile Include="Label.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCtrl\iCtrl.vcxproj">
+      <Project>{0774cc73-c1bb-467d-9de7-209ebada49fd}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
