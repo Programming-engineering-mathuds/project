@@ -20,6 +20,6 @@ public:
 	~iCtrl();
 
 	void frame(int size);
-	void color(int clrNum);
+	void color(int clrNumFont, int clrNumBG);
 };
 
