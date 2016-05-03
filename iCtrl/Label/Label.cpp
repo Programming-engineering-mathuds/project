@@ -10,8 +10,6 @@ void Label::getInput(KEY_EVENT_RECORD key)
 }
 void Label::print()
 {
-	//HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
 	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
 	SetConsoleCursorInfo(hndl, &cci);
 

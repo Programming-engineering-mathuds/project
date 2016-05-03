@@ -126,7 +126,6 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 	}
 	else
 	{
-	printf("button press\n");
 	}
 	break;
 	case DOUBLE_CLICK:
