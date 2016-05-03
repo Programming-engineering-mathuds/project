@@ -33,6 +33,9 @@ CheckList::CheckList(string name, COORD cur)
 	cout << unchecked << " " << bName;
 }
 
+//Destructor
+CheckList::~CheckList() {}
+
 //Switching position of rows
 void CheckList::coordinator(COORD& cur, string upDown)
 {
@@ -134,6 +137,3 @@ string CheckList::getName() { return bName; }
 
 //Returns Cell's lenght (from the first char "[" to the last)
 int CheckList::getLenght() { return iLenght; }
-
-//Destructor
-CheckList::~CheckList() {}

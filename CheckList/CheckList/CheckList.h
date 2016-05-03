@@ -15,6 +15,7 @@ private:
 	bool active;
 public:
 	CheckList(string name, COORD cur);
+	~CheckList();
 	void coordinator(COORD& cur, string upDown);
 	void checkSwitch(COORD cur);
 	bool isActive();
@@ -25,5 +26,4 @@ public:
 	void setActive(COORD cur);
 	void setActiveTrue(COORD& cur);
 	void setActiveFalse(COORD cur);
-	~CheckList();
 };
