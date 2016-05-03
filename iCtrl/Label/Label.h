@@ -2,12 +2,12 @@
 
 #include <windows.h>
 #include <stdio.h>
-//#include "../iCtrl/iCtrl.h"
-//#include "../iCtrl/ConsoleForeground.h"
-//#include "../iCtrl/ConsoleBackground.h"
-#include "iCtrl.h"
-#include "ConsoleForeground.h"
-#include "ConsoleBackground.h"
+#include "../iCtrl/iCtrl.h"
+#include "../iCtrl/ConsoleForeground.h"
+#include "../iCtrl/ConsoleBackground.h"
+//#include "iCtrl.h"
+//#include "ConsoleForeground.h"
+//#include "ConsoleBackground.h"
 using namespace std;
 
 class Label: public iCtrl
