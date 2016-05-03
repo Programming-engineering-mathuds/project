@@ -65,6 +65,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConsoleBackground.h" />
     <ClInclude Include="ConsoleForeground.h" />
     <ClInclude Include="iCtrl.h" />
   </ItemGroup>
