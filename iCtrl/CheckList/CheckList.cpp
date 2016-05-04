@@ -38,6 +38,11 @@ void CheckList::setCellActive(int itemNum, COORD pos) { cList[itemNum].setActive
 
 void CheckList::cellCoordinator(int itemNum, COORD& pos, string direction) { cList[itemNum].coordinator(pos, direction); }
 
+//void CheckList::topBottomCoordinator(int itemNum, COORD& pos, string direction)
+//{
+//	cList[i]
+//}
+
 void CheckList::cellCheckSwitch(int itemNum, COORD pos) { cList[itemNum].checkSwitch(pos); }
 
 int CheckList::getCellPlace(int itemNum) { return cList[itemNum].getPlace(); }

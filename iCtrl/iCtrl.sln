@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Label", "Label\Label.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CheckList", "CheckList\CheckList.vcxproj", "{9168F01D-930F-4BF1-81D7-BB1912C26F9B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Radio", "Radio\Radio.vcxproj", "{D51AE71A-91D5-4613-8BCD-33F2A08B0226}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,12 @@ Global
 		{9168F01D-930F-4BF1-81D7-BB1912C26F9B}.Release|Win32.ActiveCfg = Release|Win32
 		{9168F01D-930F-4BF1-81D7-BB1912C26F9B}.Release|Win32.Build.0 = Release|Win32
 		{9168F01D-930F-4BF1-81D7-BB1912C26F9B}.Release|x64.ActiveCfg = Release|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Debug|Win32.Build.0 = Debug|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Debug|x64.ActiveCfg = Debug|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Release|Win32.ActiveCfg = Release|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Release|Win32.Build.0 = Release|Win32
+		{D51AE71A-91D5-4613-8BCD-33F2A08B0226}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

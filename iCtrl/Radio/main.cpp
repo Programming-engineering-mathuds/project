@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
-#include "CheckList.h"
+#include "RadioList.h"
 
 using namespace std;
 
@@ -110,7 +110,7 @@ int wherey()
 //					  { "Item03", 4 },
 //					  { "Item04", 4 } };
 
-CheckList cList(4, cur, 1);
+RadioList bList(7, cur, 2);
 
 int main(VOID)
 {
@@ -208,34 +208,34 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		//printf("key pressed\n");
 		if (ker.wVirtualKeyCode == VK_UP)
 		{
-			for (i = 0; i < cList.cListSize(); i++)
+			for (i = 0; i < bList.bListSize(); i++)
 			{
-				if ((cList.isCellActive(i) == true) && (i > 0))
+				if ((bList.isCellActive(i) == true) && (i > 0))
 				{
-					cList.setCellActive(i, cur);
-					cList.cellCoordinator(i, cur, "up");
-					cList.setCellActive(i - 1, cur);
+					bList.setCellActive(i, cur);
+					bList.cellCoordinator(i, cur, "up");
+					bList.setCellActive(i - 1, cur);
 					break;
 				}
 				/*if ((cList.isCellActive(i) == true) && (i = 0))
 				{
-					cList.setCellActive(cList.cListSize() - 1 , cur);
-					cList.cellCoordinator(i, cur, "up");
-					cList.setCellActive(i - 1, cur);
-					break;
+				cList.setCellActive(cList.cListSize() - 1 , cur);
+				cList.cellCoordinator(i, cur, "up");
+				cList.setCellActive(i - 1, cur);
+				break;
 				}*/
 			}
 			//printf("UP");
 		}
 		if (ker.wVirtualKeyCode == VK_DOWN)
 		{
-			for (i = 0; i < cList.cListSize(); i++)
+			for (i = 0; i < bList.bListSize(); i++)
 			{
-				if ((cList.isCellActive(i) == true) && (i + 1 < cList.cListSize()))
+				if ((bList.isCellActive(i) == true) && (i + 1 < bList.bListSize()))
 				{
-					cList.setCellActive(i, cur);
-					cList.cellCoordinator(i, cur, "down");
-					cList.setCellActive(i + 1, cur);
+					bList.setCellActive(i, cur);
+					bList.cellCoordinator(i, cur, "down");
+					bList.setCellActive(i + 1, cur);
 					break;
 				}
 			}
@@ -243,11 +243,11 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		}
 		if ((ker.wVirtualKeyCode == 0x58) || (ker.wVirtualKeyCode == VK_SPACE) || (ker.wVirtualKeyCode == VK_RETURN))
 		{
-			for (i = 0; i < cList.cListSize(); i++)
+			for (i = 0; i < bList.bListSize(); i++)
 			{
-				if ((cList.isCellActive(i) == true))
+				if ((bList.isCellActive(i) == true))
 				{
-					cList.cellCheckSwitch(i, cur);
+					bList.setRadio(i, cur);
 					break;
 				}
 			}
@@ -269,11 +269,11 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 
 		if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 		{
-			for (int i = 0; i < cList.cListSize(); i++)
+			for (int i = 0; i < bList.bListSize(); i++)
 			{
-				if ((mer.dwMousePosition.Y == cList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList.getCellLenght(i))))
+				if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
 				{
-					cList.cellCheckSwitch(i, cur);
+					bList.setRadio(i, cur);
 					break;
 				}
 			}
@@ -289,11 +289,11 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		}
 		break;
 	case DOUBLE_CLICK:
-		for (int i = 0; i < cList.cListSize(); i++)
+		for (int i = 0; i < bList.bListSize(); i++)
 		{
-			if ((mer.dwMousePosition.Y == cList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList.getCellLenght(i))))
+			if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
 			{
-				cList.cellCheckSwitch(i, cur);
+				bList.setRadio(i, cur);
 				break;
 			}
 		}
@@ -303,14 +303,14 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		//printf("horizontal mouse wheel\n");
 		break;
 	case MOUSE_MOVED:
-		for (int i = 0; i < cList.cListSize(); i++)
+		for (int i = 0; i < bList.bListSize(); i++)
 		{
-			if ((mer.dwMousePosition.Y == cList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + cList.getCellLenght(i))))
+			if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
 			{
-				for (int j = 0; j < cList.cListSize(); j++)
+				for (int j = 0; j < bList.bListSize(); j++)
 				{
-					if (j != i)	cList.setCellActiveFalse(j, cur);
-					else cList.setCellActiveTrue(i, cur);
+					if (j != i)	bList.setCellActiveFalse(j, cur);
+					else bList.setCellActiveTrue(i, cur);
 				}
 			}
 		}

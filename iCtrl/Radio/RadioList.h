@@ -11,16 +11,16 @@
 
 using namespace std;
 
-class CheckList : public iCtrl
+class RadioList : public iCtrl
 {
 private:
-	//CheckBox* cList;
-	vector<CheckBox> cList;
+	//CheckBox* bList;
+	vector<CheckBox> bList;
 public:
-	CheckList(int arrSize, COORD cur, int frameLines);
-	~CheckList();
+	RadioList(int arrSize, COORD cur, int frameLines);
+	~RadioList();
 
-	int cListSize();
+	int bListSize();
 	//CheckBox getcList(int item);
 	bool isCellActive(int itemNum);
 	void setCellActive(int itemNum, COORD pos);
@@ -31,4 +31,5 @@ public:
 	int getCellLenght(int itemNum);
 	void setCellActiveFalse(int itemNum, COORD pos);
 	void setCellActiveTrue(int itemNum, COORD& pos);
+	void setRadio(int itemNum, COORD pos);
 };
