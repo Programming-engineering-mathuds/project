@@ -10,50 +10,97 @@ void Label::getInput(KEY_EVENT_RECORD key)
 }
 void Label::print()
 {
-	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
-	SetConsoleCursorInfo(hndl, &cci);
-	
-	//color2(Foreground::WHITE, Background::BLACK);
+	COORD init = pos;
+	if (frameSize == 0)
+	{
+		CONSOLE_CURSOR_INFO cci = { 100, FALSE };
+		SetConsoleCursorInfo(hndl, &cci);
+		SetConsoleCursorPosition(hndl, init);
+		for (int i = 0; i < size; i++)
+		{
+			putchar(text[i]);
+		}
 
-	////////
-	//SetCurrentConsoleFontEx
-	///////
-	//COORD c = { 15, 7 };
-	//SetConsoleCursorPosition(h, c);
-	SetConsoleCursorPosition(hndl, pos);
-	putchar('\xDA');
-	for (int i = 0; i < size; i++)
-	{
-		putchar('\xC4');
 	}
-	putchar('\xBF');
-	//end of the top of the frame
-	//putchar('\n');
-	//c = { 15, 8 };
-	pos.Y++;
-	SetConsoleCursorPosition(hndl, pos);
-	putchar('\xB3');
-	for (int i = 0; i < size; i++)
+	else if (frameSize == 1)
 	{
-		putchar(text[i]);
-	}
-	putchar('\xB3');
-	//end of text
-	//putchar('\n');
-	//c = { 15, 9 };
-	pos.X++;
-	SetConsoleCursorPosition(hndl, pos);
+		CONSOLE_CURSOR_INFO cci = { 100, FALSE };
+		SetConsoleCursorInfo(hndl, &cci);
 
-	putchar('\xC0');
-	for (int i = 0; i < size; i++)
-	{
-		putchar('\xC4');
+		//color2(Foreground::WHITE, Background::BLACK);
+
+		SetConsoleCursorPosition(hndl, init);
+		putchar('\xDA');
+		for (int i = 0; i < size; i++)
+		{
+			putchar('\xC4');
+		}
+		putchar('\xBF');
+		//end of the top of the frame
+		init.Y++;
+		init.X = pos.X;
+		SetConsoleCursorPosition(hndl, init);
+		putchar('\xB3');
+		for (int i = 0; i < size; i++)
+		{
+			putchar(text[i]);
+		}
+		putchar('\xB3');
+		//end of text
+		init.Y++;
+		init.X = pos.X;
+		SetConsoleCursorPosition(hndl, init);
+
+		putchar('\xC0');
+		for (int i = 0; i < size; i++)
+		{
+			putchar('\xC4');
+		}
+		putchar('\xD9');
+		//end of bottom of frame
 	}
-	putchar('\xD9');
-	//end of bottom of frame
+	else
+	{
+		CONSOLE_CURSOR_INFO cci = { 100, FALSE };
+		SetConsoleCursorInfo(hndl, &cci);
+
+		//color2(Foreground::WHITE, Background::BLACK);
+
+		SetConsoleCursorPosition(hndl, init);
+		putchar('\xC9');
+		for (int i = 0; i < size; i++)
+		{
+			putchar('\xCD');
+		}
+		putchar('\xBB');
+		//end of the top of the frame
+		init.Y++;
+		init.X = pos.X;
+		SetConsoleCursorPosition(hndl, init);
+		putchar('\xBA');
+		for (int i = 0; i < size; i++)
+		{
+			putchar(text[i]);
+		}
+		putchar('\xBA');
+		//end of text
+		init.Y++;
+		init.X = pos.X;
+		SetConsoleCursorPosition(hndl, init);
+
+		putchar('\xC8');
+		for (int i = 0; i < size; i++)
+		{
+			putchar('\xCD');
+		}
+		putchar('\xBC');
+		//end of bottom of frame
+	}
+
 }
 Label::Label(char* text, int arrSize,COORD cor) :iCtrl(arrSize,cor),text(text),size(strlen(text))
 {
+	frameSize = 0;
 	print();
 
 }

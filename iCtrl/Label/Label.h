@@ -23,5 +23,6 @@ public:
 	void getMouse(MOUSE_EVENT_RECORD mer);
 	void handelInput(INPUT_RECORD input);
 	void changeText(char* newText);
+
 };
 
