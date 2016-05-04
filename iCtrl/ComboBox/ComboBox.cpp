@@ -7,11 +7,9 @@
 
 using namespace std;
 
-int rowCount1 = 7; // used to addvance rows - unused at the moment
-
 ComboBox::ComboBox(int arrSize, COORD cur, int frameLines) : iCtrl(arrSize, cur)
 {
-	
+	//Theme Colors
 	clrNum = 7;
 	clrNumHvr = 240;
 
@@ -30,9 +28,7 @@ ComboBox::ComboBox(int arrSize, COORD cur, int frameLines) : iCtrl(arrSize, cur)
 	frame(arrSize+2, frameLines);
 }
 
-ComboBox::~ComboBox()
-{
-}
+ComboBox::~ComboBox() { }
 
 int ComboBox::cBoxSize() {	return cBox.size(); }
 
@@ -56,16 +52,12 @@ void ComboBox::hideAll()
 
 int ComboBox::getCellPlace(int itemNum) { return cBox[itemNum].getPlace(); }
 
-void ComboBox::cellCheckSwitch(int itemNum, COORD pos)
-{ 
-	cBox[itemNum].checkSwitch(pos); 
-	//hideAll();
-}
+void ComboBox::cellCheckSwitch(int itemNum, COORD pos) { cBox[itemNum].checkSwitch(pos); }
 
 void ComboBox::cellSetPressedColor(int itemNum, COORD pos) 
 { 
 	cBox[itemNum].setPressedColor(pos); 
-	//hideAll();
+	hideAll();
 }
 
 void ComboBox::setCellActiveFalse(int itemNum, COORD pos) { cBox[itemNum].setActiveFalse(pos); }

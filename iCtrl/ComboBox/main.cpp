@@ -18,59 +18,6 @@ VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
 COORD cur = { 2, 2 };
 const COORD cCur = cur;
 
-//void borders()
-//{
-//	int xInit = 20;
-//	int xEnd = 60;
-//	int yInit = 2;
-//	int yEnd = 22;
-//	COORD c = { xInit + 3, yInit + 2 };
-//	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-//	SetConsoleCursorPosition(h, c);
-//	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-//
-//	cout << "ComboBox demo for console with C++";
-//
-//	for (int i = yInit; i <= yEnd; i++)
-//	{
-//		if (i == yInit)
-//		{
-//			c = { xInit, yInit };
-//			SetConsoleCursorPosition(h, c);
-//			cout << '\xC9';
-//			for (int j = xInit + 1; j < xEnd; j++)
-//			{
-//				c = { j, i };
-//				SetConsoleCursorPosition(h, c);
-//				cout << '\xCD';
-//			}
-//			cout << '\xBB';
-//		}
-//		if ((i > yInit) && (i < yEnd))
-//		{
-//			c = { xEnd, i };
-//			SetConsoleCursorPosition(h, c);
-//			cout << '\xBA';
-//			c = { xInit, i };
-//			SetConsoleCursorPosition(h, c);
-//			cout << '\xBA';
-//		}
-//		if (i == yEnd)
-//		{
-//			c = { xInit, i };
-//			SetConsoleCursorPosition(h, c);
-//			cout << '\xC8';
-//			for (int j = xInit + 1; j < xEnd; j++)
-//			{
-//				c = { j, i };
-//				SetConsoleCursorPosition(h, c);
-//				cout << '\xCD';
-//			}
-//			cout << '\xBC';
-//		}
-//	}
-//}
-
 int wherex()
 {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -97,10 +44,7 @@ int wherey()
 	return result.Y;
 }
 
-//ComboBox
-//string strArr[] = { "Item01", "Item02", "Item03", "Item04", "item05" };
-//Cell cBox[] = { "Item01", "Item02", "Item03", "Item04", "Item05" };
-
+//ComboBox initialization
 ComboBox cBox(9, cur, 2);
 
 int main(VOID)
@@ -110,20 +54,6 @@ int main(VOID)
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	int counter = 0;
 	int arrSize;
-
-	//Inisialize Border draw
-	//borders();
-
-	//Saves array size and creates a ComboBox objets
-	//arrSize = ARRAYSIZE(strArr);
-	//ComboBox cBox(strArr, arrSize);
-	//COORD c = { 26, 7 };
-	//SetConsoleCursorPosition(h, cur);
-	//cout << "[ Please Select an item | v ]";
-	/*for (int i = 0; i < ARRAYSIZE(cBox); i++)
-	{
-	cout << cBox[i].getName() << endl;
-	}*/
 
 	//set cursor size and visibility example
 
@@ -299,6 +229,7 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 					{
 						cBox.cellCheckSwitch(i, cCur);
 						cBox.cellSetPressedColor(i, cCur);
+						on = false;
 						break;
 					}
 				}
