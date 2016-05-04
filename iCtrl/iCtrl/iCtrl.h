@@ -14,13 +14,13 @@ protected:
 	int clrNum;
 	int clrNumHvr;
 	int area;
-	int rowLength;
+	int maxWidth;
 public:
-	iCtrl(int arrSize);
+	iCtrl(int arrSize, COORD cur);
 	~iCtrl();
 
-	void frame(int size);
-	void color(int clrNumFont, int clrNumBG);
+	void frame(int size, int frameLines);
+	void color(int clrNum);
 	void color2(Foreground clrNumFont, Background clrNumBG);
 };
 

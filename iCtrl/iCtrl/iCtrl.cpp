@@ -1,71 +1,118 @@
 #include "iCtrl.h"
+
 #include <iostream>
 using namespace std;
 
-int xCount = 0;
-int yCount = 0;
-
-iCtrl::iCtrl(int arrSize)
+iCtrl::iCtrl(int arrSize, COORD cur)
 {
-	//frame(arrSize);
-	//rowLength = lenght;
-	pos = { (short)xCount, (short)yCount++ };
-	SetConsoleCursorPosition(hndl, pos);
+	pos = cur;
+	maxWidth = 0;
+	//SetConsoleCursorPosition(hndl, pos);
 }
 
-iCtrl::~iCtrl(){}
+iCtrl::~iCtrl() {}
 
-void iCtrl::frame(int size)
+void iCtrl::frame(int size, int frameLines)
 {
+	//X Axis
 	int xInit = 0;
-	int xEnd = 40;
+	int xEnd = maxWidth + 3;
+	//Y Axis
 	int yInit = 0;
-	int yEnd = 40;
-	//Prints Borders
-	for (int i = yInit; i <= yEnd; i++)
+	int yEnd = size + 3;
+	if (frameLines == 1)
 	{
-		//Upper row
-		if (i == yInit)
+		//Prints Borders
+		for (int i = yInit; i <= yEnd; i++)
 		{
-			pos = { (short)xInit, (short)yInit };
-			SetConsoleCursorPosition(hndl, pos);
-			cout << '\xC9';
-			for (int j = xInit + 1; j < xEnd; j++)
+			//Upper row
+			if (i == yInit)
 			{
-				pos = { (short)j,(short)i };
+				pos = { xInit, yInit };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xCD';
+				cout << '\xDA';
+				for (int j = xInit + 1; j < xEnd; j++)
+				{
+					pos = { j, i };
+					SetConsoleCursorPosition(hndl, pos);
+					cout << '\xC4';
+				}
+				cout << '\xBF';
 			}
-			cout << '\xBB';
-		}
-		//Middle columns (first and last only) 
-		if ((i > yInit) && (i < yEnd))
-		{
-			pos = { (short)xEnd, (short)i };
-			SetConsoleCursorPosition(hndl, pos);
-			cout << '\xBA';
-			pos = { (short)xInit, (short)i };
-			SetConsoleCursorPosition(hndl, pos);
-			cout << '\xBA';
-		}
-		//Lower row
-		if (i == yEnd)
-		{
-			pos = { (short)xInit,(short)i };
-			SetConsoleCursorPosition(hndl, pos);
-			cout << '\xC8';
-			for (int j = xInit + 1; j < xEnd; j++)
+			//Middle columns (first and last only) 
+			if ((i > yInit) && (i < yEnd))
 			{
-				pos = { (short)j, (short)i };
+				pos = { xEnd, i };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xCD';
+				cout << '\xB3';
+				pos = { xInit, i };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xB3';
 			}
-			cout << '\xBC';
+			//Lower row
+			if (i == yEnd)
+			{
+				pos = { xInit, i };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xC0';
+				for (int j = xInit + 1; j < xEnd; j++)
+				{
+					pos = { j, i };
+					SetConsoleCursorPosition(hndl, pos);
+					cout << '\xC4';
+				}
+				cout << '\xD9';
+			}
+		}
+	}
+	if (frameLines == 2)
+	{
+		//Prints Borders
+		for (int i = yInit; i <= yEnd; i++)
+		{
+			//Upper row
+			if (i == yInit)
+			{
+				pos = { xInit, yInit };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xC9';
+				for (int j = xInit + 1; j < xEnd; j++)
+				{
+					pos = { j, i };
+					SetConsoleCursorPosition(hndl, pos);
+					cout << '\xCD';
+				}
+				cout << '\xBB';
+			}
+			//Middle columns (first and last only) 
+			if ((i > yInit) && (i < yEnd))
+			{
+				pos = { xEnd, i };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xBA';
+				pos = { xInit, i };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xBA';
+			}
+			//Lower row
+			if (i == yEnd)
+			{
+				pos = { xInit, i };
+				SetConsoleCursorPosition(hndl, pos);
+				cout << '\xC8';
+				for (int j = xInit + 1; j < xEnd; j++)
+				{
+					pos = { j, i };
+					SetConsoleCursorPosition(hndl, pos);
+					cout << '\xCD';
+				}
+				cout << '\xBC';
+			}
 		}
 	}
 }
 
-void iCtrl::color(int clrNumFont, int clrNumBG)
+void iCtrl::color(int clrNum)
 {
 	SetConsoleTextAttribute(hndl, clrNum);
 }
