@@ -10,8 +10,8 @@ VOID ErrorExit(LPSTR);
 VOID KeyEventProc(KEY_EVENT_RECORD);
 VOID MouseEventProc(MOUSE_EVENT_RECORD);
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
-
-Label label("label",0);
+COORD cor = { 15, 7 };
+Label label("label",0,cor,2);
 
 int main(VOID)
 {

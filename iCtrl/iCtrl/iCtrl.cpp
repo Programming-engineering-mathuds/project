@@ -119,5 +119,6 @@ void iCtrl::color(int clrNum)
 
 void iCtrl::color2(Foreground clrNumFont, Background clrNumBG)
 {
-	SetConsoleTextAttribute(hndl,clrNum);
+	SetConsoleTextAttribute(hndl, (DWORD)clrNumFont);
+	SetConsoleTextAttribute(hndl, (DWORD)clrNumBG);
 }
