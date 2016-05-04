@@ -59,13 +59,13 @@ int ComboBox::getCellPlace(int itemNum) { return cBox[itemNum].getPlace(); }
 void ComboBox::cellCheckSwitch(int itemNum, COORD pos)
 { 
 	cBox[itemNum].checkSwitch(pos); 
-	hideAll();
+	//hideAll();
 }
 
 void ComboBox::cellSetPressedColor(int itemNum, COORD pos) 
 { 
 	cBox[itemNum].setPressedColor(pos); 
-	hideAll();
+	//hideAll();
 }
 
 void ComboBox::setCellActiveFalse(int itemNum, COORD pos) { cBox[itemNum].setActiveFalse(pos); }
