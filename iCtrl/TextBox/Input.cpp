@@ -157,8 +157,6 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD wbsr)
 {
-	//printf("Resize event\n");
-	//printf("Console screen buffer is %d columns by %d rows.\n", wbsr.dwSize.X, wbsr.dwSize.Y);
 
 }
 
