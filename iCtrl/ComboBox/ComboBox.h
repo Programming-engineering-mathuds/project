@@ -1,5 +1,7 @@
 #pragma once
-#include "iCtrl.h"
+#include "../iCtrl/iCtrl.h"
+#include "../iCtrl/ConsoleForeground.h"
+#include "../iCtrl/ConsoleBackground.h"
 #include <Windows.h>
 #include <string>
 #include <stdio.h>
