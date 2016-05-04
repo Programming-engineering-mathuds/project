@@ -1,0 +1,23 @@
+﻿Build started 04/05/2016 23:52:59.
+     1>Project "C:\Users\Peleg\Source\Repos\project\iCtrl\ComboBox\ComboBox.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cell.cpp ComboBox.cpp main.cpp
+         main.cpp
+     1>c:\users\peleg\source\repos\project\ictrl\combobox\main.cpp(56): warning C4101: 'arrSize' : unreferenced local variable
+     1>c:\users\peleg\source\repos\project\ictrl\combobox\main.cpp(152): warning C4101: 'i' : unreferenced local variable
+         ComboBox.cpp
+     1>c:\users\peleg\source\repos\project\ictrl\combobox\combobox.cpp(37): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\peleg\source\repos\project\ictrl\combobox\combobox.cpp(46): warning C4018: '<' : signed/unsigned mismatch
+         Cell.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Peleg\Source\Repos\project\iCtrl\Debug\ComboBox.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Peleg\Source\Repos\project\iCtrl\Debug\ComboBox.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Peleg\Source\Repos\project\iCtrl\Debug\ComboBox.lib" /MACHINE:X86 Debug\Cell.obj
+         Debug\ComboBox.obj
+         Debug\main.obj
+         C:\Users\Peleg\Source\Repos\project\iCtrl\Debug\iCtrl.lib
+         ComboBox.vcxproj -> C:\Users\Peleg\Source\Repos\project\iCtrl\Debug\ComboBox.exe
+     1>Done Building Project "C:\Users\Peleg\Source\Repos\project\iCtrl\ComboBox\ComboBox.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.18
