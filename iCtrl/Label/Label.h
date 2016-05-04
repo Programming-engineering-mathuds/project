@@ -5,9 +5,6 @@
 #include "../iCtrl/iCtrl.h"
 #include "../iCtrl/ConsoleForeground.h"
 #include "../iCtrl/ConsoleBackground.h"
-//#include "iCtrl.h"
-//#include "ConsoleForeground.h"
-//#include "ConsoleBackground.h"
 using namespace std;
 
 class Label: public iCtrl
@@ -19,11 +16,12 @@ class Label: public iCtrl
 	int fontColor = 0;//defult white
 	int backColor = 0;
 public:
-	Label(char* text, int arrSize);
+	Label(char* text, int arrSize, COORD cor);
 	~Label() {};
 	void print();
 	void getInput(KEY_EVENT_RECORD key);
 	void getMouse(MOUSE_EVENT_RECORD mer);
 	void handelInput(INPUT_RECORD input);
+	void changeText(char* newText);
 };
 

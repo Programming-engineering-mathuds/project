@@ -13,7 +13,7 @@ void Label::print()
 	CONSOLE_CURSOR_INFO cci = { 100, FALSE };
 	SetConsoleCursorInfo(hndl, &cci);
 	
-	color2(Foreground::WHITE, Background::BLACK);
+	//color2(Foreground::WHITE, Background::BLACK);
 
 	////////
 	//SetCurrentConsoleFontEx
@@ -52,9 +52,10 @@ void Label::print()
 	putchar('\xD9');
 	//end of bottom of frame
 }
-Label::Label(char* text, int arrSize) :iCtrl(arrSize),text(text),size(strlen(text))
+Label::Label(char* text, int arrSize,COORD cor) :iCtrl(arrSize,cor),text(text),size(strlen(text))
 {
 	print();
+
 }
 
 void Label::getMouse(MOUSE_EVENT_RECORD mer)
@@ -84,4 +85,11 @@ void Label::handelInput(INPUT_RECORD input)
 	default:
 		break;
 	}
+
+}
+void Label::changeText(char* newText)
+{
+	text = newText;
+	size = strlen(text);
+	print();
 }
