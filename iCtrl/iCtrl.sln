@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iCtrl", "iCtrl\iCtrl.vcxproj", "{0774CC73-C1BB-467D-9DE7-209EBADA49FD}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Radio", "Radio\Radio.vcxproj", "{D51AE71A-91D5-4613-8BCD-33F2A08B0226}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextBox", "TextBox\TextBox.vcxproj", "{3B1BFC32-7C88-4D74-B4EE-6B1297EF5EEB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComboBox", "ComboBox\ComboBox.vcxproj", "{B6E2529D-336F-4E12-9308-3C8C5498970C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,12 @@ Global
 		{3B1BFC32-7C88-4D74-B4EE-6B1297EF5EEB}.Release|Win32.ActiveCfg = Release|Win32
 		{3B1BFC32-7C88-4D74-B4EE-6B1297EF5EEB}.Release|Win32.Build.0 = Release|Win32
 		{3B1BFC32-7C88-4D74-B4EE-6B1297EF5EEB}.Release|x64.ActiveCfg = Release|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Debug|Win32.Build.0 = Debug|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Debug|x64.ActiveCfg = Debug|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Release|Win32.ActiveCfg = Release|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Release|Win32.Build.0 = Release|Win32
+		{B6E2529D-336F-4E12-9308-3C8C5498970C}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

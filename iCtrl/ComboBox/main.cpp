@@ -209,9 +209,11 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		//{
 		//	for (i = 0; i < cBox.cBoxSize(); i++)
 		//	{
-		//		if ((cBox.isCellActive(i) == true))
+		//		if ((cBox.isCellActive(i) == true) && (on))
 		//		{
 		//			cBox.cellCheckSwitch(i, cur);
+		//			cBox.cellSetPressedColor(i, cCur);
+		//			on = false;
 		//			break;
 		//		}
 		//	}
