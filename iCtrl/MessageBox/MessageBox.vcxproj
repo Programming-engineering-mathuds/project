@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3B1BFC32-7C88-4D74-B4EE-6B1297EF5EEB}</ProjectGuid>
+    <ProjectGuid>{B52D9525-2DAE-4121-8DCC-CA3DFEDF240A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>TextBox</RootNamespace>
+    <RootNamespace>MessageBox</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -52,8 +52,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Gonen\Source\Repos\project2\iCtrl\iCtrl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -69,7 +67,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -79,16 +76,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Input.cpp" />
-    <ClCompile Include="TextBox.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TextBox.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\iCtrl\iCtrl.vcxproj">
-      <Project>{0774cc73-c1bb-467d-9de7-209ebada49fd}</Project>
-    </ProjectReference>
+    <ClInclude Include="MessageBox.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
