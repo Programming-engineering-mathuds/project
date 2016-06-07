@@ -9,7 +9,7 @@ using namespace std;
 
 class Label: public iCtrl
 {
-	char* text;
+	string text;
 	int size;
 	//TBADDED to base class
 	int frameSize = 0; //should be change to enum. 0 = no fram,1= 1 line, 2 = 2 lines//
@@ -17,13 +17,14 @@ class Label: public iCtrl
 	int backColor = 0;
 	COORD init;
 public:
-	Label(char* text, int arrSize, COORD cor, int frameS);
+	Label(string text, int arrSize, COORD cor, int frameS);
+	Label();
 	~Label() {};
 	//void print();
 	void getInput(KEY_EVENT_RECORD key);
 	void getMouse(MOUSE_EVENT_RECORD mer);
 	void handelInput(INPUT_RECORD input);
-	void changeText(char* newText);
+	void changeText(string newText);
 	void putText();
 };
 

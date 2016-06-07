@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ComboBox", "ComboBox\ComboB
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageBox", "MessageBox\MessageBox.vcxproj", "{B52D9525-2DAE-4121-8DCC-CA3DFEDF240A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Button", "Button\Button.vcxproj", "{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -69,6 +71,12 @@ Global
 		{B52D9525-2DAE-4121-8DCC-CA3DFEDF240A}.Release|Win32.ActiveCfg = Release|Win32
 		{B52D9525-2DAE-4121-8DCC-CA3DFEDF240A}.Release|Win32.Build.0 = Release|Win32
 		{B52D9525-2DAE-4121-8DCC-CA3DFEDF240A}.Release|x64.ActiveCfg = Release|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Debug|Win32.Build.0 = Debug|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Debug|x64.ActiveCfg = Debug|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Release|Win32.ActiveCfg = Release|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Release|Win32.Build.0 = Release|Win32
+		{6476CCF1-4EAD-43C5-B689-F51F6EC70A1D}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

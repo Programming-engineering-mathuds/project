@@ -4,14 +4,20 @@
 #include <stdio.h>
 using namespace std;
 
-Label::Label(char* text, int arrSize, COORD cor, int frameS) :iCtrl(arrSize, cor), text(text), size(strlen(text)), frameSize(frameS)
+Label::Label(string text, int arrSize, COORD cor, int frameS) :iCtrl(arrSize, cor), text(text), size(text.length()), frameSize(frameS)
 {
-	maxWidth = strlen(text);
+	maxWidth = text.length();
 	init = { 2, 2 };
 	//print();
 	putText();
 	frame(1, 2);
 
+}
+Label::Label() :iCtrl()
+{
+	init = { 2, 2 };
+	//print();
+	//putText();
 }
 
 void Label::handelInput(INPUT_RECORD input)
@@ -39,10 +45,10 @@ void Label::handelInput(INPUT_RECORD input)
 	}
 
 }
-void Label::changeText(char* newText)
+void Label::changeText(string newText)
 {
 	text = newText;
-	size = strlen(text);
+	size = text.length();
 	putText();
 	//print();
 }
