@@ -3,11 +3,12 @@
 #include <windows.h>
 #include <stdio.h>
 using namespace std;
-
-TextBox::TextBox( int arrSize, COORD cor, int frameS) :iCtrl(arrSize, cor),size(30), frameSize(frameS)
+COORD cor;
+TextBox::TextBox(int arrSize,int StartX) :iCtrl(arrSize, cor)
 {
-	maxWidth = 30;
+	maxWidth = arrSize;
+	setSmaxWidth(arrSize);
 	init = { 2, 2 };
-	frame(1, 30);
+	frame(StartX, 2);
 
 }
