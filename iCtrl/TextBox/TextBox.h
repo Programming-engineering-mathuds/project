@@ -15,10 +15,27 @@ class TextBox : public iCtrl
 	int frameSize = 0; //should be change to enum. 0 = no fram,1= 1 line, 2 = 2 lines//
 	int fontColor = 0;//defult white
 	int backColor = 0;
+
 	COORD init;
 public:
-	TextBox(int arrSize, COORD cor, int frameS);
-	~TextBox() {};
+	TextBox(int arrSize,int StartX);
+	~TextBox(){};
 
+	int TextmaxWidth;
+	void setStartX(int X){
+		StartX = X;
+	}
+
+	void setSmaxWidth(int X){
+		TextmaxWidth = X;
+	}
+	int StartX = 0;
+	
+    int GetStartX(){
+		return StartX;
+	}
+ int GetTextMaxWidth(){
+	 return maxWidth;
+	}
 	};
 

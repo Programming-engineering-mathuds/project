@@ -10,9 +10,11 @@ VOID ErrorExit(LPSTR);
 VOID KeyEventProc(KEY_EVENT_RECORD);
 VOID MouseEventProc(MOUSE_EVENT_RECORD);
 VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
-COORD cor = { 0, 30 };
 char Text_Box[30];
-TextBox textBox(0, cor, 30);
+char Temp[30];
+int Maxlenght = 30;
+TextBox textBox(10,0);
+//Label label("label",0,cor,2);
 
 int main(VOID)
 {
@@ -33,10 +35,15 @@ int main(VOID)
 	fdwMode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT;
 	if (!SetConsoleMode(hStdin, fdwMode))
 		ErrorExit("SetConsoleMode");
+	CONSOLE_SCREEN_BUFFER_INFO SBInfo;
 
 	// Loop to read and handle the next 100 input events. 
+	COORD Coord;
+	Coord.X = 1;
+	Coord.Y = 1;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
 
-	while (counter++ <= 1000)
+	while (counter++ <= 10000)
 	{
 		// Wait for the events. 
 		if (!ReadConsoleInput(
@@ -94,7 +101,7 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 		case VK_NUMPAD4:
 		case VK_LEFT:
 			if (!ker.bKeyDown)
-				if (SBInfo.dwCursorPosition.X >= 1 && SBInfo.dwCursorPosition.X <= 30) {
+				if (SBInfo.dwCursorPosition.X >= textBox.StartX + 2 && SBInfo.dwCursorPosition.X <= textBox.TextmaxWidth) {
 					COORD Coord;
 					Coord.X = SBInfo.dwCursorPosition.X;
 					Coord.Y = SBInfo.dwCursorPosition.Y;
@@ -103,10 +110,31 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 				}
 			break;
 		case VK_SPACE:
+			/*
+			if (!ker.bKeyDown)
+				if (SBInfo.dwCursorPosition.X > textBox.StartX + 1 && SBInfo.dwCursorPosition.X <= Maxlenght) {
+					COORD Coord;
+					Coord.X = SBInfo.dwCursorPosition.X;
+					Coord.Y = SBInfo.dwCursorPosition.Y;
+					
+					for (int i = Coord.X ; i <= Maxlenght; i++)
+					{
+						Temp[i+1] = Text_Box[i];
+					}
+					Text_Box[SBInfo.dwCursorPosition.X - textBox.StartX] = ' ';
+					printf(" ");
+					for (int i = Coord.X+1 ; i <= Maxlenght; i++)
+					{
+						printf("%c", Temp[i]);
+					}
+					Coord.X = SBInfo.dwCursorPosition.X+1;
+					SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
+				}
+			break;*/
 		case VK_NUMPAD6:
 		case VK_RIGHT:
 			if (!ker.bKeyDown)
-				if (SBInfo.dwCursorPosition.X >= 1 && SBInfo.dwCursorPosition.X <= 29) {
+				if (SBInfo.dwCursorPosition.X >= textBox.StartX + 1 && SBInfo.dwCursorPosition.X <= textBox.TextmaxWidth - 1) {
 					COORD Coord;
 					Coord.X = SBInfo.dwCursorPosition.X;
 					Coord.Y = SBInfo.dwCursorPosition.Y;
@@ -116,7 +144,7 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 			break;
 		case VK_BACK:
 			if (!ker.bKeyDown)
-				if (SBInfo.dwCursorPosition.X > 1 && SBInfo.dwCursorPosition.X <= 30) {
+				if (SBInfo.dwCursorPosition.X > textBox.StartX + 1 && SBInfo.dwCursorPosition.X <= textBox.TextmaxWidth) {
 					COORD Coord;
 					Coord.X = SBInfo.dwCursorPosition.X;
 					Coord.Y = SBInfo.dwCursorPosition.Y;
@@ -127,13 +155,34 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 					SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
 				}
 			break;
+
+		case VK_DELETE:
+			if (!ker.bKeyDown)
+				if (SBInfo.dwCursorPosition.X > textBox.StartX + 1 && SBInfo.dwCursorPosition.X <= textBox.TextmaxWidth) {
+					COORD Coord;
+					Coord.X = SBInfo.dwCursorPosition.X;
+					Coord.Y = SBInfo.dwCursorPosition.Y;
+					printf(" ");
+					Text_Box[SBInfo.dwCursorPosition.X - textBox.StartX] = ' ';
+					SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
+					for (int i = Coord.X + 1 - textBox.StartX; i <= textBox.TextmaxWidth; i++)
+					{
+						Text_Box[i] = Text_Box[i+1];
+					}
+					for (int i = Coord.X + 1 - textBox.StartX; i <= textBox.TextmaxWidth; i++)
+					{
+						printf("%c",Text_Box[i]) ;
+					}
+					SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
+				}
+			break;
 		case VK_ESCAPE:
 			COORD Coord;
 			Coord.X = 1;
 			Coord.Y = 20;
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
 			printf("Text You Wrote Is : \n ");
-			for (int i = 0; i < 30; i++){
+			for (int i = 0; i < textBox.TextmaxWidth; i++){
 
 				printf("%c", Text_Box[i]);
 
@@ -141,10 +190,11 @@ VOID KeyEventProc(KEY_EVENT_RECORD ker)
 			printf("\n");
 			GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &SBInfo);
 			break;
+		
 		default:
 			if (ker.wVirtualKeyCode >= 0x41 && ker.wVirtualKeyCode <= 0x5A || ker.wVirtualKeyCode >= 0x30 && ker.wVirtualKeyCode <= 0x39)
 			{
-				if (SBInfo.dwCursorPosition.X < 30){
+				if (SBInfo.dwCursorPosition.X < textBox.TextmaxWidth){
 					if (!ker.bKeyDown)
 						printf("%c", ker.wVirtualKeyCode);
 					Text_Box[SBInfo.dwCursorPosition.X] = ker.wVirtualKeyCode;
@@ -172,7 +222,7 @@ VOID MouseEventProc(MOUSE_EVENT_RECORD mer)
 		if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 		{
 
-			if (mer.dwMousePosition.X >= 0 && mer.dwMousePosition.X <= 29 && mer.dwMousePosition.Y == 1)
+			if (mer.dwMousePosition.X >= 0 && mer.dwMousePosition.X <= textBox.TextmaxWidth-1 && mer.dwMousePosition.Y == 1)
 			{
 				COORD Coord;
 				Coord.X = mer.dwMousePosition.X;
