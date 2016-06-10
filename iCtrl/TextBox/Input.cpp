@@ -13,7 +13,7 @@ VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
 char Text_Box[30];
 char Temp[30];
 int Maxlenght = 30;
-TextBox textBox(10,0);
+TextBox textBox(30,0);
 //Label label("label",0,cor,2);
 
 int main(VOID)
