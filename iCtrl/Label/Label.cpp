@@ -13,12 +13,12 @@ Label::Label(string text, int arrSize, COORD cor, int frameS) :iCtrl(arrSize, co
 	frame(1, 2);
 
 }
-Label::Label() :iCtrl()
-{
-	init = { 2, 2 };
+//Label::Label() :iCtrl()
+//{
+//	init = { 2, 2 };
 	//print();
 	//putText();
-}
+//}
 
 void Label::handelInput(INPUT_RECORD input)
 {
