@@ -1,17 +1,9 @@
 #include "iControl.h"
-
 #include <iostream>
 using namespace std;
 
-
 vector<iControl*> iControl::controls;
 
-//iControl::iControl(int arrSize, COORD cur)
-//{
-	//pos = cur;
-//	maxWidth = 0;
-	
-//}
 void iControl::setCoords(COORD coord) {
 	pos = coord;
 	top = pos.Y;
@@ -19,6 +11,7 @@ void iControl::setCoords(COORD coord) {
 	mPos = pos;
 
 };
+
 void iControl::frame(int size, BorderType type)
 {
 	hight = size;
@@ -46,7 +39,6 @@ void iControl::frame(int size, BorderType type)
 				SetConsoleCursorPosition(hndl, pos);
 				if (type == BorderType::Single) cout << '\xDA';
 				else cout << '\xC9';
-
 				for (int j = xInit + 1; j < xEnd; j++)
 				{
 					pos = { j, i };
@@ -89,7 +81,7 @@ void iControl::frame(int size, BorderType type)
 		}
 	}
 }
-
+/*
 void iControl::color(int clrNum)
 {
 	SetConsoleTextAttribute(hndl, clrNum);
@@ -100,9 +92,4 @@ void iControl::color2(Foreground clrNumFont, Background clrNumBG)
 	SetConsoleTextAttribute(hndl, (DWORD)clrNumFont);
 	SetConsoleTextAttribute(hndl, (DWORD)clrNumBG);
 }
-
-void iControl::setForeground(Color color)
-{
-	Graphics g;
-	g.setForeground(color);
-};
+*/
