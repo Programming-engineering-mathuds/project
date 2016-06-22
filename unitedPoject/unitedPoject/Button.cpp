@@ -20,7 +20,7 @@ void Button::notify()
 {
 	for (int iterator = 0; iterator < listeners.size(); iterator++)
 	{
-		listeners[iterator]->MousePressed(*this, pos.X, pos.Y, isLeft);
+		listeners[iterator]->MousePressed(*this, pos.X, pos.Y, 1);
 	}
 }
 
