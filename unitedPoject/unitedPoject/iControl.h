@@ -26,7 +26,7 @@ protected:
 	bool can_Get_Focus;//to be set in the controls themself
 	bool focused = false;
 	size_t _layer = 0;
-	BorderType border;
+	BorderType border= BorderType::None;
 	COORD mPos;//coords for mouse use
 	Graphics g;
 	static vector<iControl*> controls;
@@ -69,7 +69,7 @@ public:
 	bool isFocused(){ return focused; };
 	void unFocused(){ focused = false; };
 
-	void frame(int size, BorderType type);
+	void frame(int size);
 	virtual void MousePressed(int x, int y, bool isLeft) = 0;// maybe change to size_t
 	virtual void keyDown(int keyCode, char charater) = 0;
 	virtual void draw(Graphics &g, int left, int top, size_t layer) = 0;

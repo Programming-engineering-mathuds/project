@@ -51,5 +51,6 @@ void Label::draw(Graphics &g, int left, int top, size_t layer)
 	COORD cur = { left, top };
 	setCoords(cur);
 	putText();
-	frame(1, BorderType::Double);
+	setBorder(BorderType::Double);
+	frame(1);
 }

@@ -18,25 +18,21 @@ struct MouseListener
 
 class Button : public Label
 {
-public:
-
+protected:
 	vector <MouseListener*> listeners;
 	string text;
-	//int x;
-	//int y;
-	bool isLeft=false;
-
+	bool isLeft = false;
+public:
 	Button(int width);
 	~Button();
-	//virtual void MousePressed(Button &b, int x, int y, bool isLeft);
+
 	void SetValue(string value);
 	void AddListener(MouseListener &listener);
 	void notify();
 	virtual void draw(Graphics &g, int left, int top, size_t layer);
-	//temp
-	void input();
+
 	void getInput(INPUT_RECORD in);
 	void MouseEvent(MOUSE_EVENT_RECORD in);
-	void  MousePressed(int x, int y, bool isLeft);
+	void MousePressed(int x, int y, bool isLeft);
 };
 
