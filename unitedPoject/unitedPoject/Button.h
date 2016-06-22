@@ -23,8 +23,8 @@ protected:
 	string text;
 	bool isLeft = false;
 public:
-	Button(int width);
-	~Button();
+	Button(int width) :Label(width){};
+	~Button(){};
 
 	void SetValue(string value);
 	void AddListener(MouseListener &listener);

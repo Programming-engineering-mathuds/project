@@ -4,9 +4,6 @@
 #include <stdio.h>
 using namespace std;
 
-Button::Button(int width) :Label(width){}
-Button::~Button() {};
-
 void Button::SetValue(string value)
 {
 	text = value;
@@ -23,7 +20,7 @@ void Button::notify()
 {
 	for (int iterator = 0; iterator < listeners.size(); iterator++)
 	{
-		listeners[iterator]->MousePressed(*this, pos.X, pos.Y, isLeft);
+		listeners[iterator]->MousePressed(*this, pos.X, pos.Y, 1);
 	}
 }
 
@@ -37,22 +34,11 @@ void Button::getInput(INPUT_RECORD in)
 {
 	switch (in.EventType)
 	{
-	case KEY_EVENT: // keyboard input 
-		break;
-
 	case MOUSE_EVENT: // mouse input 
 		MouseEvent(in.Event.MouseEvent);
 		break;
-
-	case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing 
-
-		break;
-
 	case FOCUS_EVENT:  // disregard focus events 
-
-	case MENU_EVENT:   // disregard menu events 
 		break;
-
 	default:
 		exit(8);
 		break;
