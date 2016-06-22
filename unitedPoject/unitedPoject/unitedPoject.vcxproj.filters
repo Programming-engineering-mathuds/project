@@ -15,42 +15,51 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\BorderType.h">
+    <ClInclude Include="BorderType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Button.h">
+    <ClInclude Include="Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\EventEngine.h">
+    <ClInclude Include="ConsoleBackground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Graphics.h">
+    <ClInclude Include="ConsoleForeground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\iControl.h">
+    <ClInclude Include="EventEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Label.h">
+    <ClInclude Include="Graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Button.cpp">
+    <ClCompile Include="Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\EventEngine.cpp">
+    <ClCompile Include="EventEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Graphics.cpp">
+    <ClCompile Include="Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\iControl.cpp">
+    <ClCompile Include="iControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\Label.cpp">
+    <ClCompile Include="Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\info retrival\BRUT\ConsoleApplication1\ConsoleApplication1\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
