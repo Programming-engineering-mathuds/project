@@ -40,7 +40,7 @@ public:
 	void setTop(int tempTop) { top = tempTop; };
 	void setLeft(int tempLeft){ left = tempLeft; };
 	void setCoords(COORD coord);
-	void frame(int size, int frameLines);
+	void frame(int size, BorderType type);
 	void color(int clrNum);
 	void color2(Foreground clrNumFont, Background clrNumBG);
 	bool canGetFocus(){return can_Get_Focus;};

@@ -44,8 +44,6 @@ void Button::getInput(INPUT_RECORD in)
 	switch (in.EventType)
 	{
 	case KEY_EVENT: // keyboard input 
-		//label.handelInput(irInBuf[i]);
-
 		break;
 
 	case MOUSE_EVENT: // mouse input 

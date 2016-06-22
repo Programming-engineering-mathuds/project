@@ -87,5 +87,5 @@ void Label::draw(Graphics &g, int left, int top, size_t layer)
 	//pos.Y = top;
 	setCoords(cur);
 	putText();
-	frame(1, 2);
+	frame(1, BorderType::Double);
 }

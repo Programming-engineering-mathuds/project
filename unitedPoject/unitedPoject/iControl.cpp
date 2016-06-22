@@ -1,4 +1,5 @@
 #include "iControl.h"
+
 #include <iostream>
 using namespace std;
 
@@ -18,7 +19,7 @@ void iControl::setCoords(COORD coord) {
 	mPos = pos;
 
 };
-void iControl::frame(int size, int frameLines)
+void iControl::frame(int size, BorderType type)
 {
 	hight = size;
 	//X Axis
@@ -27,52 +28,13 @@ void iControl::frame(int size, int frameLines)
 	//Y Axis
 	int yInit = pos.Y - 1;
 	int yEnd = pos.Y + size;
-	if (frameLines == 1)
+	if ((type != BorderType::None) && (pos.X = 0) && (pos.Y = 0)) //frame cannot be printed in -1,-1
 	{
-		//Prints Borders
-		for (int i = yInit; i <= yEnd; i++)
-		{
-			//Upper row
-			if (i == yInit)
-			{
-				pos = { xInit, yInit };
-				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xDA';
-				for (int j = xInit + 1; j < xEnd; j++)
-				{
-					pos = { j, i };
-					SetConsoleCursorPosition(hndl, pos);
-					cout << '\xC4';
-				}
-				cout << '\xBF';
-			}
-			//Middle columns (first and last only) 
-			if ((i > yInit) && (i < yEnd))
-			{
-				pos = { xEnd, i };
-				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xB3';
-				pos = { xInit, i };
-				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xB3';
-			}
-			//Lower row
-			if (i == yEnd)
-			{
-				pos = { xInit, i };
-				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xC0';
-				for (int j = xInit + 1; j < xEnd; j++)
-				{
-					pos = { j, i };
-					SetConsoleCursorPosition(hndl, pos);
-					cout << '\xC4';
-				}
-				cout << '\xD9';
-			}
-		}
+		pos.X++;
+		pos.Y++;
 	}
-	if (frameLines == 2)
+
+	if (type != BorderType::None)
 	{
 		//Prints Borders
 		for (int i = yInit; i <= yEnd; i++)
@@ -82,38 +44,47 @@ void iControl::frame(int size, int frameLines)
 			{
 				pos = { xInit, yInit };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xC9';
+				if (type == BorderType::Single) cout << '\xDA';
+				else cout << '\xC9';
+
 				for (int j = xInit + 1; j < xEnd; j++)
 				{
 					pos = { j, i };
 					SetConsoleCursorPosition(hndl, pos);
-					cout << '\xCD';
+					if (type == BorderType::Single) cout << '\xC4';
+					else cout << '\xCD';
 				}
-				cout << '\xBB';
+				if (type == BorderType::Single) cout << '\xBF';
+				else cout << '\xBB';
 			}
 			//Middle columns (first and last only) 
 			if ((i > yInit) && (i < yEnd))
 			{
 				pos = { xEnd, i };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xBA';
+				if (type == BorderType::Single) cout << '\xB3';
+				else cout << '\xBA';
 				pos = { xInit, i };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xBA';
+				if (type == BorderType::Single) cout << '\xB3';
+				else cout << '\xBA';
 			}
 			//Lower row
 			if (i == yEnd)
 			{
 				pos = { xInit, i };
 				SetConsoleCursorPosition(hndl, pos);
-				cout << '\xC8';
+				if (type == BorderType::Single) cout << '\xC0';
+				else cout << '\xC8';
 				for (int j = xInit + 1; j < xEnd; j++)
 				{
 					pos = { j, i };
 					SetConsoleCursorPosition(hndl, pos);
-					cout << '\xCD';
+					if (type == BorderType::Single) cout << '\xC4';
+					else cout << '\xCD';
 				}
-				cout << '\xBC';
+				if (type == BorderType::Single) cout << '\xD9';
+				else cout << '\xBC';
 			}
 		}
 	}
