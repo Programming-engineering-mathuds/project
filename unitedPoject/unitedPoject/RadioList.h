@@ -10,17 +10,6 @@
 
 using namespace std;
 
-struct MyListener : public MouseListener
-{
-	MyListener(RadioList &r) : _r(r) { }
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
-	{
-		_r.setRadio(x,y);
-	}
-private:
-	RadioList &_r;
-};
-
 class RadioList : public iControl
 {
 private:
@@ -53,7 +42,18 @@ public:
 	void getMouse(MOUSE_EVENT_RECORD mer);
 	void handelInput(INPUT_RECORD input);
 
-	void MousePressed(int x, int y, bool isLeft) {};
+	void MousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater) {};
 	void draw(Graphics &g, int left, int top, size_t layer);
+};
+
+struct MyListener : public MouseListener
+{
+	MyListener(RadioList &r) : _r(r) { }
+	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	{
+		_r.setRadio(x, y);
+	}
+private:
+	RadioList &_r;
 };

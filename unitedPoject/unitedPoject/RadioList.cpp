@@ -80,6 +80,7 @@ void RadioList::setCellActiveTrue(int itemNum, COORD& pos) {
 void RadioList::setRadio(int x, int y)
 {
 	COORD c = bList[0].getCoords();
+	cout << c.X << " 123 " << c.Y;
 	for (int i = 0; i < bList.size(); i++)
 	{
 		if (i == y-c.Y)
@@ -202,7 +203,81 @@ void RadioList::getInput(KEY_EVENT_RECORD key)
 
 void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
 {
+	#ifndef MOUSE_HWHEELED
+	#define MOUSE_HWHEELED 0x0008
+	#endif
 
+	if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+	{
+		if (isInside(mer.dwMousePosition.X, mer.dwMousePosition.Y, mPos.X, mPos.Y, maxWidth + 1, hight))
+				setRadio(mPos.X, mPos.Y);
+	}
+	
+
+//#ifndef MOUSE_HWHEELED
+//#define MOUSE_HWHEELED 0x0008
+//#endif
+//	//printf("Mouse event: ");
+//	switch (mer.dwEventFlags)
+//	{
+//	case 0:
+//
+//		if (mer.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
+//		{
+//			for (int i = 0; i < bList.bListSize(); i++)
+//			{
+//				if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
+//				{
+//					bList.setRadio(i, cur);
+//					break;
+//				}
+//			}
+//			//printf("left button press \n");
+//		}
+//		else if (mer.dwButtonState == RIGHTMOST_BUTTON_PRESSED)
+//		{
+//			//printf("right button press \n");
+//		}
+//		else
+//		{
+//			//printf("button press\n");
+//		}
+//		break;
+//	case DOUBLE_CLICK:
+//		for (int i = 0; i < bList.bListSize(); i++)
+//		{
+//			if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
+//			{
+//				bList.setRadio(i, cur);
+//				break;
+//			}
+//		}
+//		//printf("double click\n");
+//		break;
+//	case MOUSE_HWHEELED:
+//		//printf("horizontal mouse wheel\n");
+//		break;
+//	case MOUSE_MOVED:
+//		for (int i = 0; i < bList.bListSize(); i++)
+//		{
+//			if ((mer.dwMousePosition.Y == bList.getCellPlace(i)) && (mer.dwMousePosition.X >= cur.X) && (mer.dwMousePosition.X < (cur.X + bList.getCellLenght(i))))
+//			{
+//				for (int j = 0; j < bList.bListSize(); j++)
+//				{
+//					if (j != i)	bList.setCellActiveFalse(j, cur);
+//					else bList.setCellActiveTrue(i, cur);
+//				}
+//			}
+//		}
+//		//printf("mouse moved\n");
+//		break;
+//	case MOUSE_WHEELED:
+//		//printf("vertical mouse wheel\n");
+//		break;
+//	default:
+//		//printf("unknown\n");
+//		break;
+//	}
 }
 
 void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
@@ -231,6 +306,23 @@ void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 		}
 
 		for (int i = 0; i < tempLenght; i++) g.write("=");
+}
+
+void RadioList::MousePressed(int x, int y, bool isLeft)
+{
+	cout << "hello";
+	int XL = mPos.X - 1;
+	int XR = XL + maxWidth + 1;
+	int YU = mPos.Y;
+	int YD = YU + hight;
+	if (isLeft)
+	{
+		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
+		{
+			setRadio(mPos.X, mPos.Y);
+
+		}
+	}
 }
 
 
