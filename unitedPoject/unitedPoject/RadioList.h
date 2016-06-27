@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <iostream>
 #include "vector"
-#include "Graphics.h"
 
 using namespace std;
 
@@ -42,7 +41,7 @@ public:
 	void getMouse(MOUSE_EVENT_RECORD mer);
 	void handelInput(INPUT_RECORD input);
 
-	void MousePressed(int x, int y, bool isLeft);
+	void MousePressed(int x, int y, bool isLeft) {};
 	void keyDown(int keyCode, char charater) {};
 	void draw(Graphics &g, int left, int top, size_t layer);
 };
@@ -50,7 +49,7 @@ public:
 struct MyListener : public MouseListener
 {
 	MyListener(RadioList &r) : _r(r) { }
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	void  MousePressed(RadioList &rl, int x, int y, bool isLeft)
 	{
 		_r.setRadio(x, y);
 	}

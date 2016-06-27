@@ -80,7 +80,7 @@ void RadioList::setCellActiveTrue(int itemNum, COORD& pos) {
 void RadioList::setRadio(int x, int y)
 {
 	COORD c = bList[0].getCoords();
-	cout << c.X << " 123 " << c.Y;
+	cout << "yoooooohoooo";
 	for (int i = 0; i < bList.size(); i++)
 	{
 		if (i == y-c.Y)
@@ -203,7 +203,7 @@ void RadioList::getInput(KEY_EVENT_RECORD key)
 
 void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
 {
-	#ifndef MOUSE_HWHEELED
+	/*#ifndef MOUSE_HWHEELED
 	#define MOUSE_HWHEELED 0x0008
 	#endif
 
@@ -212,7 +212,7 @@ void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
 		if (isInside(mer.dwMousePosition.X, mer.dwMousePosition.Y, mPos.X, mPos.Y, maxWidth + 1, hight))
 				setRadio(mPos.X, mPos.Y);
 	}
-	
+	*/
 
 //#ifndef MOUSE_HWHEELED
 //#define MOUSE_HWHEELED 0x0008
@@ -308,22 +308,21 @@ void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 		for (int i = 0; i < tempLenght; i++) g.write("=");
 }
 
-void RadioList::MousePressed(int x, int y, bool isLeft)
-{
-	cout << "hello";
-	int XL = mPos.X - 1;
-	int XR = XL + maxWidth + 1;
-	int YU = mPos.Y;
-	int YD = YU + hight;
-	if (isLeft)
-	{
-		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
-		{
-			setRadio(mPos.X, mPos.Y);
-
-		}
-	}
-}
+//void RadioList::MousePressed(int x, int y, bool isLeft)
+//{
+//	cout << "hello";
+//	int XL = mPos.X - 1;
+//	int XR = XL + maxWidth + 1;
+//	int YU = mPos.Y;
+//	int YD = YU + hight;
+//	if (isLeft)
+//	{
+//		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
+//		{
+//			setRadio(mPos.X, mPos.Y);
+//		}
+//	}
+//}
 
 
 
