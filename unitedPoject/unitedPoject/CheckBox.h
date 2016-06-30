@@ -14,8 +14,8 @@ private:
 	string bName;
 	int iLenght;
 	int curY;
-	bool pressed;
-	bool active;
+	bool pressed; //Active
+	bool hover; 
 	int clrNormal;
 	int clrActive;
 public:
@@ -23,13 +23,13 @@ public:
 	~CheckBox();
 	void coordinator(COORD& cur, string upDown);
 	void checkSwitch(COORD cur);
-	bool isActive();
+	bool isHover();
 	int getPlace();
 	bool getSwitchState();
 	string getName();
 	int getLenght();
-	void setActive(COORD cur);
-	void setActiveTrue(COORD& cur);
-	void setActiveFalse(COORD cur);
+	void setHover(COORD cur);
+	void setHoverTrue(COORD& cur);
+	void setHoverFalse(COORD cur);
 };
 

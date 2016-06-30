@@ -14,7 +14,7 @@ RadioList::RadioList(int height, int width, vector<string> entries) : iControl(w
 		bList.push_back(a);
 		//if (bList[i].iLenght > maxWidth) maxWidth = bList[i].iLenght;
 	}
-	bList[0].setActive(pos);
+	bList[0].setHover(pos);
 	//color(clrNum);
 	//frame(width, frameLines);
 }
@@ -34,12 +34,12 @@ int RadioList::bListSize()
 
 bool RadioList::isCellActive(int itemNum) {
 	if (itemNum <= bList.size() - 1)
-		return bList[itemNum].isActive();
+		return bList[itemNum].isHover();
 }
 
 void RadioList::setCellActive(int itemNum, COORD pos) {
 	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setActive(pos);
+		bList[itemNum].setHover(pos);
 }
 
 void RadioList::cellCoordinator(int itemNum, COORD& pos, string direction) {
@@ -69,12 +69,12 @@ int RadioList::getCellLenght(int itemNum) {
 
 void RadioList::setCellActiveFalse(int itemNum, COORD pos) {
 	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setActiveFalse(pos);
+		bList[itemNum].setHoverFalse(pos);
 }
 
 void RadioList::setCellActiveTrue(int itemNum, COORD& pos) {
 	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setActiveTrue(pos);
+		bList[itemNum].setHoverTrue(pos);
 }
 
 void RadioList::setRadio(int x, int y)
@@ -282,47 +282,24 @@ void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
 
 void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 		g.moveTo(left, top);
-		
-		int tempLenght = 0;
-		for (int i = 0; i < bList.size(); i++){
-			if (bList[i].bName.length() > tempLenght) tempLenght = bList[i].bName.length();
-		}
-
-		tempLenght += 8;
-
-		for (int i = 0; i < tempLenght; i++) g.write("=");
-
-		COORD c = { left, ++top };
+				
+		COORD c = { left, top };
 		SetConsoleCursorPosition(hndl, c);
 
 		for (int i = 0 ; i < bList.size(); i++) {
-			g.write("= [ ] ");
+			if (!bList[i].hover) g.write("[ ] ");
+			else g.write("[X] ");
 			g.write(bList[i].bName);
-			COORD c = {tempLenght - 2, top };
-			SetConsoleCursorPosition(hndl, c);
-			g.write(" =");
 			c = { left, ++top };
 			SetConsoleCursorPosition(hndl, c);
 		}
-
-		for (int i = 0; i < tempLenght; i++) g.write("=");
 }
 
-//void RadioList::MousePressed(int x, int y, bool isLeft)
-//{
-//	cout << "hello";
-//	int XL = mPos.X - 1;
-//	int XR = XL + maxWidth + 1;
-//	int YU = mPos.Y;
-//	int YD = YU + hight;
-//	if (isLeft)
-//	{
-//		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
-//		{
-//			setRadio(mPos.X, mPos.Y);
-//		}
-//	}
-//}
+void RadioList::MousePressed(int x, int y, bool isLeft)
+{
+	cout << bList.size();
+	setRadio(x, y);
+}
 
 
 

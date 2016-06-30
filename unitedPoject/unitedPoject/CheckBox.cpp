@@ -1,8 +1,8 @@
 #include "CheckBox.h"
 
 int rowCount = 0;
-string unchecked = "[ ]";
-string checked = "[X]";
+//string unchecked = "[ ]";
+//string checked = "[X]";
 
 CheckBox::CheckBox(string name) : Button(name.length())
 {
@@ -19,14 +19,14 @@ CheckBox::CheckBox(string name) : Button(name.length())
 
 	bName = name;
 	iLenght = name.length() + 6;
-	active = false;
+	hover = false;
 	pressed = false;
 	//curY = place;
 	//clrNormal = clrNum;
 	//clrActive = clrNumHvr;
 
 	//Prints an initialized cell (just "[ ]" and its name)
-	cout << unchecked << " " << bName;
+	//cout << unchecked << " " << bName;
 
 	//vector<CheckList> cList;
 	//for (int i = 0; i < arrSize; i++)
@@ -61,27 +61,27 @@ void CheckBox::coordinator(COORD& cur, string upDown)
 }
 
 //Gets "Acvite" State
-bool CheckBox::isActive() { return active; }
+bool CheckBox::isHover() { return hover; }
 
 //Gets the Y position of a cell
 int CheckBox::getPlace() { return curY; }
 
 //Sets a Cell's "Acvite" to ture/false {Keyboard Use}
-void CheckBox::setActive(COORD cur)
+void CheckBox::setHover(COORD cur)
 {
 	//Sets cursors position
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, cur);
 
 	//Swithces cell's "Active" state and color scheme (true becomes false and vice versa)
-	if (active)
+	if (hover)
 	{
-		active = false;
+		hover = false;
 		SetConsoleTextAttribute(h, clrNormal);
 	}
 	else
 	{
-		active = true;
+		hover = true;
 		SetConsoleTextAttribute(h, 240);
 	}
 
@@ -91,7 +91,7 @@ void CheckBox::setActive(COORD cur)
 }
 
 //Sets a Cell's "Active" to true {Mouse Use}
-void CheckBox::setActiveTrue(COORD& cur)
+void CheckBox::setHoverTrue(COORD& cur)
 {
 	//Changes the GLOBAL cursor's Y position to the objects position
 	//And sets the colors to chosen scheme
@@ -100,7 +100,7 @@ void CheckBox::setActiveTrue(COORD& cur)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), clrActive);
 
 	//Sets the cell to "Active"
-	active = true;
+	hover = true;
 
 	//Checks if the cell is selected ("[X]") or not and reprints the cell in "Active" colors
 	if (pressed) cout << checked << " " << getName();
@@ -108,7 +108,7 @@ void CheckBox::setActiveTrue(COORD& cur)
 }
 
 //Sets a Cell's "Active" to false {Mouse Use}
-void CheckBox::setActiveFalse(COORD cur)
+void CheckBox::setHoverFalse(COORD cur)
 {
 	//Changes the LOCAL cursor's Y position to the objects position
 	//And sets the colors to chosen scheme
@@ -117,7 +117,7 @@ void CheckBox::setActiveFalse(COORD cur)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), clrNormal);
 
 	//Sets the cell to "Active"
-	active = false;
+	hover = false;
 
 	//Checks if the cell is selected ("[X]") or not and reprints the cell in NON-"Active" colors
 	if (pressed) cout << checked << " " << getName();
