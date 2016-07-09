@@ -26,7 +26,7 @@ public:
 	void draw(Graphics &g, int left, int top, size_t layer);
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater) {};
-	void refreshLocation(int x, int y);
+	void setLocation(int x, int y);
 	void getAllControls(vector < iControl * > *controls) 
 	{ 
 		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);

@@ -55,7 +55,7 @@ void Button::MouseEvent(MOUSE_EVENT_RECORD in)
 	}
 }
 
-//needed to be removed when refactoring
+
 void  Button::MousePressed(int x, int y, bool isLeft)
 {
 	int XL = mPos.X - 1;

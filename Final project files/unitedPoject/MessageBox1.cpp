@@ -5,7 +5,8 @@ struct BoxListener : public MouseListener
 	BoxListener(iControl &c) : _c(c) { }
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
-		_c.invisible();
+		_c.setForeground(Color::Red);
+		//_c.invisible();
 	}
 private:
 	iControl &_c;
