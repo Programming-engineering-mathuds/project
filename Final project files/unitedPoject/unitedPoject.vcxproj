@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="BorderType.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="CheckBox.h" />
     <ClInclude Include="ConsoleBackground.h" />
     <ClInclude Include="ConsoleForeground.h" />
     <ClInclude Include="EventEngine.h" />
@@ -22,9 +23,11 @@
     <ClInclude Include="MessageBox1.h" />
     <ClInclude Include="MouseListener.h" />
     <ClInclude Include="Panel.h" />
+    <ClInclude Include="RadioList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="EventEngine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="iControl.cpp" />
@@ -32,6 +35,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBox1.cpp" />
     <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="RadioList.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{99A8756F-256F-4920-BBA1-B6AE5456A1B0}</ProjectGuid>
