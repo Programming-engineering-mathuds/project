@@ -17,6 +17,7 @@ void iControl::setLocation(int x, int y)
 	pos = co;
 	setLeft(x);
 	setTop(y);
+	mPos = co;
 }
 void iControl::frame(int size)
 {
