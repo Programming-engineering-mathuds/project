@@ -1,25 +1,25 @@
 #include "CheckBox.h"
+#include <windows.h>
 
 struct CheckBoxListener : public MouseListener
 {
 	CheckBoxListener(iControl &c) : _c(c) { }
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
-		_c.setForeground(Color::Red);
+		cout << "boom!";
 	}
 private:
 	iControl &_c;
 };
 
 int rowCount = 0;
-//string unchecked = "[ ]";
-//string checked = "[X]";
 
 // "width" holds the second value returned from the main & "name.length" is 
 // being sent all the way down to iControl, which puts it in "maxWidth"
 // bottom line - iLength != maxWidth
 CheckBox::CheckBox(string name, int width) : Button(name.length())
 {
+	CheckBoxListener(*this);
 	iLenght = width;
 	bName = name;
 	hover = false;
@@ -43,31 +43,27 @@ bool CheckBox::isHover() { return hover; }
 //Gets the Y position of a cell
 int CheckBox::getPlace() { return curY; }
 
-//Sets a Cell's "Acvite" to ture/false {Keyboard Use}
+//Sets a Cell's "Hover" to ture/false {Keyboard Use}
 void CheckBox::setHover(COORD cur)
 {
 	//Sets cursors position
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(h, cur);
 
-	//Swithces cell's "Active" state and color scheme (true becomes false and vice versa)
+	//Swithces cell's "Hover" state and color scheme (true becomes false and vice versa)
 	if (hover)
 	{
 		hover = false;
-		SetConsoleTextAttribute(h, clrNormal);
+		//SetConsoleTextAttribute(h, clrNormal);
 	}
 	else
 	{
 		hover = true;
-		SetConsoleTextAttribute(h, 240);
+		//SetConsoleTextAttribute(h, 240);
 	}
-
-	//Checks if the cell is selected ("[X]") or not and reprints the cell in the acording colors
-	/*if (pressed) cout << checked << " " << bName;
-	else cout << unchecked << " " << bName;*/
 }
 
-//Sets a Cell's "Active" to true {Mouse Use}
+//Sets a Cell's "Hover" to true {Mouse Use}
 void CheckBox::setHoverTrue(COORD& cur)
 {
 	//Changes the GLOBAL cursor's Y position to the objects position
@@ -76,15 +72,11 @@ void CheckBox::setHoverTrue(COORD& cur)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), clrActive);
 
-	//Sets the cell to "Active"
+	//Sets the cell to "Hover"
 	hover = true;
-
-	//Checks if the cell is selected ("[X]") or not and reprints the cell in "Active" colors
-	//if (pressed) cout << checked << " " << getName();
-	//else cout << unchecked << " " << getName();
 }
 
-//Sets a Cell's "Active" to false {Mouse Use}
+//Sets a Cell's "Hover" to false {Mouse Use}
 void CheckBox::setHoverFalse(COORD cur)
 {
 	//Changes the LOCAL cursor's Y position to the objects position
@@ -93,12 +85,9 @@ void CheckBox::setHoverFalse(COORD cur)
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cur);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), clrNormal);
 
-	//Sets the cell to "Active"
+	//Sets the cell to "Hover"
 	hover = false;
 
-	//Checks if the cell is selected ("[X]") or not and reprints the cell in NON-"Active" colors
-	/*if (pressed) cout << checked << " " << getName();
-	else cout << unchecked << " " << getName();*/
 }
 
 //Selection switch that checks whether a Cell has been selected or not (has "X")

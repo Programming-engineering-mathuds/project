@@ -1,15 +1,15 @@
 #include "RadioList.h"
 
-struct radioListener : public MouseListener
-{
-	radioListener(RadioList &r) : _r(r) { }
-	void  MousePressed(RadioList &rl, int x, int y, bool isLeft)
-	{
-		_r.setRadio(x, y);
-	}
-private:
-	RadioList &_r;
-};
+//struct radioListener : public MouseListener
+//{
+//	radioListener(RadioList &r) : _r(r) { }
+//	void  MousePressed(RadioList &rl, int x, int y, bool isLeft)
+//	{
+//		_r.setRadio(x, y);
+//	}
+//private:
+//	RadioList &_r;
+//};
 
 //Constructor
 RadioList::RadioList(int height, int width, vector<string> entries) : iControl(width)
@@ -84,49 +84,48 @@ void RadioList::setCellActiveTrue(int itemNum, COORD& pos) {
 
 void RadioList::setRadio(int x, int y)
 {
+	//saves the position of the first cell (incase we start at different y then 0)
 	COORD c = bList[0].getCoords();
-	cout << "yoooooohoooo";
 	for (int i = 0; i < bList.size(); i++)
 	{
-		if (i == y - c.Y)
+		if ((y >= c.Y) && (y <= (c.Y + bList.size()-1)) && (x >= c.X) && (x <= c.X + maxWidth))
 		{
-			SetConsoleTextAttribute(hndl, 240);
-			SetConsoleCursorPosition(hndl, pos);
-			bList[i].pressed = true;
-			cout << "[X] " << bList[i].bName;
+			if (i == y - c.Y)
+			{
+				bList[i].pressed = true;
+				cout << "[X] " << bList[i].bName;
+			}
+			else		
+				{
+					bList[i].pressed = false;
+					cout << "[ ] " << bList[i].bName;
+				}
 		}
-		else
-		{
-			SetConsoleTextAttribute(hndl, 7);
-			COORD c = { x, y - i };
-			SetConsoleCursorPosition(hndl, c);
-			bList[i].pressed = false;
-			cout << "[ ] " << bList[i].bName;
-		}
+		
 	}
 }
 
-void RadioList::setRadio(int itemNum, COORD pos)
-{
-	for (int i = 0; i < bList.size(); i++)
-	{
-		if (i == itemNum)
-		{
-			SetConsoleTextAttribute(hndl, 240);
-			SetConsoleCursorPosition(hndl, pos);
-			bList[i].pressed = true;
-			cout << "[X] " << bList[i].bName;
-		}
-		else
-		{
-			SetConsoleTextAttribute(hndl, 7);
-			COORD c = { pos.X, pos.Y - itemNum + i };
-			SetConsoleCursorPosition(hndl, c);
-			bList[i].pressed = false;
-			cout << "[ ] " << bList[i].bName;
-		}
-	}
-}
+//void RadioList::setRadio(int itemNum, COORD pos)
+//{
+//	for (int i = 0; i < bList.size(); i++)
+//	{
+//		if (i == itemNum)
+//		{
+//			SetConsoleTextAttribute(hndl, 240);
+//			SetConsoleCursorPosition(hndl, pos);
+//			bList[i].pressed = true;
+//			cout << "[X] " << bList[i].bName;
+//		}
+//		else
+//		{
+//			SetConsoleTextAttribute(hndl, 7);
+//			COORD c = { pos.X, pos.Y - itemNum + i };
+//			SetConsoleCursorPosition(hndl, c);
+//			bList[i].pressed = false;
+//			cout << "[ ] " << bList[i].bName;
+//		}
+//	}
+//}
 
 size_t RadioList::GetSelectedIndex()
 {
@@ -292,7 +291,7 @@ void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 	SetConsoleCursorPosition(hndl, c);
 
 	for (int i = 0; i < bList.size(); i++) {
-		if (!bList[i].hover) g.write("[ ] ");
+		if (!bList[i].pressed) g.write("[ ] ");
 		else g.write("[X] ");
 		g.write(bList[i].bName);
 		c = { left, ++top };
@@ -302,8 +301,47 @@ void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 
 void RadioList::mousePressed(int x, int y, bool isLeft)
 {
-	cout << bList.size();
+	//cout << bList.size();
 	setRadio(x, y);
+}
+
+void RadioList::keyDown(int keyCode, char charater) {
+	//printf("Key event: ");
+	//int i;
+
+	//	//printf("key pressed\n");
+	//	if (keyCode == VK_UP)
+	//	{
+	//		bList[0].pos
+	//		SetSelectedIndex(GetSelectedIndex() - 1);
+	//	}
+	//	if (keyCode == VK_DOWN)
+	//	{
+	//		for (i = 0; i < bList.size(); i++)
+	//		{
+	//			if ((bList.isCellActive(i) == true) && (i + 1 < bList.size()))
+	//			{
+	//				bList.setCellActive(i, cur);
+	//				bList.cellCoordinator(i, cur, "down");
+	//				bList.setCellActive(i + 1, cur);
+	//				break;
+	//			}
+	//		}
+	//		//printf("DOWN");
+	//	}
+	//	if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))
+	//	{
+	//		for (i = 0; i < bList.size(); i++)
+	//		{
+	//			if ((bList.isCellActive(i) == true))
+	//			{
+	//				bList.setRadio(i, cur);
+	//				break;
+	//			}
+	//		}
+	//		//printf("Select");
+	//	}
+	//else printf("key released\n");
 }
 
 

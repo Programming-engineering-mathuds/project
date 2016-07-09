@@ -31,5 +31,7 @@ public:
 	void setHover(COORD cur);
 	void setHoverTrue(COORD& cur);
 	void setHoverFalse(COORD cur);
+
+	void mousePressed(int x, int y, bool isLeft) {};
 };
 

@@ -6,13 +6,13 @@
 #include <stdio.h>
 #include <iostream>
 #include "vector"
-#include "Button.h"
+//#include "Button.h"
 
 using namespace std;
 
 class RadioList : public iControl
 {
-	friend class button;
+	//friend class button;
 private:
 	//CheckBox* bList;
 	vector<CheckBox> bList;
@@ -45,7 +45,7 @@ public:
 
 	void getAllControls(vector < iControl * > *controls) {};
 	void mousePressed(int x, int y, bool isLeft);
-	void keyDown(int keyCode, char charater) {};
+	void keyDown(int keyCode, char charater);
 	void draw(Graphics &g, int left, int top, size_t layer);
 };
 
