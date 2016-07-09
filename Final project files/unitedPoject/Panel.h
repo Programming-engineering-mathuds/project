@@ -15,8 +15,8 @@ class Panel : public  iControl
 	void add(iControl *c);
 	//void getFocuse();
 	void getAllControls(vector<iControl*> &pan){ pan = controlers; };
-	int myHeight;
-	int myWidth;
+	//int myHeight;
+	//int myWidth;
 	static vector<iControl*> controlers;
 public:
 	Panel(int height, int width);
