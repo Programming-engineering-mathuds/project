@@ -65,13 +65,13 @@
     <ClCompile Include="Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Panel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MessageBox1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

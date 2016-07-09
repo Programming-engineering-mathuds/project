@@ -1,9 +1,85 @@
-﻿Build started 09/07/2016 16:50:41.
-     1>Project "C:\Users\Gonen\Source\Repos\project2\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project2\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Gonen\Source\Repos\project2\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+﻿Build started 7/9/2016 4:33:43 PM.
+     1>Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Button.cpp Label.cpp MessageBox1.cpp Panel.cpp main.cpp
+         Button.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         main.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(31): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(36): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(16): error C2259: 'Button' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(17): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(18): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\main.cpp(52): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\main.cpp(54): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\main.cpp(56): error C2259: 'Button' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+         Panel.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(31): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(36): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(32): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(43): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+         MessageBox1.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(31): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(36): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(16): error C2259: 'Button' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(17): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\messagebox1.h(18): error C2259: 'Label' : cannot instantiate abstract class
+                 due to following members:
+                 'void Label::mousePressed(int,int,bool)' : is abstract
+                 c:\users\erez\source\repos\project\final project files\unitedpoject\label.h(28) : see declaration of 'Label::mousePressed'
+         Label.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(93): warning C4715: 'iControl::getFocus' : not all control paths return a value
+     1>Done Building Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.11
+Time Elapsed 00:00:03.28

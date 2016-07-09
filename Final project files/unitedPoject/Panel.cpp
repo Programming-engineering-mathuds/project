@@ -80,6 +80,15 @@ void Panel::mousePressed(int x, int y, bool isLeft)
 	};
 }
 
+void Panel::refreshLocation(int x, int y)
+{
+	setLocation(x, y);
+	for (int i = 0; i < controlers.size(); i++)
+	{
+		controlers[i]->setLocation(controlers[i]->getLeft() + x, controlers[i]->getTop() + x);
+	}
+}
+
 
 
 
