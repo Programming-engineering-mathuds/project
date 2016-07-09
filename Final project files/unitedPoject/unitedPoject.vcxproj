@@ -19,6 +19,7 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="iControl.h" />
     <ClInclude Include="Label.h" />
+    <ClInclude Include="MessageBox1.h" />
     <ClInclude Include="MouseListener.h" />
     <ClInclude Include="Panel.h" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <ClCompile Include="iControl.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MessageBox1.cpp" />
     <ClCompile Include="Panel.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

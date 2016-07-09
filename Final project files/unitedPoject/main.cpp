@@ -6,11 +6,9 @@
 #include "EventEngine.h"
 #include "Graphics.h"
 #include "Panel.h"
+#include "MessageBox1.h"
 
 using namespace std;
-
-HANDLE hStdin;
-DWORD fdwSaveOldMode;
 
 struct MyListener : public MouseListener
 {
@@ -23,11 +21,20 @@ private:
 	iControl &_c;
 };
 
-VOID ErrorExit(LPSTR);
-VOID KeyEventProc(KEY_EVENT_RECORD);
-VOID MouseEventProc(MOUSE_EVENT_RECORD);
-VOID ResizeEventProc(WINDOW_BUFFER_SIZE_RECORD);
+int main(int argc, char *argv[])
+{
+	MessageBox1 mess(10, 30);
+	mess.setBorder(BorderType::Single);
+	mess.SetTitle("title");
+	mess.SetText("look! text!");
+	mess.setLocation(4, 4);
+	EventEngine e;
 
+	e.run(mess);
+	return 0;
+};
+
+/*
 int main(int argc, char *argv[])
 {
 	//Test for Panel
@@ -87,8 +94,9 @@ int main(int argc, char *argv[])
 
 	EventEngine e;
 	e.run(bSubmit);
-	*/
+	
 }
+*/
 /* //Teacher's Main
 struct MyListener : public MouseListener
 {

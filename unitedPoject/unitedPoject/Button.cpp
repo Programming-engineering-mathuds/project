@@ -8,7 +8,6 @@ void Button::SetValue(string value)
 {
 	text = value;
 	Label::SetValue(text);
-
 }
 
 void Button::AddListener(MouseListener &listener)

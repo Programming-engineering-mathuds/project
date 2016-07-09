@@ -37,6 +37,7 @@ public:
 	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){};
 	~iControl() {};
 
+	virtual void invisible(){ this->_layer = 6; };
 	void setBorder(BorderType type){ border = type; };
 	BorderType getBorder(){ return border; };
 	void setTop(int tempTop) { top = tempTop; };
@@ -45,6 +46,7 @@ public:
 	int getLeft() { return left; };
 	void setCoords(COORD coord);
 	COORD getCoords(){ return pos; };
+	void setLocation(int x, int y);
 	void setLayer(size_t layer) { _layer = layer; };
 	size_t getLayer() { return _layer; };
 	void setForeground(Color color){ g.setForeground(color); };
@@ -57,7 +59,7 @@ public:
 	void frame(int size);
 	void setWidthSetFlag(){ widthSetFlag = 1; };
 	int getWidthSetFlag(){ return widthSetFlag; };
-	int setHight(int addToTop){ hight = hight + addToTop; };
+	void setHight(int addToTop){ hight = hight + addToTop; };
 	int getHight(){ return hight; };
 	virtual void getAllControls(vector < iControl * > *controls) = 0;
 	virtual void mousePressed(int x, int y, bool isLeft) = 0;// maybe change to size_t

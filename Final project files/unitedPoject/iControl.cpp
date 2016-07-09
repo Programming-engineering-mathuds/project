@@ -11,7 +11,13 @@ void iControl::setCoords(COORD coord) {
 	mPos = pos;
 
 };
-
+void iControl::setLocation(int x, int y)
+{
+	COORD co = { x, y };
+	pos = co;
+	setLeft(x);
+	setTop(y);
+}
 void iControl::frame(int size)
 {
 	hight = size;
