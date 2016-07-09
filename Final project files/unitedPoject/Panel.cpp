@@ -13,8 +13,8 @@ void Panel::add(iControl *c)
 	}
 Panel::Panel(int height, int width) :iControl(width)
 	{
-		myHeight = height;
-		myWidth = width;
+		setHight(height);
+		setMaxWidth(width);
 		_layer = 0;
 		setLeft(1);
 		setTop(1);
@@ -62,7 +62,7 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 		controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), _layer);
 
 	}
-	frame(myHeight);
+	frame(getHight());
 
 		//controlers[i]->draw(controlers[i]->getLeft(), controlers[i]->getTop(), controlers[i]->getLayer());
 }
