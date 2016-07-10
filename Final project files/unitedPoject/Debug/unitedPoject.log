@@ -1,9 +1,99 @@
-﻿Build started 10/07/2016 16:03:26.
-     1>Project "C:\Users\Gonen\Source\Repos\project4\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project4\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Gonen\Source\Repos\project4\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+﻿Build started 7/10/2016 3:08:11 PM.
+     1>Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Button.cpp CheckBox.cpp EventEngine.cpp Graphics.cpp iControl.cpp Label.cpp main.cpp MessageBox1.cpp Panel.cpp RadioList.cpp
+         RadioList.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(41): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(46): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(51): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(61): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(66): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(71): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(76): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(81): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(91): warning C4018: '<=' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(293): warning C4018: '<' : signed/unsigned mismatch
+         Panel.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(38): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(31): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(71): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(85): warning C4018: '<' : signed/unsigned mismatch
+         MessageBox1.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(38): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         main.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(38): warning C4018: '<' : signed/unsigned mismatch
+         Label.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+         iControl.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+         Graphics.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\graphics.cpp(97): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
+         EventEngine.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+         CheckBox.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+         Button.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(93): warning C4715: 'iControl::getFocus' : not all control paths return a value
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(93): warning C4715: 'iControl::getFocus' : not all control paths return a value
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(68): warning C4715: 'RadioList::getCellPlace' : not all control paths return a value
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(73): warning C4715: 'RadioList::getCellLenght' : not all control paths return a value
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\radiolist.cpp(43): warning C4715: 'RadioList::isCellActive' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         Debug\CheckBox.obj
+         Debug\EventEngine.obj
+         Debug\Graphics.obj
+         Debug\iControl.obj
+         Debug\Label.obj
+         Debug\main.obj
+         Debug\MessageBox1.obj
+         Debug\Panel.obj
+         Debug\RadioList.obj
+         LINK : C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe not found or not built by the last incremental link; performing full link
+         unitedPoject.vcxproj -> C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\unitedPoject.tlog\unsuccessfulbuild".
+         Touching "Debug\unitedPoject.tlog\unitedPoject.lastbuildstate".
+     1>Done Building Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.09
+Time Elapsed 00:00:07.41
