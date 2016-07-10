@@ -21,7 +21,7 @@ protected:
 	int clrNumHvr;
 	int area;
 	int maxWidth;
-	int hight;
+	int hight=0;
 	int top;
 	int left;
 	int widthSetFlag=0;
