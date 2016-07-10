@@ -47,5 +47,5 @@ public:
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater){};
 	void invisible();
-	void setVisible();
+	void setVisible(){visible = true;};
 };
