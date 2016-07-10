@@ -1,19 +1,8 @@
 #include "MessageBox1.h"
 
-struct BoxListener : public MouseListener
+
+MessageBox1::MessageBox1(int height, int width) : Panel(height, width), button(2), text(1, ""), title(1, ""),listner(*this)
 {
-	BoxListener(iControl &c) : _c(c) { }
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
-	{
-		_c.setForeground(Color::Red);
-		//_c.invisible();
-	}
-private:
-	iControl &_c;
-};
-MessageBox1::MessageBox1(int height, int width) : Panel(height,width), button(3), text(1, ""), title(1,"")
-{
-	BoxListener listner(*this);
 	iControl::hight = height;
 	setLayer(4);
 	button.setLayer(3);
@@ -61,4 +50,6 @@ void MessageBox1::invisible()
 	button.setLayer(5);
 	text.setLayer(5);
 	title.setLayer(5);
+	g.clearScreen();
+	delete(this);
 }

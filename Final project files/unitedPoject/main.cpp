@@ -25,26 +25,26 @@ int main(int argc, char *argv[])
 {
 
 
-	//MessageBox1 mess(10, 30);
-	//mess.setBorder(BorderType::Single);
-	//mess.SetTitle("title");
-	//mess.SetText("look! text!");
-	//mess.setLocation(4, 4);
+	MessageBox1 mess(10, 30);
+	mess.setBorder(BorderType::Single);
+	mess.SetTitle("title");
+	mess.SetText("look! text!");
+	mess.setLocation(4, 4);
 	EventEngine e;
-	//MyListener listeners(mess);
-	Button bSubmit(10);
-	bSubmit.SetValue("Submit");
+	MyListener listeners(mess);
+	//Button bSubmit(10);
+	//bSubmit.SetValue("Submit");
 
-	bSubmit.setBorder(BorderType::Double);
-	Label l(7, "just");
-	Panel p(20, 30);
-	p.setBorder(BorderType::Single);
-	MyListener listeners(p);
-	bSubmit.AddListener(listeners);
-	p.AddControler(bSubmit,5,5);
-	p.AddControler(l, 8, 9);
+//	bSubmit.setBorder(BorderType::Double);
+	//Label l(7, "just");
+	//Panel p(20, 30);
+	//p.setBorder(BorderType::Single);
+	//MyListener listeners(p);
+//	bSubmit.AddListener(listeners);
+	//p.AddControler(bSubmit,5,5);
+	//p.AddControler(l, 8, 9);
 	//bSubmit.setLayer(4);
-	e.run(p);
+	e.run(mess);
 	return 0;
 };
 
