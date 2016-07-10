@@ -31,7 +31,7 @@ public:
 
 	//void draw(Graphics &g, int left, int top, size_t layer);
 	//void getAllControls(vector < iControl * > *controls){};
-	void mousePressed(int x, int y, bool isLeft){button.MousePressed(x, y, isLeft);	};
+	void mousePressed(int x, int y, bool isLeft){button.mousePressed(x, y, isLeft);	};
 	void keyDown(int keyCode, char charater){};
 	void invisible();
 

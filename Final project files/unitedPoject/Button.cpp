@@ -56,12 +56,12 @@ void Button::MouseEvent(MOUSE_EVENT_RECORD in)
 }
 
 
-void  Button::MousePressed(int x, int y, bool isLeft)
+void  Button::mousePressed(int x, int y, bool isLeft)
 {
 	int XL = mPos.X - 1;
 	int XR = XL + maxWidth + 1;
-	int YU = mPos.Y;
-	int YD = YU + hight;
+	int YU = mPos.Y-1;
+	int YD = YU + hight+1;
 	if (isLeft)
 	{
 		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
