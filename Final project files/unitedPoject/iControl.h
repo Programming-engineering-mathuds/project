@@ -35,7 +35,7 @@ protected:
 
 public:
 	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){};
-	virtual ~iControl() {};
+	virtual ~iControl(){};
 
 	virtual void invisible(){ this->_layer = 6; };
 	void setBorder(BorderType type){ border = type; };

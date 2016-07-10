@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 //	bSubmit.setBorder(BorderType::Double);
 	//Label l(7, "just");
-	//Panel p(20, 30);
+	Panel p(20, 30);
 	//p.setBorder(BorderType::Single);
 	//MyListener listeners(p);
 //	bSubmit.AddListener(listeners);

@@ -19,16 +19,18 @@ MessageBox1::MessageBox1(int height, int width) : Panel(height, width), button(2
 	//title.setLocation(this->getLeft() + 1, this->getTop() + 1);
 };
 
-//MessageBox1::~MessageBox1()
-//{
+MessageBox1::~MessageBox1()
+{
 	//setLayer(5);
 	//button.setLayer(5);
 	///text.setLayer(5);
 	//title.setLayer(5);
 	//g.clearScreen();
 
-	//delete(this);
-//}
+	//text.~Label();
+	//title.~Label();
+	//button.~Button();
+}
 
 void MessageBox1::setTextLabelSize(int height, int width)
 {
@@ -57,5 +59,6 @@ void MessageBox1::setButtonSize(int height, int width)
 
 void MessageBox1::invisible()
 {
-	this->~MessageBox1();
+	g.clearScreen();
+	delete this;
 }

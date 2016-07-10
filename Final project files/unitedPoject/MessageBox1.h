@@ -36,7 +36,7 @@ class MessageBox1 : public Panel
 
 public:
 	MessageBox1(int height, int width);
-	~MessageBox1(){};
+	~MessageBox1();
 
 	void SetText(string text){this->text.SetValue(text);};
 	void SetTitle(string title){this->title.SetValue(title);};
