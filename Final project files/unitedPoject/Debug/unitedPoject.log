@@ -1,11 +1,32 @@
-﻿Build started 7/10/2016 3:15:33 PM.
+﻿Build started 7/10/2016 3:18:00 PM.
      1>Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Panel.cpp
+         Panel.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(38): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(30): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(41): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(70): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(84): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(93): warning C4715: 'iControl::getFocus' : not all control paths return a value
        Link:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         Debug\CheckBox.obj
+         Debug\EventEngine.obj
+         Debug\Graphics.obj
+         Debug\iControl.obj
+         Debug\Label.obj
+         Debug\main.obj
+         Debug\MessageBox1.obj
+         Debug\Panel.obj
+         Debug\RadioList.obj
          unitedPoject.vcxproj -> C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe
        FinalizeBuildStatus:
          Deleting file "Debug\unitedPoject.tlog\unsuccessfulbuild".
@@ -14,4 +35,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:01.01

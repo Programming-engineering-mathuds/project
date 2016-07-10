@@ -16,8 +16,7 @@ Panel::Panel(int height, int width) :iControl(width)
 		setHight(height);
 		setMaxWidth(width);
 		_layer = 0;
-		setLeft(1);
-		setTop(1);
+		setLocation(0, 0);
 	}
 
 void Panel::AddControler(iControl& control, int newLeft, int newTop)
