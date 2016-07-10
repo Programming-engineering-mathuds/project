@@ -28,6 +28,7 @@ class MessageBox1 : public Panel
 	Label text;
 	Label title;
 	BoxListener listner;
+	bool visible=true;
 
 	void setTextLabelSize(int height, int width);
 	void setTitleLabelSize(int height, int width);
@@ -36,15 +37,15 @@ class MessageBox1 : public Panel
 
 public:
 	MessageBox1(int height, int width);
-	~MessageBox1();
+	~MessageBox1(){};
 
 	void SetText(string text){this->text.SetValue(text);};
 	void SetTitle(string title){this->title.SetValue(title);};
 
-	//void draw(Graphics &g, int left, int top, size_t layer);
+	void draw(Graphics &g, int left, int top, size_t layer);
 	//void getAllControls(vector < iControl * > *controls){};
-	void mousePressed(int x, int y, bool isLeft){Panel::mousePressed(x, y, isLeft);	};
+	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater){};
 	void invisible();
-
+	void setVisible();
 };
