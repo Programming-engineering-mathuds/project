@@ -28,7 +28,7 @@ public:
 
 	void SetValue(string value);
 	void AddListener(MouseListener &listener);
-	void notify();
+	void notify(int x, int y, bool isLeft);
 	virtual void draw(Graphics &g, int left, int top, size_t layer);
 
 	void getInput(INPUT_RECORD in);

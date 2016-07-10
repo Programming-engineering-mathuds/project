@@ -16,11 +16,11 @@ void Button::AddListener(MouseListener &listener)
 	listeners.push_back(&listener);
 }
 
-void Button::notify()
+void Button::notify(int x, int y, bool isLeft)
 {
 	for (int iterator = 0; iterator < listeners.size(); iterator++)
 	{
-		listeners[iterator]->MousePressed(*this, pos.X, pos.Y, 1);
+		listeners[iterator]->MousePressed(*this, x, y, 1);
 	}
 }
 
@@ -51,7 +51,7 @@ void Button::MouseEvent(MOUSE_EVENT_RECORD in)
 	if (in.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 	{
 		if (isInside(in.dwMousePosition.X, in.dwMousePosition.Y, mPos.X, mPos.Y, maxWidth + 1, hight))
-			notify();
+			notify(in.dwMousePosition.X, in.dwMousePosition.Y,1);
 	}
 }
 
@@ -66,7 +66,7 @@ void  Button::MousePressed(int x, int y, bool isLeft)
 	{
 		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
 		{
-			notify();
+			notify(x,y,1);
 
 		}
 	}
