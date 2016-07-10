@@ -51,5 +51,5 @@ void MessageBox1::invisible()
 	text.setLayer(5);
 	title.setLayer(5);
 	g.clearScreen();
-	delete(this);
+	//delete(this);
 }

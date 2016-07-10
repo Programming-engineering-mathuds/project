@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	mess.setBorder(BorderType::Single);
 	mess.SetTitle("title");
 	mess.SetText("look! text!");
-	mess.setLocation(4, 4);
+	mess.setLocation(10, 10);
 	EventEngine e;
 	MyListener listeners(mess);
 	//Button bSubmit(10);

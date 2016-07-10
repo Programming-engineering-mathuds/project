@@ -73,9 +73,9 @@ void Panel::mousePressed(int x, int y, bool isLeft)
 {
 	for (int i = 0; i < controlers.size(); i++)
 	{
-		if ( (x >= controlers[i]->getLeft()-2) && (x <= (controlers[i]->getLeft() + controlers[i]->getMaxWidth()) ))
-			if (y >= controlers[i]->getTop()-2 && y <= (controlers[i]->getTop()+controlers[i]->getHight()) )
-				controlers[i]->mousePressed(x, y, isLeft);
+		if ((x >= controlers[i]->getLeft() - getLeft()) && (x <= (controlers[i]->getLeft() - getLeft() + controlers[i]->getMaxWidth())))
+		if (y >= controlers[i]->getTop() - getTop() && y <= (controlers[i]->getTop() - getTop() + controlers[i]->getHight()))
+			controlers[i]->mousePressed(x + getLeft(), y + getTop(), isLeft);
 	};
 }
 
