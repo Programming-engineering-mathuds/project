@@ -41,4 +41,5 @@ void MessageBox1::mousePressed(int x, int y, bool isLeft)
 void MessageBox1::invisible()
 {
 	visible = false;
+	can_Get_Focus = false;
 }
