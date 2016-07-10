@@ -30,8 +30,7 @@ void iControl::frame(int size)
 	int yEnd = pos.Y + size;
 	if ((border != BorderType::None) && (pos.X = 0) && (pos.Y = 0)) //frame cannot be printed in -1,-1
 	{
-		pos.X++;
-		pos.Y++;
+		setLocation(1, 1);
 	}
 
 	if (border != BorderType::None)
