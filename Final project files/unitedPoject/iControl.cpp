@@ -21,6 +21,10 @@ void iControl::setLocation(int x, int y)
 }
 void iControl::frame(int size)
 {
+	if ((border != BorderType::None) && (left = 0) && (top = 0)) //frame cannot be printed in -1,-1
+	{
+		setLocation(1, 1);
+	}
 	hight = size;
 	//X Axis
 	int xInit = pos.X - 1;
@@ -28,10 +32,7 @@ void iControl::frame(int size)
 	//Y Axis
 	int yInit = pos.Y - 1;
 	int yEnd = pos.Y + size;
-	if ((border != BorderType::None) && (pos.X = 0) && (pos.Y = 0)) //frame cannot be printed in -1,-1
-	{
-		setLocation(1, 1);
-	}
+
 
 	if (border != BorderType::None)
 	{
