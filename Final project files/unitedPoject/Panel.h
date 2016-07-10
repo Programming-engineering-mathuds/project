@@ -29,6 +29,7 @@ public:
 	void setLocation(int x, int y);
 	void getAllControls(vector < iControl * > *controls) 
 	{ 
+		controls->clear();
 		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);
 	};
 	

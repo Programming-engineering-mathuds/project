@@ -22,8 +22,7 @@ Panel::Panel(int height, int width) :iControl(width)
 
 void Panel::AddControler(iControl& control, int newLeft, int newTop)
 {
-	control.setLeft(newLeft + left);
-	control.setTop(newTop + top);
+	control.setLocation(newLeft + left, newTop + top);
 	add(&control);
 	setStaticControlList(controlers);
 	if (control.canGetFocus() && weHaveFocus == 0)
