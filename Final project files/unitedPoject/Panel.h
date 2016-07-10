@@ -22,6 +22,7 @@ public:
 	Panel(int height, int width);
 	~Panel(){};
 	void AddControler(iControl& control, int left, int top);
+	void frame(int size);
 	//void traverseFocuse();
 	void draw(Graphics &g, int left, int top, size_t layer);
 	void mousePressed(int x, int y, bool isLeft);
