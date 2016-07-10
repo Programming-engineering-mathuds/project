@@ -33,7 +33,7 @@ public:
 
 	void getInput(INPUT_RECORD in);
 	void MouseEvent(MOUSE_EVENT_RECORD in);
-	void MousePressed(int x, int y, bool isLeft);
+	virtual void MousePressed(int x, int y, bool isLeft);
 	virtual void getAllControls(vector < iControl * > *controls){};
 
 };

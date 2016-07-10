@@ -25,7 +25,7 @@ public:
 	void handelInput(INPUT_RECORD input);
 	void putText();
 	virtual void draw(Graphics &g, int left, int top, size_t layer);
-	void mousePressed(int x, int y, bool isLeft) {};
+	virtual void mousePressed(int x, int y, bool isLeft) {};
 	void keyDown(int keyCode, char charater) {};
 	virtual void getAllControls(vector < iControl * > *controls){};
 
