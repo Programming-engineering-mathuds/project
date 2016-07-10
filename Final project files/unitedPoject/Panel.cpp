@@ -16,7 +16,7 @@ Panel::Panel(int height, int width) :iControl(width)
 		setHight(height);
 		setMaxWidth(width);
 		_layer = 0;
-		setLocation(0, 0);
+		iControl::setLocation(0, 0);
 	}
 
 void Panel::AddControler(iControl& control, int newLeft, int newTop)
@@ -37,31 +37,33 @@ void Panel::AddControler(iControl& control, int newLeft, int newTop)
 
 void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 {
-	setCoords(COORD{ left, top });
-	for (int i = 0; i < controlers.size(); i++)
-	{
-		//int a = controlers[i]->getLeft();
-		//int b = controlers[i]->getTop();
-		//int x = controlers[i]->getLeft() + left;
-		//int y = controlers[i]->getTop() + top;
-		//int j = controlers[i]->getMaxWidth();
-
-
-		if (p == 0 && controlers[i]->getWidthSetFlag() == 0)controlers[i]->setCoords(COORD{ controlers[i]->getLeft(), controlers[i]->getTop() });
-		if (p == 0 && controlers[i]->getWidthSetFlag() == 0)
+	if (p = getLayer()){
+		//setCoords(COORD{ left, top });
+		iControl::setLocation(left, top);
+		for (int i = 0; i < controlers.size(); i++)
 		{
-			controlers[i]->setMaxWidth(controlers[i]->getLeft() + controlers[i]->getMaxWidth()-1);
-			controlers[i]->setWidthSetFlag();
+			//int a = controlers[i]->getLeft();
+			//int b = controlers[i]->getTop();
+			//int x = controlers[i]->getLeft() + left;
+			//int y = controlers[i]->getTop() + top;
+			//int j = controlers[i]->getMaxWidth();
+
+
+			if (p == 0 && controlers[i]->getWidthSetFlag() == 0)controlers[i]->setCoords(COORD{ controlers[i]->getLeft(), controlers[i]->getTop() });
+			if (p == 0 && controlers[i]->getWidthSetFlag() == 0)
+			{
+				controlers[i]->setMaxWidth(controlers[i]->getLeft() + controlers[i]->getMaxWidth() - 1);
+				controlers[i]->setWidthSetFlag();
+			}
+
+			//int w = controlers[i]->getLeft() + controlers[i]->getMaxWidth() + left;
+			//int c = controlers[i]->getMaxWidth();
+
+			controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), _layer);
+
 		}
-		
-		//int w = controlers[i]->getLeft() + controlers[i]->getMaxWidth() + left;
-		//int c = controlers[i]->getMaxWidth();
-
-		controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), _layer);
-
+		frame(getHight());
 	}
-	frame(getHight());
-
 		//controlers[i]->draw(controlers[i]->getLeft(), controlers[i]->getTop(), controlers[i]->getLayer());
 }
 

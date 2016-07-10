@@ -47,7 +47,7 @@ void Label::putText()
 
 void Label::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (layer < _layer) return;
+	if (layer != _layer) return;
 	iControl::g = g;
 	COORD cur = { left, top };
 	setCoords(cur);
