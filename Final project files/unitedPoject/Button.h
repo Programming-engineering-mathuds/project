@@ -23,7 +23,7 @@ protected:
 	string text;
 	bool isLeft = false;
 public:
-	Button(int width) :Label(width){};
+	Button(int width) :Label(width){ can_Get_Focus = false; };
 	~Button(){};
 
 	void SetValue(string value);

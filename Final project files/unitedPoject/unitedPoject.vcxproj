@@ -19,9 +19,9 @@
     <ClInclude Include="EventEngine.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="iControl.h" />
+    <ClInclude Include="keyButton.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MessageBox1.h" />
-    <ClInclude Include="MouseListener.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="RadioList.h" />
   </ItemGroup>
@@ -31,6 +31,7 @@
     <ClCompile Include="EventEngine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="iControl.cpp" />
+    <ClCompile Include="keyButton.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBox1.cpp" />

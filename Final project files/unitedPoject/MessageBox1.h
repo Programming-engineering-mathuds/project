@@ -15,7 +15,6 @@ struct BoxListener : public MouseListener
 	BoxListener(iControl &c) : _c(c) { }
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
-		//_c.setForeground(Color::Red);
 		_c.invisible();
 	}
 private:
@@ -41,7 +40,7 @@ public:
 
 	void SetText(string text){this->text.SetValue(text);};
 	void SetTitle(string title){this->title.SetValue(title);};
-
+	void AddControler(iControl& control, int left, int top){};
 	void draw(Graphics &g, int left, int top, size_t layer);
 	//void getAllControls(vector < iControl * > *controls){};
 	void mousePressed(int x, int y, bool isLeft);
