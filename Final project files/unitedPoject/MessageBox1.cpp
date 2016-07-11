@@ -10,9 +10,9 @@ MessageBox1::MessageBox1(int height, int width) : Panel(height, width), button(2
 	title.setLayer(3);
 	button.SetValue("OK"); 
 	button.setBorder(BorderType::Single);
-	AddControler(title, maxWidth / 8, 0);
-	AddControler(text, maxWidth/8, hight/4);
-	AddControler(button, maxWidth/3, hight-2);
+	Panel::AddControler(title, maxWidth / 8, 0);
+	Panel::AddControler(text, maxWidth / 8, hight / 4);
+	Panel::AddControler(button, maxWidth / 3, hight - 2);
 };
 
 void MessageBox1::setTextLabelSize(int height, int width)

@@ -39,9 +39,6 @@
     <ClInclude Include="Label.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MouseListener.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Panel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -52,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RadioList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="keyButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -84,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RadioList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="keyButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
