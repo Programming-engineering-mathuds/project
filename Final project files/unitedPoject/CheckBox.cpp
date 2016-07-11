@@ -24,6 +24,8 @@ CheckBox::CheckBox(string name, int width) : Button(name.length())
 	bName = name;
 	hover = false;
 	pressed = false;
+	COORD c = getCoords();
+	curY = c.Y;
 }
 
 
@@ -44,11 +46,11 @@ bool CheckBox::isHover() { return hover; }
 int CheckBox::getPlace() { return curY; }
 
 //Sets a Cell's "Hover" to ture/false {Keyboard Use}
-void CheckBox::setHover(COORD cur)
+void CheckBox::setHover()
 {
 	//Sets cursors position
-	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleCursorPosition(h, cur);
+	/*HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleCursorPosition(h, cur);*/
 
 	//Swithces cell's "Hover" state and color scheme (true becomes false and vice versa)
 	if (hover)

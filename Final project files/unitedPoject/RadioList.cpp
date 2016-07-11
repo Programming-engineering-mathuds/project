@@ -12,16 +12,17 @@
 //};
 
 //Constructor
-RadioList::RadioList(int height, int width, vector<string> entries) : iControl(width)
+RadioList::RadioList(int height, int width, vector<string> entries) : Panel(height, width)
 {
 	can_Get_Focus = true;
+	size = height;
 	for (int i = 0; i < height; i++)
 	{
 		CheckBox tempBox(entries[i], width);
 		//radioListener lisenter(tempBox);
-		bList.push_back(tempBox);
+		rList.push_back(tempBox);
 	}
-	bList[0].setHover(pos);
+	rList[0].setHover();
 }
 
 //Destructor
@@ -29,7 +30,7 @@ RadioList::~RadioList() {}
 
 int RadioList::bListSize()
 {
-	return bList.size();
+	return rList.size();
 }
 
 //CheckBox CheckList::getcList(int item)
@@ -38,18 +39,18 @@ int RadioList::bListSize()
 //}
 
 bool RadioList::isCellActive(int itemNum) {
-	if (itemNum <= bList.size() - 1)
-		return bList[itemNum].isHover();
+	if (itemNum <= rList.size() - 1)
+		return rList[itemNum].isHover();
 }
 
 void RadioList::setCellActive(int itemNum, COORD pos) {
-	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setHover(pos);
+	if (itemNum <= rList.size() - 1)
+		rList[itemNum].setHover();
 }
 
 void RadioList::cellCoordinator(int itemNum, COORD& pos, string direction) {
-	if (itemNum <= bList.size() - 1)
-		bList[itemNum].coordinator(pos, direction);
+	if (itemNum <= rList.size() - 1)
+		rList[itemNum].coordinator(pos, direction);
 }
 
 //void CheckList::topBottomCoordinator(int itemNum, COORD& pos, string direction)
@@ -58,47 +59,47 @@ void RadioList::cellCoordinator(int itemNum, COORD& pos, string direction) {
 //}
 
 void RadioList::cellCheckSwitch(int itemNum, COORD pos) {
-	if (itemNum <= bList.size() - 1)
-		bList[itemNum].checkSwitch(pos);
+	if (itemNum <= rList.size() - 1)
+		rList[itemNum].checkSwitch(pos);
 }
 
 int RadioList::getCellPlace(int itemNum) {
-	if (itemNum <= bList.size() - 1)
-		return bList[itemNum].getPlace();
+	if (itemNum <= rList.size() - 1)
+		return rList[itemNum].getPlace();
 }
 
 int RadioList::getCellLenght(int itemNum) {
-	if (itemNum <= bList.size() - 1)
-		return bList[itemNum].getLenght();
+	if (itemNum <= rList.size() - 1)
+		return rList[itemNum].getLenght();
 }
 
 void RadioList::setCellActiveFalse(int itemNum, COORD pos) {
-	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setHoverFalse(pos);
+	if (itemNum <= rList.size() - 1)
+		rList[itemNum].setHoverFalse(pos);
 }
 
 void RadioList::setCellActiveTrue(int itemNum, COORD& pos) {
-	if (itemNum <= bList.size() - 1)
-		bList[itemNum].setHoverTrue(pos);
+	if (itemNum <= rList.size() - 1)
+		rList[itemNum].setHoverTrue(pos);
 }
 
 void RadioList::setRadio(int x, int y)
 {
 	//saves the position of the first cell (incase we start at different y then 0)
-	COORD c = bList[0].getCoords();
-	for (int i = 0; i < bList.size(); i++)
+	COORD c = rList[0].getCoords();
+	for (int i = 0; i < rList.size(); i++)
 	{
-		if ((y >= c.Y) && (y <= (c.Y + bList.size()-1)) && (x >= c.X) && (x <= c.X + maxWidth))
+		if ((y >= c.Y) && (y <= (c.Y + rList.size() - 1)) && (x >= c.X) && (x <= c.X + maxWidth))
 		{
 			if (i == y - c.Y)
 			{
-				bList[i].pressed = true;
-				cout << "[X] " << bList[i].bName;
+				rList[i].pressed = true;
+				cout << "[X] " << rList[i].bName;
 			}
 			else		
 				{
-					bList[i].pressed = false;
-					cout << "[ ] " << bList[i].bName;
+				rList[i].pressed = false;
+				cout << "[ ] " << rList[i].bName;
 				}
 		}
 		
@@ -290,10 +291,20 @@ void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
 	COORD c = { left, top };
 	SetConsoleCursorPosition(hndl, c);
 
-	for (int i = 0; i < bList.size(); i++) {
-		if (!bList[i].pressed) g.write("[ ] ");
-		else g.write("[X] ");
-		g.write(bList[i].bName);
+	for (int i = 0; i < size; i++) {
+		if (rList[i].hover) {
+			setBackground(Color::White);
+			setForeground(Color::Black);
+			if (!rList[i].pressed) g.write("[ ] ");
+			else g.write("[X] ");
+			g.write(rList[i].bName);
+		} else {
+			setBackground(Color::Black);
+			setForeground(Color::White);
+			if (!rList[i].pressed) g.write("[ ] ");
+			else g.write("[X] ");
+			g.write(rList[i].bName);
+		}
 		c = { left, ++top };
 		SetConsoleCursorPosition(hndl, c);
 	}
@@ -307,41 +318,52 @@ void RadioList::mousePressed(int x, int y, bool isLeft)
 
 void RadioList::keyDown(int keyCode, char charater) {
 	//printf("Key event: ");
-	//int i;
-
-	//	//printf("key pressed\n");
-	//	if (keyCode == VK_UP)
-	//	{
-	//		bList[0].pos
-	//		SetSelectedIndex(GetSelectedIndex() - 1);
-	//	}
-	//	if (keyCode == VK_DOWN)
-	//	{
-	//		for (i = 0; i < bList.size(); i++)
-	//		{
-	//			if ((bList.isCellActive(i) == true) && (i + 1 < bList.size()))
-	//			{
-	//				bList.setCellActive(i, cur);
-	//				bList.cellCoordinator(i, cur, "down");
-	//				bList.setCellActive(i + 1, cur);
-	//				break;
-	//			}
-	//		}
-	//		//printf("DOWN");
-	//	}
-	//	if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))
-	//	{
-	//		for (i = 0; i < bList.size(); i++)
-	//		{
-	//			if ((bList.isCellActive(i) == true))
-	//			{
-	//				bList.setRadio(i, cur);
-	//				break;
-	//			}
-	//		}
-	//		//printf("Select");
-	//	}
-	//else printf("key released\n");
+	int i;
+	COORD c = rList[0].getCoords();
+		//printf("key pressed\n");
+		if (keyCode == VK_UP)
+		{
+			for (i = 0; i < size; i++)
+			{
+				if (rList[i].isHover())
+				{
+					if (rList[i].curY - 1 > c.Y)
+					{
+						rList[i].setHover();
+						rList[i - 1].setHover();
+					}
+				}
+			}
+			//SetSelectedIndex(GetSelectedIndex() - 1);
+		}
+		if (keyCode == VK_DOWN)
+		{
+			for (i = 0; i < size; i++)
+			{
+				if (rList[i].isHover())
+				{
+					if (rList[i].curY + 1 < c.Y + (size - 1))
+					{
+						rList[i].setHover();
+						rList[i + 1].setHover();
+					}
+				}
+			}
+			//printf("DOWN");
+		}
+		if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))
+		{
+			for (i = 0; i < rList.size(); i++)
+			{
+				/*if ((bList.isCellActive(i) == true))
+				{
+					bList.setRadio(i, cur);
+					break;
+				}*/
+			}
+			//printf("Select");
+		}
+	else printf("key released\n");
 }
 
 

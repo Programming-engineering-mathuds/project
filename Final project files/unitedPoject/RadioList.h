@@ -1,5 +1,5 @@
 #pragma once
-#include "iControl.h"
+#include "panel.h"
 #include "CheckBox.h"
 #include <Windows.h>
 #include <string>
@@ -10,13 +10,14 @@
 
 using namespace std;
 
-class RadioList : public iControl
+class RadioList : public Panel
 {
 	//friend class button;
 private:
 	//CheckBox* bList;
-	vector<CheckBox> bList;
+	vector<CheckBox> rList;
 	size_t where_am_i;
+	int size; // Number of cells in a Radio List
 public:
 	RadioList(int height, int width, vector<string> entries);
 	~RadioList();

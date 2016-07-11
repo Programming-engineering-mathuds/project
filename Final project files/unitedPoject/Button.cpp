@@ -29,7 +29,6 @@ void Button::draw(Graphics &g, int left, int top, size_t layer)
 	Label::draw(g, left, top, layer);
 }
 
-
 void Button::getInput(INPUT_RECORD in)
 {
 	switch (in.EventType)

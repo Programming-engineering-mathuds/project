@@ -28,7 +28,7 @@ public:
 	bool getSwitchState();
 	string getName();
 	int getLenght();
-	void setHover(COORD cur);
+	void setHover();
 	void setHoverTrue(COORD& cur);
 	void setHoverFalse(COORD cur);
 
