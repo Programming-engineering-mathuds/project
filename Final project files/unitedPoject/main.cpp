@@ -38,7 +38,8 @@ int main(int argc, char *argv[])
 	Panel p(10, 20);
 	keyButton k(10);
 	k.SetValue("kbutton");
-	k.AddListener(listeners);
+	MyListener listeneres(p);
+	k.AddListener(listeneres);
 	p.AddControler(k, 5, 5);
 	//p.setBorder(BorderType::Single);
 	//MyListener listeners(p);
