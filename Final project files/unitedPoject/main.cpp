@@ -1,4 +1,3 @@
-#include <windows.h>
 #include <string>
 #include <stdio.h>
 #include "Button.h"
@@ -6,7 +5,7 @@
 #include "EventEngine.h"
 #include "Graphics.h"
 #include "Panel.h"
-#include "MessageBox1.h"
+#include "MessageBox.h"
 #include "keyButton.h"
 
 using namespace std;
@@ -24,8 +23,7 @@ private:
 
 int main(int argc, char *argv[])
 {
-
-	MessageBox1 mess(10, 30);
+	MessageBox mess(10, 30);
 	mess.setBorder(BorderType::Single);
 	mess.SetTitle("title");
 	mess.SetText("look! text!");

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <windows.h>
+#undef MessageBox
+
 #include <stdio.h>
 #include "iControl.h"
 #include "ConsoleForeground.h"
@@ -21,7 +23,7 @@ private:
 	iControl &_c;
 };
 
-class MessageBox1 : public Panel
+class MessageBox : public Panel
 {
 	Button button;
 	Label text;
@@ -35,8 +37,8 @@ class MessageBox1 : public Panel
 	//void setPanelSize(int height, int width);
 
 public:
-	MessageBox1(int height, int width);
-	~MessageBox1(){};
+	MessageBox(int height, int width);
+	~MessageBox(){};
 
 	void SetText(string text){this->text.SetValue(text);};
 	void SetTitle(string title){this->title.SetValue(title);};

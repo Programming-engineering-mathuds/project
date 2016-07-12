@@ -21,7 +21,7 @@
     <ClInclude Include="iControl.h" />
     <ClInclude Include="keyButton.h" />
     <ClInclude Include="Label.h" />
-    <ClInclude Include="MessageBox1.h" />
+    <ClInclude Include="MessageBox.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="RadioList.h" />
   </ItemGroup>
@@ -34,7 +34,7 @@
     <ClCompile Include="keyButton.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MessageBox1.cpp" />
+    <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="RadioList.cpp" />
   </ItemGroup>
