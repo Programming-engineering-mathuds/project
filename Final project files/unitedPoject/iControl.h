@@ -33,6 +33,8 @@ protected:
 	Graphics g;
 	static vector<iControl*> controls;
 
+	static iControl nullFocuse;
+
 public:
 	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){};
 	virtual ~iControl(){};

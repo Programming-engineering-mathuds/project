@@ -18,7 +18,7 @@ class Panel : public  iControl
 	void getAllControls(vector<iControl*> &pan){ pan = controlers; };
 	//int myHeight;
 	//int myWidth;
-	static vector<iControl*> controlers;
+	vector<iControl*> controlers;
 public:
 	Panel(int height, int width);
 	~Panel(){};
@@ -31,10 +31,20 @@ public:
 	void setLocation(int x, int y);
 	void getAllControls(vector < iControl * > *controls) 
 	{ 
+		int focuseCount = 0;
 		controls->clear();
-		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);
+		for (int i = 0; i < controlers.size(); i++) {
+			controls->push_back(controlers[i]);
+			if (controlers[i]->isFocused()) focuseCount++;
+		}
+		if (focuseCount==0)
+		{
+			if(nullFocuse.getFocus()) setFocus(nullFocuse);
+			controls->push_back(&nullFocuse);
+		}
 	};
 	
+	/* No need, alleady in is iControl.h
 	static iControl* getFocus()
 	{
 		for (int i = 0; i < controlers.size(); i++)
@@ -45,4 +55,5 @@ public:
 			else if (controlers[i]->getFocus()) return controlers[i];
 		};
 	}
+	*/
 };

@@ -5,8 +5,6 @@
 
 using namespace std;
 
-vector<iControl*> Panel::controlers;
-
 void Panel::add(iControl *c)
 	{
 		controlers.push_back(c);
@@ -27,7 +25,7 @@ void Panel::AddControler(iControl& control, int newLeft, int newTop)
 	if (control.canGetFocus() && weHaveFocus == 0)
 	{
 		setFocus(*controlers[controlers.size()-1]);
-		weHaveFocus == 1;
+		weHaveFocus = 1;
 	}
 }
 //void Panel::traverseFocuse()
