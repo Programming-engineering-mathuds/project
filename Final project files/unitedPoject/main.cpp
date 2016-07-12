@@ -7,6 +7,7 @@
 #include "Graphics.h"
 #include "Panel.h"
 #include "MessageBox1.h"
+#include "keyButton.h"
 
 using namespace std;
 
@@ -24,7 +25,6 @@ private:
 int main(int argc, char *argv[])
 {
 
-
 	MessageBox1 mess(10, 30);
 	mess.setBorder(BorderType::Single);
 	mess.SetTitle("title");
@@ -38,13 +38,17 @@ int main(int argc, char *argv[])
 //	bSubmit.setBorder(BorderType::Double);
 	//Label l(7, "just");
 	Panel p(10, 20);
+	keyButton k(10);
+	k.SetValue("kbutton");
+	k.AddListener(listeners);
+	p.AddControler(k, 5, 5);
 	//p.setBorder(BorderType::Single);
 	//MyListener listeners(p);
 //	bSubmit.AddListener(listeners);
 	//p.AddControler(bSubmit,5,5);
 	//p.AddControler(l, 8, 9);
 	//bSubmit.setLayer(4);
-	e.run(mess);
+	e.run(p);
 	return 0;
 };
 
