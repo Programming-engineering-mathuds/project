@@ -22,6 +22,7 @@
     <ClInclude Include="keyButton.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="MessageBox.h" />
+    <ClInclude Include="NumericBox.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="RadioList.h" />
   </ItemGroup>
@@ -35,6 +36,7 @@
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MessageBox.cpp" />
+    <ClCompile Include="NumericBox.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="RadioList.cpp" />
   </ItemGroup>

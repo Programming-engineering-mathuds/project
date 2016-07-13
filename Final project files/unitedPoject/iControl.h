@@ -32,6 +32,7 @@ protected:
 	COORD mPos;//coords for mouse use
 	Graphics g;
 	static vector<iControl*> controls;
+	bool visible = true;
 
 public:
 	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){};
@@ -92,5 +93,10 @@ public:
 			if (controls[i]->isFocused()) return controls[i];
 		}
 	};
+	virtual void genericFunc1(){};
+	virtual void genericFunc2(){};
+	//TD
+	void Show();
+	void Hide();
 };
 

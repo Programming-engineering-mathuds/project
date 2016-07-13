@@ -34,7 +34,6 @@ class MessageBox : public Panel
 	void setTextLabelSize(int height, int width);
 	void setTitleLabelSize(int height, int width);
 	void setButtonSize(int height, int width);
-	//void setPanelSize(int height, int width);
 
 public:
 	MessageBox(int height, int width);

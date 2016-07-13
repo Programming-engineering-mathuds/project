@@ -7,6 +7,7 @@
 #include "Panel.h"
 #include "MessageBox.h"
 #include "keyButton.h"
+#include "NumericBox.h"
 
 using namespace std;
 
@@ -32,22 +33,18 @@ int main(int argc, char *argv[])
 	MyListener listeners(mess);
 	//Button bSubmit(10);
 	//bSubmit.SetValue("Submit");
-
+	NumericBox n(20, -10, 10);
+	n.setBorder(BorderType::Double);
 //	bSubmit.setBorder(BorderType::Double);
 	//Label l(7, "just");
-	Panel p(10, 20);
-	keyButton k(10);
-	k.SetValue("kbutton");
-	MyListener listeneres(p);
-	k.AddListener(listeneres);
-	p.AddControler(k, 5, 5);
+	
 	//p.setBorder(BorderType::Single);
 	//MyListener listeners(p);
 //	bSubmit.AddListener(listeners);
 	//p.AddControler(bSubmit,5,5);
 	//p.AddControler(l, 8, 9);
 	//bSubmit.setLayer(4);
-	e.run(p);
+	e.run(n);
 	return 0;
 };
 
