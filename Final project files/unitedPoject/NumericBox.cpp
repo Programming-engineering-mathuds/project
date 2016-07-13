@@ -1,6 +1,6 @@
 #include "NumericBox.h"
 
-NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_button(5), minus_button(5), screen(3, ""), minus(*this), plus(*this), minValue(min), maxValue(max)
+NumericBox::NumericBox(int width, int min, int max) :Panel(4, width), plus_button(5), minus_button(5), screen(3, ""), minus(*this), plus(*this), minValue(min), maxValue(max)
 {
 	//iControl::hight = 4;
 	setLayer(1);
