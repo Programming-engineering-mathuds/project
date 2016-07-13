@@ -9,8 +9,10 @@ void Panel::add(iControl *c)
 	{
 		controlers.push_back(c);
 	}
-Panel::Panel(int height, int width) :iControl(width)
+Panel::Panel(int height, int width) :iControl(width), nullFocuse(1, "")
 	{
+		setFocus(nullFocuse);
+		add(&nullFocuse);
 		setHight(height);
 		setMaxWidth(width);
 		_layer = 0;

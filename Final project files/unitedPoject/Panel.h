@@ -11,6 +11,7 @@ using namespace std;
 
 class Panel : public  iControl
 {
+	Label nullFocuse;
 	int FirstFrameRun = 0;
 	int weHaveFocus = 0;
 	void add(iControl *c);
@@ -31,17 +32,13 @@ public:
 	void setLocation(int x, int y);
 	void getAllControls(vector < iControl * > *controls) 
 	{ 
+		if (weHaveFocus == 0)
+		{
+			
+		}
 		int focuseCount = 0;
 		controls->clear();
-		for (int i = 0; i < controlers.size(); i++) {
-			controls->push_back(controlers[i]);
-			if (controlers[i]->isFocused()) focuseCount++;
-		}
-		if (focuseCount==0)
-		{
-			if(nullFocuse.getFocus()) setFocus(nullFocuse);
-			controls->push_back(&nullFocuse);
-		}
+		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);
 	};
 	
 	/* No need, alleady in is iControl.h
