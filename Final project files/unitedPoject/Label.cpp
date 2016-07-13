@@ -47,10 +47,13 @@ void Label::putText()
 
 void Label::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (layer != _layer) return;
-	iControl::g = g;
-	COORD cur = { left, top };
-	setCoords(cur);
-	putText();
-	frame(1);
+	if (visible)
+	{
+		if (layer != _layer) return;
+		iControl::g = g;
+		COORD cur = { left, top };
+		setCoords(cur);
+		putText();
+		frame(1);
+	}
 }

@@ -26,7 +26,7 @@ void Button::notify(int x, int y, bool isLeft)
 
 void Button::draw(Graphics &g, int left, int top, size_t layer)
 {
-	Label::draw(g, left, top, layer);
+	if (visible)Label::draw(g, left, top, layer);
 }
 
 void Button::getInput(INPUT_RECORD in)
@@ -57,16 +57,20 @@ void Button::MouseEvent(MOUSE_EVENT_RECORD in)
 
 void  Button::mousePressed(int x, int y, bool isLeft)
 {
-	int XL = mPos.X - 1;
-	int XR = XL + maxWidth + 1;
-	int YU = mPos.Y-1;
-	int YD = YU + hight+1;
-	if (isLeft)
+	if (visible)
 	{
-		if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
-		{
-			notify(x,y,1);
 
+		int XL = mPos.X - 1;
+		int XR = XL + maxWidth + 1;
+		int YU = mPos.Y - 1;
+		int YD = YU + hight + 1;
+		if (isLeft)
+		{
+			if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
+			{
+				notify(x, y, 1);
+
+			}
 		}
 	}
 }
