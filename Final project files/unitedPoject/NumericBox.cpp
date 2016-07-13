@@ -19,7 +19,7 @@ NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_butto
 	screen.setLayer(1);
 	if (min <= 0 && max >= 0) SetValue(0);
 	else{SetValue(max);}
-	Panel::AddControler(plus_button, 1, 1);
+	Panel::AddControler(plus_button, 0, 0);
 	Panel::AddControler(screen, getMaxWidth()/2, 1);
 	Panel::AddControler(minus_button, getMaxWidth()-minus_button.getMaxWidth()-1, 1);
 

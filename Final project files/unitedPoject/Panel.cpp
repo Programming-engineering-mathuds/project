@@ -40,7 +40,7 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 		//setCoords(COORD{ left, top });
 		iControl::setLocation(left, top);
 		if (p == getLayer()){
-			frame(getHight());
+			Panel::frame(getHight());
 		}
 		for (int i = 0; i < controlers.size(); i++)
 		{
@@ -84,7 +84,13 @@ void Panel::setLocation(int x, int y)
 	iControl::setLocation(x, y);
 	for (int i = 0; i < controlers.size(); i++)
 	{
-		controlers[i]->setLocation(controlers[i]->getLeft() + x, controlers[i]->getTop() + y);
+		if (controlers[i]->getLeft() == 0 && controlers[i]->getTop() == 0) 
+					controlers[i]->setLocation(controlers[i]->getLeft() + x + 1, controlers[i]->getTop() + y + 1);
+		else if (controlers[i]->getLeft() == 0) 
+				controlers[i]->setLocation(controlers[i]->getLeft() + x +1, controlers[i]->getTop() + y);
+		else if (controlers[i]->getTop() == 0)
+			controlers[i]->setLocation(controlers[i]->getLeft() + x, controlers[i]->getTop() + y +1);
+		else controlers[i]->setLocation(controlers[i]->getLeft() + x, controlers[i]->getTop() + y);
 	}
 }
 
