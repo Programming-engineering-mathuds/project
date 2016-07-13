@@ -4,6 +4,7 @@
 #include <string>
 #include <stdio.h>
 #include "vector"
+#include "Label.h"
 
 using namespace std;
 
@@ -11,7 +12,6 @@ using namespace std;
 
 class Panel : public  iControl
 {
-	Label nullFocuse;
 	int FirstFrameRun = 0;
 	int weHaveFocus = 0;
 	void add(iControl *c);
@@ -20,6 +20,7 @@ class Panel : public  iControl
 	//int myHeight;
 	//int myWidth;
 	vector<iControl*> controlers;
+	Label nullFocuse;
 public:
 	Panel(int height, int width);
 	~Panel(){};
@@ -32,10 +33,6 @@ public:
 	void setLocation(int x, int y);
 	void getAllControls(vector < iControl * > *controls) 
 	{ 
-		if (weHaveFocus == 0)
-		{
-			
-		}
 		int focuseCount = 0;
 		controls->clear();
 		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);

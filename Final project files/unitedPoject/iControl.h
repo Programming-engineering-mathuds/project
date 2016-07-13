@@ -82,6 +82,7 @@ public:
 				controls[i]->unFocused();
 			}
 			control.focused = true;
+			control.can_Get_Focus = true;
 		}
 	};
 	static iControl* getFocus()

@@ -1,51 +1,54 @@
-﻿Build started 7/13/2016 3:13:00 AM.
+﻿Build started 7/13/2016 3:34:25 AM.
      1>Project "C:\Users\erez\Source\Repos\project2\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MessageBox.cpp Panel.cpp RadioList.cpp
-         RadioList.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Button.cpp CheckBox.cpp EventEngine.cpp Label.cpp MessageBox.cpp Panel.cpp RadioList.cpp iControl.cpp keyButton.cpp main.cpp
+         Button.cpp
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C2146: syntax error : missing ';' before identifier 'nullFocuse'
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(41): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(42): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(47): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(52): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(62): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(67): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(72): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(77): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(82): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(90): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(92): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\radiolist.cpp(356): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(90): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\button.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
          Panel.cpp
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C2146: syntax error : missing ';' before identifier 'nullFocuse'
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(41): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(90): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(38): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(13): error C2614: 'Panel' : illegal member initialization: 'nullFocuse' is not a base or member
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(14): error C2065: 'nullFocuse' : undeclared identifier
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(15): error C2065: 'nullFocuse' : undeclared identifier
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(45): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(74): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.cpp(85): warning C4018: '<' : signed/unsigned mismatch
-         MessageBox.cpp
+         EventEngine.cpp
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(72): warning C4042: 'newControls' : has bad storage class
      1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(78): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(89): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C2146: syntax error : missing ';' before identifier 'nullFocuse'
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\panel.h(41): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(90): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
-     1>Done Building Project "C:\Users\erez\Source\Repos\project2\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)) -- FAILED.
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(94): warning C4715: 'iControl::getFocus' : not all control paths return a value
+     1>c:\users\erez\source\repos\project2\final project files\unitedpoject\icontrol.h(94): warning C4715: 'iControl::getFocus' : not all control paths return a value
+         Skipping... (no relevant changes detected)
+         main.cpp
+         keyButton.cpp
+         iControl.cpp
+         RadioList.cpp
+         MessageBox.cpp
+         Label.cpp
+         CheckBox.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\erez\Source\Repos\project2\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\erez\Source\Repos\project2\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\erez\Source\Repos\project2\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         Debug\CheckBox.obj
+         Debug\EventEngine.obj
+         Debug\Graphics.obj
+         Debug\iControl.obj
+         Debug\keyButton.obj
+         Debug\Label.obj
+         Debug\main.obj
+         Debug\MessageBox.obj
+         Debug\Panel.obj
+         Debug\RadioList.obj
+         unitedPoject.vcxproj -> C:\Users\erez\Source\Repos\project2\Final project files\Debug\unitedPoject.exe
+     1>Done Building Project "C:\Users\erez\Source\Repos\project2\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.83
+Time Elapsed 00:00:02.51
