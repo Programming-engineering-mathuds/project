@@ -15,7 +15,8 @@ void Label::SetValue(string value)
 {
 	text = value;
 	size = text.length();
-	setMaxWidth(size);
+	if (getMaxWidth() > size){}
+	else setMaxWidth(size);
 }
 
 void Label::handelInput(INPUT_RECORD input)
