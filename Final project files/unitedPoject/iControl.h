@@ -39,6 +39,7 @@ public:
 	virtual ~iControl(){};
 
 	virtual void invisible(){ this->_layer = 6; };
+	Graphics getGraphic(){ return g; };
 	void setBorder(BorderType type){ border = type; };
 	BorderType getBorder(){ return border; };
 	void setTop(int tempTop) { top = tempTop; };

@@ -25,6 +25,7 @@
     <ClInclude Include="NumericBox.h" />
     <ClInclude Include="Panel.h" />
     <ClInclude Include="RadioList.h" />
+    <ClInclude Include="unitedProject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
