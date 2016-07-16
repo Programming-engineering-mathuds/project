@@ -14,6 +14,8 @@
     <ClInclude Include="BorderType.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CheckBox.h" />
+    <ClInclude Include="CheckList.h" />
+    <ClInclude Include="ComboBox.h" />
     <ClInclude Include="ConsoleBackground.h" />
     <ClInclude Include="ConsoleForeground.h" />
     <ClInclude Include="EventEngine.h" />
@@ -29,6 +31,8 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CheckBox.cpp" />
+    <ClCompile Include="CheckList.cpp" />
+    <ClCompile Include="ComboBox.cpp" />
     <ClCompile Include="EventEngine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="iControl.cpp" />
