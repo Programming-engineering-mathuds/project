@@ -8,6 +8,10 @@
 #include "MessageBox.h"
 #include "keyButton.h"
 #include "NumericBox.h"
+#include "RadioList.h"
+#include "CheckList.h"
+#include "ComboBox.h"
+
 
 using namespace std;
 
@@ -31,9 +35,16 @@ int main(int argc, char *argv[])
 	l.setBackground(Color::Red);
 	l.setBorder(BorderType::Double);
 
+	RadioList myRadioList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
+	CheckList  myCheckList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
+	ComboBox  myComboBox(5, { "hey", "there", "you", "stupid", "fuck" });
+	myCheckList.setBorder(BorderType::Double);
+
+
+
 	p.AddControler(l, 0, 0);
 	p.Hide();
-	e.run(p);
+	e.run(myRadioList);
 	return 0;
 };
 

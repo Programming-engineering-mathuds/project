@@ -16,6 +16,7 @@ ComboBox::ComboBox(int width, vector<string> entries) : Panel(entries.size(), wi
 		CheckBox tempBox(entries[i], width);
 		cBox.push_back(tempBox);
 		if (cBox[i].getMaxWidth() > cBoxMaxWidth) cBoxMaxWidth = cBox[i].getMaxWidth();
+		cBox[i].setCanGetFocus(true);
 	}
 
 	//if (sizeof(label) > maxWidth) maxWidth = sizeof(label) + 1;

@@ -11,6 +11,7 @@ CheckList::CheckList(int height, int width, vector<string> entries) : Panel(heig
 	{
 		CheckBox tempBox(entries[i], width);
 		cList.push_back(tempBox);
+		cList[i].setCanGetFocus(true);
 	}
 	//cList[0].setHover();
 }
