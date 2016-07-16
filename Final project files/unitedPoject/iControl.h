@@ -26,7 +26,7 @@ protected:
 	int left;
 	int widthSetFlag=0;
 	bool can_Get_Focus;//to be set in the controls themself
-	bool couldGetFocus = can_Get_Focus;
+	bool couldGetFocus;
 	bool focused = false;
 	size_t _layer = 0;
 	BorderType border= BorderType::None;
