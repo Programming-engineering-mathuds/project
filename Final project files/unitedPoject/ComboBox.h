@@ -14,7 +14,7 @@ class ComboBox : public Panel
 	vector<CheckBox> cBox;
 	Label cBoxHeader;
 	string label;
-	int size;
+	int size; // Number of cells in a Combobox List
 	int cBoxMaxWidth;
 	bool isOpen = false;
 public:
@@ -22,24 +22,13 @@ public:
 	~ComboBox();
 
 	int cBoxSize();
-	void revealAll();
-	void hideAll();
-	int getCellPlace(int itemNum);
-	void cellCheckSwitch(int itemNum, COORD pos);
-	void cellSetPressedColor(int itemNum, COORD pos);
-	void setCellHoverFalse(int itemNum, COORD pos);
-	void setCellHoverTrue(int itemNum, COORD& pos);
-	int getLabelsLenght();
-	bool isCellHover(int itemNum);
-	void setCellHover(int itemNum, COORD pos);
-	void cellCoordinator(int itemNum, COORD& pos, string direction);
-
 	size_t GetSelectedIndex();
 	void SetSelectedIndex(size_t index);
+	bool getOpenState();
+	void toggleOpenState();
 
-	//void print();
-	void getInput(KEY_EVENT_RECORD key);
-	void getMouse(MOUSE_EVENT_RECORD mer);
+	void getInput(KEY_EVENT_RECORD key) {};
+	void getMouse(MOUSE_EVENT_RECORD mer) {};
 	void handelInput(INPUT_RECORD input);
 
 	void getAllControls(vector < iControl * > *controls) {};

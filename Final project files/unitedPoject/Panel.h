@@ -8,8 +8,6 @@
 
 using namespace std;
 
-
-
 class Panel : public  iControl
 {
 	int FirstFrameRun = 0;
