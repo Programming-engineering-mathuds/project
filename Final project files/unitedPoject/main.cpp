@@ -30,10 +30,9 @@ int main(int argc, char *argv[])
 	Label l(5, "test");
 	l.setBackground(Color::Red);
 	l.setBorder(BorderType::Double);
-	l.Hide();
-	l.Show();
-	p.AddControler(l, 0, 0);
 
+	p.AddControler(l, 0, 0);
+	p.Hide();
 	e.run(p);
 	return 0;
 };

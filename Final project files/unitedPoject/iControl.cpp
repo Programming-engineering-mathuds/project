@@ -87,15 +87,3 @@ void iControl::frame(int size)
 		}
 	}
 }
-/*
-void iControl::color(int clrNum)
-{
-	SetConsoleTextAttribute(hndl, clrNum);
-}
-
-void iControl::color2(Foreground clrNumFont, Background clrNumBG)
-{
-	SetConsoleTextAttribute(hndl, (DWORD)clrNumFont);
-	SetConsoleTextAttribute(hndl, (DWORD)clrNumBG);
-}
-*/

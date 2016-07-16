@@ -6,7 +6,7 @@ using namespace std;
 
 Label::Label(int width, string value):iControl(width),text(value),size(value.length())
 {
-	can_Get_Focus = false;
+	setCanGetFocus(false);
 	setCoords(COORD{ 0, 0 });
 	_layer = 0;
 }

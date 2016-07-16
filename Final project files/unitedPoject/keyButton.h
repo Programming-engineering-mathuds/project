@@ -14,7 +14,7 @@ class keyButton : public Button
 {
 
 public:
-	keyButton(int width) :Button(width){ can_Get_Focus = true; };
+	keyButton(int width) :Button(width){ setCanGetFocus(true); };
 	~keyButton(){};
 
 	virtual void draw(Graphics &g, int left, int top, size_t layer){Button::draw(g, left, top, layer);};

@@ -2,6 +2,7 @@
 
 MessageBox::MessageBox(int height, int width) : Panel(height, width), button(2), text(1, ""), title(1, ""),listner(*this)
 {
+	setCanGetFocus(false);
 	iControl::hight = height;
 	setLayer(4);
 	button.setLayer(3);
