@@ -8,7 +8,7 @@ int rowCount = 0;
 // bottom line - iLength != maxWidth
 CheckBox::CheckBox(string name, int width) : keyButton(width), cBoxLsn(*this)
 {
-	keyButton::AddListener(cBoxLsn);
+	AddListener(cBoxLsn);
 	iLenght = width;
 	bName = name;
 	hover = false;
@@ -131,5 +131,5 @@ void CheckBox::hide()
 
 
 void CheckBox::mousePressed(int x, int y, bool isLeft) {
-	cBoxLsn.MousePressed(b, x, y, isLeft);
+	Button::mousePressed(x, y, isLeft);
 }

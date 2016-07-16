@@ -13,7 +13,7 @@ struct CheckBoxListener : public MouseListener
 	CheckBoxListener(iControl &c) : _c(c) { }
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
-		b.setBackground(Color::Red);
+		_c.setBackground(Color::Red);
 	}
 private:
 	iControl &_c;
