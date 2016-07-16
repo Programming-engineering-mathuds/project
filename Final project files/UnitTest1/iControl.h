@@ -9,6 +9,7 @@
 #include "Graphics.h"
 #include <iostream>
 #include "BorderType.h"
+#include "stdafx.h"
 using namespace std;
 
 
@@ -21,14 +22,14 @@ protected:
 	int clrNumHvr;
 	int area;
 	int maxWidth;
-	int hight=0;
+	int hight = 0;
 	int top;
 	int left;
-	int widthSetFlag=0;
+	int widthSetFlag = 0;
 	bool can_Get_Focus;//to be set in the controls themself
 	bool focused = false;
 	size_t _layer = 0;
-	BorderType border= BorderType::None;
+	BorderType border = BorderType::None;
 	COORD mPos;//coords for mouse use
 	Graphics g;
 	static vector<iControl*> controls;

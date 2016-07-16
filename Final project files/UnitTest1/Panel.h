@@ -17,6 +17,8 @@ class Panel : public  iControl
 	void add(iControl *c);
 	//void getFocuse();
 	void getAllControls(vector<iControl*> &pan){ pan = controlers; };
+	//int myHeight;
+	//int myWidth;
 	vector<iControl*> controlers;
 	Label nullFocuse;
 public:
@@ -36,4 +38,16 @@ public:
 		for (int i = 0; i < controlers.size(); i++) controls->push_back(controlers[i]);
 	};
 	
+	/* No need, alleady in is iControl.h
+	static iControl* getFocus()
+	{
+		for (int i = 0; i < controlers.size(); i++)
+		{
+			Panel *checkPanel;
+			checkPanel = dynamic_cast<Panel*>(controlers[i]);
+			if (checkPanel != 0)return controlers[i]->getFocus();
+			else if (controlers[i]->getFocus()) return controlers[i];
+		};
+	}
+	*/
 };

@@ -38,17 +38,28 @@ void Panel::AddControler(iControl& control, int newLeft, int newTop)
 		weHaveFocus = 1;
 	}
 }
+//void Panel::traverseFocuse()
+//{
+	//	PanelComposite::getFocus();
+//	}
 
 void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 {
-	if (getVisible())
-	{
+		//setCoords(COORD{ left, top });
 		iControl::setLocation(left, top);
 		if (p == getLayer()){
 			Panel::frame(getHight());
 		}
 		for (int i = 0; i < controlers.size(); i++)
 		{
+
+			//int a = controlers[i]->getLeft();
+			//int b = controlers[i]->getTop();
+			//int x = controlers[i]->getLeft() + left;
+			//int y = controlers[i]->getTop() + top;
+			//int j = controlers[i]->getMaxWidth();
+
+
 			if (p == 0 && controlers[i]->getWidthSetFlag() == 0)controlers[i]->setCoords(COORD{ controlers[i]->getLeft(), controlers[i]->getTop() });
 			if (p == 0 && controlers[i]->getWidthSetFlag() == 0)
 			{
@@ -56,26 +67,24 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 				controlers[i]->setWidthSetFlag();
 			}
 
+			//int w = controlers[i]->getLeft() + controlers[i]->getMaxWidth() + left;
+			//int c = controlers[i]->getMaxWidth();
 			if (p == controlers[i]->getLayer()){
 				controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), p);
 			}
-
+			
 		}
-	}
+		//controlers[i]->draw(controlers[i]->getLeft(), controlers[i]->getTop(), controlers[i]->getLayer());
 }
 
 void Panel::mousePressed(int x, int y, bool isLeft) 
 {
-	if (getVisible())
+	for (int i = 0; i < controlers.size(); i++)
 	{
-
-		for (int i = 0; i < controlers.size(); i++)
-		{
-			if ((x >= controlers[i]->getLeft() - getLeft()) && (x <= (controlers[i]->getLeft() - getLeft() + controlers[i]->getMaxWidth())))
-			if (y >= controlers[i]->getTop() - getTop() && y <= (controlers[i]->getTop() - getTop() + controlers[i]->getHight()))
-				controlers[i]->mousePressed(x + getLeft(), y + getTop(), isLeft);
-		};
-	}
+		if ((x >= controlers[i]->getLeft() - getLeft()) && (x <= (controlers[i]->getLeft() - getLeft() + controlers[i]->getMaxWidth())))
+		if (y >= controlers[i]->getTop() - getTop() && y <= (controlers[i]->getTop() - getTop() + controlers[i]->getHight()))
+			controlers[i]->mousePressed(x + getLeft(), y + getTop(), isLeft);
+	};
 }
 
 void Panel::setLocation(int x, int y)

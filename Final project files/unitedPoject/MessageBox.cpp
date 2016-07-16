@@ -32,11 +32,11 @@ void MessageBox::setButtonSize(int height, int width)
 };
 void  MessageBox::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (visible)Panel::draw(g, left, top, layer);
+	if (getVisible())Panel::draw(g, left, top, layer);
 }
 void MessageBox::mousePressed(int x, int y, bool isLeft)
 {
-	if (visible)Panel::mousePressed(x, y, isLeft);
+	if (getVisible())Panel::mousePressed(x, y, isLeft);
 }
 void MessageBox::invisible()
 {

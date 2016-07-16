@@ -2,7 +2,7 @@
 
 void keyButton::keyDown(int keyCode, char charater)
 {
-	if (visible)
+	if (getVisible())
 	{
 		if (keyCode == VK_RETURN)
 		{

@@ -48,7 +48,7 @@ void Label::putText()
 
 void Label::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (getVisible())
+	if (visible)
 	{
 		if (layer != _layer) return;
 		iControl::g = g;

@@ -2,7 +2,7 @@
 
 NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_button(3), minus_button(3), screen(2, ""), minus(*this), plus(*this), minValue(min), maxValue(max)
 {
-	//iControl::hight = 4;
+	can_Get_Focus = false;
 	setLayer(1);
 	plus_button.setLayer(1);
 	plus_button.AddListener(plus);
@@ -28,11 +28,11 @@ NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_butto
 }
 void NumericBox::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (visible)Panel::draw(g, left, top, layer);
+	if (getVisible())Panel::draw(g, left, top, layer);
 }
 void NumericBox::mousePressed(int x, int y, bool isLeft)
 {
-	if (visible)Panel::mousePressed(x, y, isLeft);
+	if (getVisible())Panel::mousePressed(x, y, isLeft);
 }
 void NumericBox::inc()
 {

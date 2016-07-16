@@ -24,27 +24,17 @@ private:
 
 int main(int argc, char *argv[])
 {
-	MessageBox mess(10, 30);
-	mess.setBorder(BorderType::Single);
-	mess.SetTitle("title");
-	mess.SetText("look! text!");
-	mess.setLocation(10, 10);
 	EventEngine e;
-	MyListener listeners(mess);
-	//Button bSubmit(10);
-	//bSubmit.SetValue("Submit");
-	NumericBox n(20, -10, 10);
-	n.setBorder(BorderType::Double);
-//	bSubmit.setBorder(BorderType::Double);
-	//Label l(7, "just");
-	
-	//p.setBorder(BorderType::Single);
-	//MyListener listeners(p);
-//	bSubmit.AddListener(listeners);
-	//p.AddControler(bSubmit,5,5);
-	//p.AddControler(l, 8, 9);
-	//bSubmit.setLayer(4);
-	e.run(n);
+	Panel p(10, 10);
+	p.setBorder(BorderType::Single);
+	Label l(5, "test");
+	l.setBackground(Color::Red);
+	l.setBorder(BorderType::Double);
+	l.Hide();
+	l.Show();
+	p.AddControler(l, 0, 0);
+
+	e.run(p);
 	return 0;
 };
 
