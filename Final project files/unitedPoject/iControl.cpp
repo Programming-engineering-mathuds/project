@@ -21,10 +21,20 @@ void iControl::setLocation(int x, int y)
 }
 void iControl::frame(int size)
 {
+	CONSOLE_SCREEN_BUFFER_INFO   csbi;
+	WORD                        m_currentConsoleAttr;
 	//TD focus frame?
 	if ((border != BorderType::None) && (left == 0) && (top == 0)) //frame cannot be printed in -1,-1
 	{
 		setLocation(1, 1);
+	}
+
+	if (GetConsoleScreenBufferInfo(hndl, &csbi))
+		m_currentConsoleAttr = csbi.wAttributes;
+	if (isFocused())
+	{
+		DWORD wAttr = BACKGROUND_GREEN | BACKGROUND_INTENSITY;
+		SetConsoleTextAttribute(hndl, wAttr);
 	}
 	hight = size;
 	//X Axis
@@ -87,4 +97,5 @@ void iControl::frame(int size)
 			}
 		}
 	}
+	SetConsoleTextAttribute(hndl, m_currentConsoleAttr);
 }
