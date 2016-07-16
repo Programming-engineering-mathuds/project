@@ -21,8 +21,9 @@ RadioList::RadioList(int height, int width, vector<string> entries) : Panel(heig
 		CheckBox tempBox(entries[i], width);
 		//radioListener lisenter(tempBox);
 		rList.push_back(tempBox);
+		rList[i].setCanGetFocus(true);
 	}
-	rList[0].setHover();
+	//rList[0].setHover();
 }
 
 //Destructor
