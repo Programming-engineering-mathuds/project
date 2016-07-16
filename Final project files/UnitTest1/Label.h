@@ -7,7 +7,7 @@
 #include "ConsoleBackground.h"
 using namespace std;
 
-class Label: public iControl
+class Label : public iControl
 {
 	string text;
 	int size;
@@ -27,4 +27,3 @@ public:
 	void keyDown(int keyCode, char charater) {};
 	virtual void getAllControls(vector < iControl * > *controls){};
 };
-

@@ -4,9 +4,9 @@
 #include <stdio.h>
 using namespace std;
 
-Label::Label(int width, string value):iControl(width),text(value),size(value.length())
+Label::Label(int width, string value) :iControl(width), text(value), size(value.length())
 {
-	can_Get_Focus = false;
+	setCanGetFocus(false);
 	setCoords(COORD{ 0, 0 });
 	_layer = 0;
 }
@@ -48,7 +48,7 @@ void Label::putText()
 
 void Label::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (visible)
+	if (getVisible())
 	{
 		if (layer != _layer) return;
 		iControl::g = g;

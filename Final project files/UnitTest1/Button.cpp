@@ -26,7 +26,7 @@ void Button::notify(int x, int y, bool isLeft)
 
 void Button::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (visible)Label::draw(g, left, top, layer);
+	if (getVisible())Label::draw(g, left, top, layer);
 }
 
 void Button::getInput(INPUT_RECORD in)
@@ -50,14 +50,14 @@ void Button::MouseEvent(MOUSE_EVENT_RECORD in)
 	if (in.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 	{
 		if (isInside(in.dwMousePosition.X, in.dwMousePosition.Y, mPos.X, mPos.Y, maxWidth + 1, hight))
-			notify(in.dwMousePosition.X, in.dwMousePosition.Y,1);
+			notify(in.dwMousePosition.X, in.dwMousePosition.Y, 1);
 	}
 }
 
 
 void  Button::mousePressed(int x, int y, bool isLeft)
 {
-	if (visible)
+	if (getVisible())
 	{
 
 		int XL = mPos.X - 1;

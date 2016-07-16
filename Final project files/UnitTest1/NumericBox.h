@@ -56,11 +56,11 @@ public:
 
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater){};
-	
+
 	void inc();
 	void dec();
 	void genericFunc1(){ NumericBox::inc(); };
 	void genericFunc2(){ NumericBox::dec(); };
-	int GetValue(){return value;};
+	int GetValue(){ return value; };
 	bool SetValue(int value);//true if value is in range
 };

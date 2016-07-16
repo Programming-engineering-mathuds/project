@@ -9,7 +9,6 @@
 #include "Graphics.h"
 #include <iostream>
 #include "BorderType.h"
-#include "stdafx.h"
 using namespace std;
 
 
@@ -27,6 +26,7 @@ protected:
 	int left;
 	int widthSetFlag = 0;
 	bool can_Get_Focus;//to be set in the controls themself
+	bool couldGetFocus;
 	bool focused = false;
 	size_t _layer = 0;
 	BorderType border = BorderType::None;
@@ -57,6 +57,7 @@ public:
 	void setForeground(Color color){ g.setForeground(color); };
 	void setBackground(Color color){ g.setBackground(color); };
 	bool canGetFocus(){ return can_Get_Focus; };
+	void setCanGetFocus(bool focus){ can_Get_Focus = focus; couldGetFocus = focus; };
 	bool isFocused(){ return focused; };
 	void unFocused(){ focused = false; };
 	void setMaxWidth(int newMaxWidth){ maxWidth = newMaxWidth; };
@@ -96,9 +97,7 @@ public:
 	};
 	virtual void genericFunc1(){};
 	virtual void genericFunc2(){};
-	//TD
-	void Show(){ setVisible(); };
-	void Hide(){ setInvisible(); };
+	void Show(){ setVisible(); can_Get_Focus = couldGetFocus; };
+	void Hide(){ setInvisible(); can_Get_Focus = false; };
 	bool getVisible(){ return visible; };
 };
-
