@@ -1,36 +1,27 @@
-#include "RadioList.h"
+#include "CheckList.h"
+#include "vector"
 
-//struct radioListener : public MouseListener
-//{
-//	radioListener(RadioList &r) : _r(r) { }
-//	void  MousePressed(RadioList &rl, int x, int y, bool isLeft)
-//	{
-//		_r.setRadio(x, y);
-//	}
-//private:
-//	RadioList &_r;
-//};
+
 
 //Constructor
-RadioList::RadioList(int height, int width, vector<string> entries) : Panel(height, width)
+CheckList::CheckList(int height, int width, vector<string> entries) : Panel(height, width)
 {
 	can_Get_Focus = true;
 	size = height;
 	for (int i = 0; i < height; i++)
 	{
 		CheckBox tempBox(entries[i], width);
-		//radioListener lisenter(tempBox);
-		rList.push_back(tempBox);
+		cList.push_back(tempBox);
 	}
-	rList[0].setHover();
+	//cList[0].setHover();
 }
 
 //Destructor
-RadioList::~RadioList() {}
+CheckList::~CheckList() {}
 
-int RadioList::bListSize()
+int CheckList::cListSize()
 {
-	return rList.size();
+	return cList.size();
 }
 
 //CheckBox CheckList::getcList(int item)
@@ -38,107 +29,68 @@ int RadioList::bListSize()
 //	return cList[item];
 //}
 
-bool RadioList::isCellHover(int itemNum) {
-	if (itemNum <= rList.size() - 1)
-		return rList[itemNum].isHover();
-}
+bool CheckList::isCellHover(int itemNum) { return cList[itemNum].isHover(); }
 
-void RadioList::setCellHover(int itemNum, COORD pos) {
-	if (itemNum <= rList.size() - 1)
-		rList[itemNum].setHover();
-}
+void CheckList::setCellHover(int itemNum, COORD pos) { cList[itemNum].setHover(); }
 
-void RadioList::cellCoordinator(int itemNum, COORD& pos, string direction) {
-	if (itemNum <= rList.size() - 1)
-		rList[itemNum].coordinator(pos, direction);
-}
+void CheckList::cellCoordinator(int itemNum, COORD& pos, string direction) { cList[itemNum].coordinator(pos, direction); }
 
 //void CheckList::topBottomCoordinator(int itemNum, COORD& pos, string direction)
 //{
 //	cList[i]
 //}
 
-void RadioList::cellCheckSwitch(int itemNum, COORD pos) {
-	if (itemNum <= rList.size() - 1)
-		rList[itemNum].checkSwitch(pos);
+void CheckList::cellCheckSwitch(int itemNum, COORD pos) { cList[itemNum].checkSwitch(pos); }
+
+int CheckList::getCellPlace(int itemNum) { return cList[itemNum].getPlace(); }
+
+int CheckList::getCellLenght(int itemNum) { return cList[itemNum].getLenght(); }
+
+void CheckList::setCellHoverFalse(int itemNum, COORD pos) { cList[itemNum].setHoverFalse(pos); }
+
+void CheckList::setCellHoverTrue(int itemNum, COORD& pos) { cList[itemNum].setHoverTrue(pos); }
+
+vector<size_t> CheckList::GetSelectedIndices() {
+	vector<size_t> tempIndexVector;
+	for (int i = 0; i < size; i++)	{
+		tempIndexVector[i] = cList[i].pressed;
+	}
+	return tempIndexVector;
 }
 
-int RadioList::getCellPlace(int itemNum) {
-	if (itemNum <= rList.size() - 1)
-		return rList[itemNum].getPlace();
-}
-
-int RadioList::getCellLenght(int itemNum) {
-	if (itemNum <= rList.size() - 1)
-		return rList[itemNum].getLenght();
-}
-
-void RadioList::setCellHoverFalse(int itemNum, COORD pos) {
-	if (itemNum <= rList.size() - 1)
-		rList[itemNum].setHoverFalse(pos);
-}
-
-void RadioList::setCellHoverTrue(int itemNum, COORD& pos) {
-	if (itemNum <= rList.size() - 1)
-		rList[itemNum].setHoverTrue(pos);
-}
-
-void RadioList::setRadio(int x, int y)
-{
-	//saves the position of the first cell (incase we start at different y then 0)
-	COORD c = rList[0].getCoords();
-	for (int i = 0; i < rList.size(); i++)
-	{
-		if ((y >= c.Y) && (y <= (c.Y + rList.size() - 1)) && (x >= c.X) && (x <= c.X + maxWidth))
-		{
-			if (i == y - c.Y)
-			{
-				rList[i].pressed = true;
-				cout << "[X] " << rList[i].bName;
-			}
-			else		
-				{
-				rList[i].pressed = false;
-				cout << "[ ] " << rList[i].bName;
-				}
+void CheckList::SelectedIndex(size_t index) {
+	for (int i = 0; i < size; i++)	{
+		if (i == index){
+			cList[i].pressed = true;
 		}
-		
 	}
 }
 
-//void RadioList::setRadio(int itemNum, COORD pos)
-//{
-//	for (int i = 0; i < bList.size(); i++)
-//	{
-//		if (i == itemNum)
-//		{
-//			SetConsoleTextAttribute(hndl, 240);
-//			SetConsoleCursorPosition(hndl, pos);
-//			bList[i].pressed = true;
-//			cout << "[X] " << bList[i].bName;
-//		}
-//		else
-//		{
-//			SetConsoleTextAttribute(hndl, 7);
-//			COORD c = { pos.X, pos.Y - itemNum + i };
-//			SetConsoleCursorPosition(hndl, c);
-//			bList[i].pressed = false;
-//			cout << "[ ] " << bList[i].bName;
-//		}
-//	}
-//}
-
-size_t RadioList::GetSelectedIndex()
-{
-	return where_am_i;
+void CheckList::DeselectIndex(size_t index) {
+	for (int i = 0; i < size; i++)	{
+		if (i == index){
+			cList[i].pressed = false;
+		}
+	}
 }
 
-void RadioList::SetSelectedIndex(size_t index)
+void CheckList::setCheckbox(int x, int y)
 {
-	where_am_i = index;
+	//saves the position of the first cell (incase we start at different y then 0)
+	COORD c = cList[0].getCoords();
+	for (int i = 0; i < cList.size(); i++)
+	{
+		if ((y >= c.Y) && (y <= (c.Y + cList.size() - 1)) && (x >= c.X) && (x <= c.X + maxWidth)) {
+			if (i == y - c.Y) {
+				if (cList[i].pressed) DeselectIndex(i);
+				else SelectedIndex(i);
+			}
+		}
+	}
 }
 
-void RadioList::handelInput(INPUT_RECORD input)
+
+void CheckList::handelInput(INPUT_RECORD input)
 {
 	switch (input.EventType)
 	{
@@ -164,7 +116,7 @@ void RadioList::handelInput(INPUT_RECORD input)
 
 }
 
-void RadioList::getInput(KEY_EVENT_RECORD key)
+void CheckList::getInput(KEY_EVENT_RECORD key)
 {
 	////printf("Key event: ");
 	//int i;
@@ -206,7 +158,7 @@ void RadioList::getInput(KEY_EVENT_RECORD key)
 	////else printf("key released\n");
 }
 
-void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
+void CheckList::getMouse(MOUSE_EVENT_RECORD mer)
 {
 	/*#ifndef MOUSE_HWHEELED
 	#define MOUSE_HWHEELED 0x0008
@@ -285,87 +237,84 @@ void RadioList::getMouse(MOUSE_EVENT_RECORD mer)
 	//	}
 }
 
-void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
+void CheckList::draw(Graphics &g, int left, int top, size_t layer) {
 	g.moveTo(left, top);
 
 	COORD c = { left, top };
 	SetConsoleCursorPosition(hndl, c);
 
 	for (int i = 0; i < size; i++) {
-		if (rList[i].hover) {
+		if (cList[i].hover) {
 			setBackground(Color::White);
 			setForeground(Color::Black);
-			if (!rList[i].pressed) g.write("[ ] ");
+			if (!cList[i].pressed) g.write("[ ] ");
 			else g.write("[X] ");
-			g.write(rList[i].bName);
-		} else {
+			g.write(cList[i].bName);
+		}
+		else {
 			setBackground(Color::Black);
 			setForeground(Color::White);
-			if (!rList[i].pressed) g.write("[ ] ");
+			if (!cList[i].pressed) g.write("[ ] ");
 			else g.write("[X] ");
-			g.write(rList[i].bName);
+			g.write(cList[i].bName);
 		}
 		c = { left, ++top };
 		SetConsoleCursorPosition(hndl, c);
 	}
 }
 
-void RadioList::mousePressed(int x, int y, bool isLeft)
+void CheckList::mousePressed(int x, int y, bool isLeft)
 {
 	//cout << bList.size();
-	setRadio(x, y);
+	setCheckbox(x, y);
 }
 
-void RadioList::keyDown(int keyCode, char charater) {
+void CheckList::keyDown(int keyCode, char charater) {
 	//printf("Key event: ");
 	int i;
-	COORD c = rList[0].getCoords();
-		//printf("key pressed\n");
-		if (keyCode == VK_UP)
+	COORD c = cList[0].getCoords();
+	//printf("key pressed\n");
+	if (keyCode == VK_UP)
+	{
+		for (i = 0; i < size; i++)
 		{
-			for (i = 0; i < size; i++)
+			if (cList[i].isHover())
 			{
-				if (rList[i].isHover())
+				if (cList[i].curY - 1 > c.Y)
 				{
-					if (rList[i].curY - 1 > c.Y)
-					{
-						rList[i].setHover();
-						rList[i - 1].setHover();
-					}
+					cList[i].setHover();
+					cList[i - 1].setHover();
 				}
 			}
-			//SetSelectedIndex(GetSelectedIndex() - 1);
 		}
-		if (keyCode == VK_DOWN)
+		//SetSelectedIndex(GetSelectedIndex() - 1);
+	}
+	if (keyCode == VK_DOWN)
+	{
+		for (i = 0; i < size; i++)
 		{
-			for (i = 0; i < size; i++)
+			if (cList[i].isHover())
 			{
-				if (rList[i].isHover())
+				if (cList[i].curY + 1 < c.Y + (size - 1))
 				{
-					if (rList[i].curY + 1 < c.Y + (size - 1))
-					{
-						rList[i].setHover();
-						rList[i + 1].setHover();
-					}
+					cList[i].setHover();
+					cList[i + 1].setHover();
 				}
 			}
-			//printf("DOWN");
 		}
-		if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))
+		//printf("DOWN");
+	}
+	if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))
+	{
+		for (i = 0; i < cList.size(); i++)
 		{
-			for (i = 0; i < rList.size(); i++)
+			/*if ((bList.isCellActive(i) == true))
 			{
-				/*if ((bList.isCellActive(i) == true))
-				{
-					bList.setRadio(i, cur);
-					break;
-				}*/
-			}
-			//printf("Select");
+			bList.setRadio(i, cur);
+			break;
+			}*/
 		}
+		//printf("Select");
+	}
 	else printf("key released\n");
 }
-
-
-
-

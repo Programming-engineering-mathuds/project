@@ -1,6 +1,6 @@
 #pragma once
-#include "panel.h"
 #include "CheckBox.h"
+#include "panel.h"
 #include <Windows.h>
 #include <string>
 #include <stdio.h>
@@ -10,19 +10,18 @@
 
 using namespace std;
 
-class RadioList : public Panel
+class CheckList : public Panel
 {
-	//friend class button;
 private:
-	//CheckBox* bList;
-	vector<CheckBox> rList;
+	//CheckBox* cList;
+	vector<CheckBox> cList;
 	size_t where_am_i;
-	int size; // Number of cells in a Radio List
+	int size;
 public:
-	RadioList(int height, int width, vector<string> entries);
-	~RadioList();
+	CheckList(int height, int width, vector<string> entries);
+	~CheckList();
 
-	int bListSize();
+	int cListSize();
 	//CheckBox getcList(int item);
 	bool isCellHover(int itemNum);
 	void setCellHover(int itemNum, COORD pos);
@@ -33,11 +32,11 @@ public:
 	int getCellLenght(int itemNum);
 	void setCellHoverFalse(int itemNum, COORD pos);
 	void setCellHoverTrue(int itemNum, COORD& pos);
-	void setRadio(int x, int y);
-	void setRadio(int itemNum, COORD pos);
+	void setCheckbox(int x, int y);
 
-	size_t GetSelectedIndex();
-	void SetSelectedIndex(size_t index);
+	vector<size_t> GetSelectedIndices();
+	void SelectedIndex(size_t index);
+	void DeselectIndex(size_t index);
 
 	//void print();
 	void getInput(KEY_EVENT_RECORD key);
@@ -49,4 +48,3 @@ public:
 	void keyDown(int keyCode, char charater);
 	void draw(Graphics &g, int left, int top, size_t layer);
 };
-

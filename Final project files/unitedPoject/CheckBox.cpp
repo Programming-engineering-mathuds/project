@@ -122,3 +122,21 @@ string CheckBox::getName() { return bName; }
 
 //Returns Cell's lenght (from the first char "[" to the last)
 int CheckBox::getLenght() { return iLenght; }
+
+void CheckBox::invisible()
+{
+	visible = false;
+	can_Get_Focus = false;
+}
+
+void CheckBox::reveal()
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+	cout << bName;
+}
+
+void CheckBox::hide()
+{
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
+	cout << bName;
+}

@@ -10,6 +10,8 @@ using namespace std;
 class CheckBox : public Button
 {
 	friend class RadioList;
+	friend class CheckList;
+	friend class ComboBox;
 private:
 	string bName;
 	int iLenght;
@@ -31,7 +33,11 @@ public:
 	void setHover();
 	void setHoverTrue(COORD& cur);
 	void setHoverFalse(COORD cur);
+	void reveal();
+	void hide();
 
 	void mousePressed(int x, int y, bool isLeft) {};
+	void invisible();
+	void setVisible(){ visible = true; };
 };
 
