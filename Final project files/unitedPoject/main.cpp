@@ -29,7 +29,7 @@ private:
 int main(int argc, char *argv[])
 {
 	EventEngine e;
-	Panel p(10, 10);
+	Panel p(20, 50);
 	p.setBorder(BorderType::Single);
 	Label l(5, "test");
 	l.setBackground(Color::Red);
@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
 
 
 
-	p.AddControler(l, 0, 0);
-	p.Hide();
-	e.run(myRadioList);
+	p.AddControler(myCheckList, 0, 0);
+//	p.Hide();
+	e.run(p);
 	return 0;
 };
 

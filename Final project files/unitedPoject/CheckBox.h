@@ -4,15 +4,28 @@
 #include <stdio.h>
 #include <iostream>
 #include "Button.h"
+#include "keyButton.h"
 
 using namespace std;
 
-class CheckBox : public Button
+struct CheckBoxListener : public MouseListener
+{
+	CheckBoxListener(iControl &c) : _c(c) { }
+	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	{
+		b.setBackground(Color::Red);
+	}
+private:
+	iControl &_c;
+};
+
+class CheckBox : public keyButton
 {
 	friend class RadioList;
 	friend class CheckList;
 	friend class ComboBox;
 private:
+	CheckBoxListener cBoxLsn;
 	string bName;
 	int iLenght;
 	int curY;
@@ -36,7 +49,7 @@ public:
 	void reveal();
 	void hide();
 
-	void mousePressed(int x, int y, bool isLeft) {};
+	void mousePressed(int x, int y, bool isLeft);
 	void invisible();
 	void setVisible(){ visible = true; };
 };

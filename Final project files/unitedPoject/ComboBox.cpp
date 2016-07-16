@@ -9,6 +9,7 @@ using namespace std;
 ComboBox::ComboBox(int width, vector<string> entries) : Panel(entries.size(), width), cBoxHeader(23, "Please Select An Item")
 {
 	can_Get_Focus = true;
+	setCanGetFocus(true);
 	size = entries.size();
 	cBoxMaxWidth = 0;
 	for (int i = 0; i < size; i++)

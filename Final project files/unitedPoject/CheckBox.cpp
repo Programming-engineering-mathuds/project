@@ -1,25 +1,14 @@
 #include "CheckBox.h"
 #include <windows.h>
 
-struct CheckBoxListener : public MouseListener
-{
-	CheckBoxListener(iControl &c) : _c(c) { }
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
-	{
-		cout << "boom!";
-	}
-private:
-	iControl &_c;
-};
-
 int rowCount = 0;
 
 // "width" holds the second value returned from the main & "name.length" is 
 // being sent all the way down to iControl, which puts it in "maxWidth"
 // bottom line - iLength != maxWidth
-CheckBox::CheckBox(string name, int width) : Button(name.length())
+CheckBox::CheckBox(string name, int width) : keyButton(width), cBoxLsn(*this)
 {
-	CheckBoxListener(*this);
+	keyButton::AddListener(cBoxLsn);
 	iLenght = width;
 	bName = name;
 	hover = false;
@@ -27,7 +16,6 @@ CheckBox::CheckBox(string name, int width) : Button(name.length())
 	COORD c = getCoords();
 	curY = c.Y;
 }
-
 
 CheckBox::~CheckBox() {}
 
@@ -139,4 +127,9 @@ void CheckBox::hide()
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
 	cout << bName;
+}
+
+
+void CheckBox::mousePressed(int x, int y, bool isLeft) {
+	cBoxLsn.MousePressed(b, x, y, isLeft);
 }
