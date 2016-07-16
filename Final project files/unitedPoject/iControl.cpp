@@ -21,6 +21,7 @@ void iControl::setLocation(int x, int y)
 }
 void iControl::frame(int size)
 {
+	//TD focus frame?
 	if ((border != BorderType::None) && (left == 0) && (top == 0)) //frame cannot be printed in -1,-1
 	{
 		setLocation(1, 1);
