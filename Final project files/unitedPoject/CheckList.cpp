@@ -2,7 +2,6 @@
 #include "vector"
 
 
-
 //Constructor
 CheckList::CheckList(int height, int width, vector<string> entries) : Panel(height, width)
 {

@@ -46,6 +46,5 @@ public:
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater);
 	void draw(Graphics &g, int left, int top, size_t layer);
-
 };
 

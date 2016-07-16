@@ -18,7 +18,6 @@ ComboBox::ComboBox(int width, vector<string> entries) : Panel(entries.size(), wi
 		if (cBox[i].getMaxWidth() > cBoxMaxWidth) cBoxMaxWidth = cBox[i].getMaxWidth();
 	}
 
-
 	//if (sizeof(label) > maxWidth) maxWidth = sizeof(label) + 1;
 }
 

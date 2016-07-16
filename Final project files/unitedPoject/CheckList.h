@@ -13,7 +13,6 @@ using namespace std;
 class CheckList : public Panel
 {
 private:
-	//CheckBox* cList;
 	vector<CheckBox> cList;
 	size_t where_am_i;
 	int size;
