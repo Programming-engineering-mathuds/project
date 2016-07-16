@@ -97,7 +97,6 @@ public:
 	};
 	virtual void genericFunc1(){};
 	virtual void genericFunc2(){};
-	//TD
 	void Show(){ setVisible(); can_Get_Focus = couldGetFocus; };
 	void Hide(){ setInvisible(); can_Get_Focus = false; };
 	bool getVisible(){ return visible; };

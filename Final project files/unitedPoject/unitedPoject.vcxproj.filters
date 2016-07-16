@@ -57,9 +57,6 @@
     <ClInclude Include="NumericBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="unitedProject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp">

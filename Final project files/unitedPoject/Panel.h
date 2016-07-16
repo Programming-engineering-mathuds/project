@@ -15,7 +15,6 @@ class Panel : public  iControl
 	int FirstFrameRun = 0;
 	int weHaveFocus = 0;
 	void add(iControl *c);
-	//void getFocuse();
 	void getAllControls(vector<iControl*> &pan){ pan = controlers; };
 	vector<iControl*> controlers;
 	Label nullFocuse;
@@ -24,7 +23,6 @@ public:
 	~Panel(){};
 	void AddControler(iControl& control, int left, int top);
 	void frame(int size);
-	//void traverseFocuse();
 	void draw(Graphics &g, int left, int top, size_t layer);
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater) {};

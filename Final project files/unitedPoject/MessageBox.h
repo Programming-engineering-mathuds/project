@@ -43,7 +43,6 @@ public:
 	void SetTitle(string title){this->title.SetValue(title);};
 	void AddControler(iControl& control, int left, int top){};
 	void draw(Graphics &g, int left, int top, size_t layer);
-	//void getAllControls(vector < iControl * > *controls){};
 	void mousePressed(int x, int y, bool isLeft);
 	void keyDown(int keyCode, char charater){};
 	void invisible();
