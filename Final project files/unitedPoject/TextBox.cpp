@@ -22,7 +22,7 @@ void TextBox::keyDown(int keyCode, char character)
 				curCoord.X--;
 			}
 			break;
-
+		case VK_NUMPAD6:
 		case VK_RIGHT:
 			if (Text.length()>0 && curCoord.X < getLeft() + Text.length() + 1) {
 				curCoord.X++;
@@ -41,9 +41,7 @@ void TextBox::keyDown(int keyCode, char character)
 				curCoord.X++;
 			}// check virtualkeycore not ascii code
 			break;
-			
-		case VK_NUMPAD6:
-		
+
 		case VK_BACK: 
 			if (curCoord.X > getLeft() + 1) {
 				Text.erase(curCoord.X - getLeft()-2,1);
