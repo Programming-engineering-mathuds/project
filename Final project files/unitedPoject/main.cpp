@@ -34,14 +34,19 @@ private:
 int main(int argc, char *argv[])
 {
 	EventEngine e;
-	Panel p(20, 50);
+	/*
+	Panel p(20, 20);
 	p.setBorder(BorderType::Single);
-	Label l(5, "test");
-	l.setBackground(Color::Red);
-	l.setBorder(BorderType::Double);
+	CheckBoxLine test1(5, "test1");
+	CheckBoxLine test2(5, "test2");
+	CheckBoxLine test3(5, "test3");
+	p.AddControler(test1, 0, 0);
+	p.AddControler(test2, 0, 5);
+	p.AddControler(test3, 0, 8);
+	*/
 	Radiolist r(20, 20, { "test1", "test2", "test3" });
 	r.setBorder(BorderType::Double);
-	p.AddControler(l, 0, 0);
+
 //	p.Hide();
 	e.run(r);
 	return 0;

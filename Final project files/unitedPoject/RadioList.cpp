@@ -10,7 +10,7 @@ Radiolist::Radiolist(int height, int width, vector<string> options) :Panel(heigh
 	}
 	for (int i = 0; i < lines.size(); i++)
 	{
-		Panel::AddControler(lines[i], 0, ((lines[i].getHight())*i) + 4*i);
+		Panel::AddControler(lines[i], 0, ((lines[i].getHight())*i) + 4*i);////hight/lines.size+1
 	}
 }
 
