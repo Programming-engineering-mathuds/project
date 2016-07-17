@@ -56,10 +56,12 @@ public:
 	size_t getLayer() { return _layer; };
 	void setForeground(Color color){ g.setForeground(color); };
 	void setBackground(Color color){ g.setBackground(color); };
+	
 	bool canGetFocus(){ return can_Get_Focus; };
 	void setCanGetFocus(bool focus){ can_Get_Focus = focus; couldGetFocus = focus; };
 	bool isFocused(){ return focused; };
 	void unFocused(){ focused = false; };
+	
 	void setMaxWidth(int newMaxWidth){ maxWidth = newMaxWidth; };
 	int getMaxWidth(){ return maxWidth; }
 	void frame(int size);

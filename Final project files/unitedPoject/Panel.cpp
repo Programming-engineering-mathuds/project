@@ -33,6 +33,7 @@ void Panel::AddControler(iControl& control, int newLeft, int newTop)
 	setStaticControlList(controlers);
 	if (control.canGetFocus() && weHaveFocus == 0)
 	{
+
 		setFocus(*controlers[controlers.size()-1]);
 		weHaveFocus = 1;
 	}
