@@ -2,15 +2,15 @@
 
 Radiolist::Radiolist(int height, int width, vector<string> options) :Panel(height, width)
 {
+	setLocation(0,0);
 	hold = NULL;
 	for (int i = 0; i < options.size(); i++)
 	{
-		CheckBoxLine temp(5, options[i]);
-		lines.push_back(temp);
+		lines.push_back(CheckBoxLine(5, options[i]));
 	}
 	for (int i = 0; i < lines.size(); i++)
 	{
-		Panel::AddControler(lines[i], 0, ((lines[i].getHight())*i) + 4*i);////hight/lines.size+1
+		Panel::AddControler(lines[i], 0, ((getHight() / lines.size()) * i)+1);
 	}
 }
 
@@ -29,6 +29,10 @@ void Radiolist::mousePressed(int x, int y, bool isLeft)
 		}
 	}
 	Panel::mousePressed(x, y, isLeft);
+	for (int i = 0; i < lines.size(); i++)
+	{
+		if (i != index) lines[i].unPress();
+	}
 }
 
 size_t Radiolist::GetSelectedIndex()
@@ -39,4 +43,5 @@ size_t Radiolist::GetSelectedIndex()
 void Radiolist::SetSelectedIndex(size_t index)
 {
 	hold = &lines[index];
+	Radiolist::index = index;
 }

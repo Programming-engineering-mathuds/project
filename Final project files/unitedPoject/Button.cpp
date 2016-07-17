@@ -69,7 +69,6 @@ void  Button::mousePressed(int x, int y, bool isLeft)
 			if (((XL <= x) && (x <= XR)) && ((YU <= y) && (y <= YD)))
 			{
 				notify(x, y, 1);
-
 			}
 		}
 	}
