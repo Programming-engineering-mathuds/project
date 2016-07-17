@@ -1,68 +1,22 @@
-﻿Build started 16/07/2016 21:00:35.
-     1>Project "C:\Users\Peleg\Source\Repos\project7\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CheckBox.cpp CheckList.cpp ComboBox.cpp RadioList.cpp main.cpp
-         CheckBox.cpp
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         Generating Code...
-         Compiling...
-         main.cpp
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\panel.h(34): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-         RadioList.cpp
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\panel.h(34): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(43): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(48): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(53): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(63): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(68): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(73): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(78): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(83): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(91): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(93): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(357): warning C4018: '<' : signed/unsigned mismatch
-         ComboBox.cpp
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\panel.h(34): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\combobox.cpp(32): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\combobox.cpp(39): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\combobox.cpp(243): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\combobox.cpp(244): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\combobox.cpp(298): warning C4018: '<' : signed/unsigned mismatch
-         CheckList.cpp
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\panel.h(34): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\checklist.cpp(81): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\checklist.cpp(83): warning C4018: '<=' : signed/unsigned mismatch
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\checklist.cpp(309): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(45): warning C4715: 'RadioList::isCellHover' : not all control paths return a value
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(70): warning C4715: 'RadioList::getCellPlace' : not all control paths return a value
-     1>c:\users\peleg\source\repos\project7\final project files\unitedpoject\radiolist.cpp(75): warning C4715: 'RadioList::getCellLenght' : not all control paths return a value
+﻿Build started 7/17/2016 2:33:32 PM.
+     1>Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Panel.cpp
+         Panel.cpp
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(75): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(81): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(93): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.h(32): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(51): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(45): warning C4101: 'checkTextBox' : unreferenced local variable
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(76): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\panel.cpp(88): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project\final project files\unitedpoject\icontrol.h(97): warning C4715: 'iControl::getFocus' : not all control paths return a value
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Peleg\Source\Repos\project7\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Peleg\Source\Repos\project7\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Peleg\Source\Repos\project7\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
          Debug\CheckBox.obj
          Debug\CheckList.obj
          Debug\ComboBox.obj
@@ -76,9 +30,13 @@
          Debug\NumericBox.obj
          Debug\Panel.obj
          Debug\RadioList.obj
-         unitedPoject.vcxproj -> C:\Users\Peleg\Source\Repos\project7\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Peleg\Source\Repos\project7\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+         Debug\TextBox.obj
+         unitedPoject.vcxproj -> C:\Users\Erez\Source\Repos\project\Final project files\Debug\unitedPoject.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\unitedPoject.tlog\unsuccessfulbuild".
+         Touching "Debug\unitedPoject.tlog\unitedPoject.lastbuildstate".
+     1>Done Building Project "C:\Users\Erez\Source\Repos\project\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.54
+Time Elapsed 00:00:01.02

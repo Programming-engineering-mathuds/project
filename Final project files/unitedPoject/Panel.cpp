@@ -1,6 +1,6 @@
 #include "Panel.h"
 #include "Label.h"
-#include "Button.h"
+#include "TextBox.h"
 #include <iostream>
 
 using namespace std;
@@ -42,6 +42,8 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 {
 	if (getVisible())
 	{
+		TextBox *checkTextBox;
+		TextBox *Temp=NULL;
 		iControl::setLocation(left, top);
 		if (p == getLayer()){
 			Panel::frame(getHight());
@@ -55,11 +57,14 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 				controlers[i]->setWidthSetFlag();
 			}
 
-			if (p == controlers[i]->getLayer()){
-				controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), p);
+			if (p == controlers[i]->getLayer())
+			{
+				if (controlers[i]->isFocused() && dynamic_cast<TextBox*>(controlers[i]) != NULL) Temp = dynamic_cast<TextBox*>(controlers[i]);
+				else controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), p);
 			}
 
 		}
+		if (Temp != NULL && Temp->isFocused() == TRUE && p == Temp->getLayer()) Temp->draw(g, Temp->getLeft(), Temp->getTop(), p);
 	}
 }
 
