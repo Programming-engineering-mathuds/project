@@ -12,6 +12,7 @@
 #include "CheckList.h"
 #include "ComboBox.h"
 
+#include "CheckBoxLine.h"
 
 using namespace std;
 
@@ -31,18 +32,22 @@ int main(int argc, char *argv[])
 	EventEngine e;
 	Panel p(20, 50);
 	p.setBorder(BorderType::Single);
-	Label l(5, "test");
-	l.setBackground(Color::Red);
-	l.setBorder(BorderType::Double);
+	//Label l(5, "test");
+	//l.setBackground(Color::Red);
+	//l.setBorder(BorderType::Double);
+	CheckBoxLine c(5, "test");
+	CheckBoxLine c1(5, "test1");
+	CheckBoxLine c2(5, "test2");
+	//RadioList myRadioList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
+	//CheckList  myCheckList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
+	//ComboBox  myComboBox(5, { "hey", "there", "you", "stupid", "fuck" });
+	//myCheckList.setBorder(BorderType::Double);
 
-	RadioList myRadioList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
-	CheckList  myCheckList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
-	ComboBox  myComboBox(5, { "hey", "there", "you", "stupid", "fuck" });
-	myCheckList.setBorder(BorderType::Double);
 
 
-
-	p.AddControler(myCheckList, 0, 0);
+	p.AddControler(c, 0, 0);
+	p.AddControler(c1, 0, 4);
+	p.AddControler(c2, 0, 7);
 //	p.Hide();
 	e.run(p);
 	return 0;

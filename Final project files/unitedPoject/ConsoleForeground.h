@@ -1,4 +1,6 @@
 #pragma once
+#include <Windows.h>
+using namespace std;
 
 enum class Foreground {
 	BLACK = 0,
