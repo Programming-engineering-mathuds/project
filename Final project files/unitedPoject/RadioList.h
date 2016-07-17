@@ -24,7 +24,6 @@ public:
 	void mousePressed(int x, int y, bool isLeft);
 
 	size_t GetSelectedIndex();
-	void SetSelectedIndex(size_t index);
-
+	void SetSelectedIndex(size_t index);
 
 };

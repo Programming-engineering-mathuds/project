@@ -2,8 +2,9 @@
 
 CheckBoxLine::CheckBoxLine(int width, string input) :keyButton(width), listener(*this)
 {
+	setLocation(0, 0);
 	string temp = input;
-	temp.insert(0, "    ");//spaceX4
+	temp.insert(0,"    ");//spaceX4
 	SetValue(temp);
 	unPressedText = temp;
 	input.insert(0, "X   ");//X spaceX3
@@ -28,3 +29,5 @@ void CheckBoxLine::genericFunc1()
 	if (isPressed()) unPress();
 	else press();
 }
+
+

@@ -20,7 +20,7 @@ public:
 	virtual void draw(Graphics &g, int left, int top, size_t layer){Button::draw(g, left, top, layer);};
 	//void MousePressed(int x, int y, bool isLeft){ Button::mousePressed(x, y, isLeft); };
 	void keyDown(int keyCode, char charater);
-	virtual void getAllControls(vector < iControl * > *controls){};
+	//virtual void getAllControls(vector < iControl * > *controls){};
 
 };
 
