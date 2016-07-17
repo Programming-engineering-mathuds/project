@@ -1,37 +1,30 @@
 #pragma once
-#include "panel.h"
-#include "CheckBox.h"
-#include <Windows.h>
-#include <string>
+
 #include <stdio.h>
-#include <iostream>
-#include "vector"
+#include "iControl.h"
+#include "ConsoleForeground.h"
+#include "ConsoleBackground.h"
+#include "Panel.h"
+#include "CheckBoxLine.h"
 
 using namespace std;
 
-class RadioList : public Panel
+class Radiolist : public Panel
 {
-private:
-	vector<CheckBox> rList;
-	size_t where_am_i;
-	int size; // Number of cells in a Radio List
-public:
-	RadioList(int height, int width, vector<string> entries);
-	~RadioList();
+	CheckBoxLine *hold;
+	int index;
+	vector<CheckBoxLine> lines;
 
-	int bListSize();
-	void setRadio(int x, int y);
+public:
+	Radiolist(int height, int width, vector<string> options);
+	~Radiolist(){};
+
+	void AddControler(iControl& control, int left, int top){};
+
+	void mousePressed(int x, int y, bool isLeft);
 
 	size_t GetSelectedIndex();
-	void SetSelectedIndex(size_t index);
+	void SetSelectedIndex(size_t index);
 
-	void getInput(KEY_EVENT_RECORD key) {};
-	void getMouse(MOUSE_EVENT_RECORD mer) {};
-	void handelInput(INPUT_RECORD input);
 
-	void getAllControls(vector < iControl * > *controls) {};
-	void mousePressed(int x, int y, bool isLeft);
-	void keyDown(int keyCode, char charater);
-	void draw(Graphics &g, int left, int top, size_t layer);
 };
-

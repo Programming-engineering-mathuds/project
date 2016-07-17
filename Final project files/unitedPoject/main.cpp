@@ -8,7 +8,7 @@
 #include "MessageBox.h"
 #include "keyButton.h"
 #include "NumericBox.h"
-#include "RadioList.h"
+#include "Radiolist.h"
 #include "CheckList.h"
 #include "ComboBox.h"
 #include "Label.h"
@@ -39,17 +39,11 @@ int main(int argc, char *argv[])
 	Label l(5, "test");
 	l.setBackground(Color::Red);
 	l.setBorder(BorderType::Double);
-
-	RadioList myRadioList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
-	CheckList  myCheckList(5, 20, { "432536", "5647dg", "grh543g", "b6yfbgbgb", "booom" });
-	ComboBox  myComboBox(5, { "hey", "there", "you", "stupid", "fuck" });
-	myCheckList.setBorder(BorderType::Double);
-
-
-
-	p.AddControler(myCheckList, 0, 0);
+	Radiolist r(20, 20, { "test1", "test2", "test3" });
+	r.setBorder(BorderType::Double);
+	p.AddControler(l, 0, 0);
 //	p.Hide();
-	e.run(p);
+	e.run(r);
 	return 0;
 };
 

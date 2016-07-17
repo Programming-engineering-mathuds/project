@@ -1,123 +1,42 @@
-#include "RadioList.h"
+#include "Radiolist.h"
 
-//Constructor
-RadioList::RadioList(int height, int width, vector<string> entries) : Panel(height, width)
+Radiolist::Radiolist(int height, int width, vector<string> options) :Panel(height, width)
 {
-	setCanGetFocus(true);
-	size = height;
-	for (int i = 0; i < height; i++) {
-		CheckBox tempBox(entries[i], width);
-		rList.push_back(tempBox);
-		rList[i].setCanGetFocus(true);
-	}
-}
-
-//Destructor
-RadioList::~RadioList() {}
-
-int RadioList::bListSize() { return rList.size(); }
-
-void RadioList::setRadio(int x, int y)
-{
-	COORD c = rList[0].getCoords();
-	for (int i = 0; i < rList.size(); i++) {
-		if ((y >= c.Y) && (y <= (c.Y + rList.size() - 1)) && (x >= c.X) && (x <= c.X + getMaxWidth())) {
-			if (i == y - c.Y) {
-				rList[i].setPressed(true);
-				cout << "[X] " << rList[i].getName();
-			} 
-			else {
-				rList[i].setPressed(false);
-				cout << "[ ] " << rList[i].getName();
-				}
-		}
-		
-	}
-}
-
-size_t RadioList::GetSelectedIndex() {	return where_am_i; }
-
-void RadioList::SetSelectedIndex(size_t index) { where_am_i = index; }
-
-void RadioList::handelInput(INPUT_RECORD input)
-{
-	switch (input.EventType)
+	hold = NULL;
+	for (int i = 0; i < options.size(); i++)
 	{
-	case KEY_EVENT: // keyboard input 
-		getInput(input.Event.KeyEvent);
-		break;
-
-	case MOUSE_EVENT: // mouse input 
-		getMouse(input.Event.MouseEvent);
-		break;
-
-	case WINDOW_BUFFER_SIZE_EVENT: // scrn buf. resizing 
-		break;
-
-	case FOCUS_EVENT:  // disregard focus events 
-
-	case MENU_EVENT:   // disregard menu events 
-		break;
-
-	default:
-		break;
+		CheckBoxLine temp(5, options[i]);
+		lines.push_back(temp);
+	}
+	for (int i = 0; i < lines.size(); i++)
+	{
+		Panel::AddControler(lines[i], 0, ((lines[i].getHight())*i) + 4*i);
 	}
 }
 
-void RadioList::draw(Graphics &g, int left, int top, size_t layer) {
-	if (getVisible()){
-		g.moveTo(left, top);
-		COORD c = { left, top };
-
-		for (int i = 0; i < size; i++) {
-			SetConsoleCursorPosition(hndl, c);
-			if (rList[i].hover) {
-				setBackground(Color::White);
-				setForeground(Color::Black);
-				if (!rList[i].isPressed()) g.write("[ ] ");
-				else g.write("[X] ");
-				g.write(rList[i].getName());
-			} else {
-				setBackground(Color::Black);
-				setForeground(Color::White);
-				if (!rList[i].isPressed()) g.write("[ ] ");
-				else g.write("[X] ");
-				g.write(rList[i].getName());
+void Radiolist::mousePressed(int x, int y, bool isLeft)
+{
+	if (getVisible())
+	{
+		for (int i = 0; i < lines.size(); i++)
+		{
+			if ((x >= lines[i].getLeft() - getLeft()) && (x <= (lines[i].getLeft() - getLeft() + lines[i].getMaxWidth())))
+			if (y >= lines[i].getTop() - getTop() && y <= (lines[i].getTop() - getTop() + lines[i].getHight()))
+			{
+				index = i;
+				hold = &lines[i];
 			}
-			c = { left, ++top };
 		}
-	}	
+	}
+	Panel::mousePressed(x, y, isLeft);
 }
 
-void RadioList::mousePressed(int x, int y, bool isLeft) { if (getVisible()) setRadio(x, y); }
-
-void RadioList::keyDown(int keyCode, char charater) {
-	int i;
-	COORD c = rList[0].getCoords();
-		if (keyCode == VK_UP) {
-			for (i = 0; i < size; i++)	{
-				if (rList[i].isHover())	{
-					if (rList[i].pos.Y - 1 > c.Y) {
-						rList[i].setHover();
-						rList[i - 1].setHover();
-					}
-				}
-			}
-		}
-		if (keyCode == VK_DOWN)	{
-			for (i = 0; i < size; i++)	{
-				if (rList[i].isHover())	{
-					if (rList[i].pos.Y + 1 < c.Y + (size - 1)) {
-						rList[i].setHover();
-						rList[i + 1].setHover();
-					}
-				}
-			}
-		}
-		if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN))	{ for (i = 0; i < rList.size(); i++) {}	}
-	else printf("key released\n");
+size_t Radiolist::GetSelectedIndex()
+{
+	return index;
 }
 
-
-
-
+void Radiolist::SetSelectedIndex(size_t index)
+{
+	hold = &lines[index];
+}

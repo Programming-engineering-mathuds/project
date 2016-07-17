@@ -29,7 +29,7 @@ public:
 	~CheckBoxLine(){};
 
 	virtual void draw(Graphics &g, int left, int top, size_t layer){ keyButton::draw(g, left, top, layer); };
-	void mousePressed(int x, int y, bool isLeft){ keyButton::mousePressed(x, y, isLeft);};
+	void mousePressed(int x, int y, bool isLeft){ keyButton::mousePressed(x, y, isLeft); };
 
 	void press();
 	void unPress();
