@@ -36,7 +36,7 @@ protected:
 	bool visible = true;
 
 public:
-	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){};
+	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){ setLocation(0, 0);};
 	virtual ~iControl(){};
 
 	virtual void invisible(){};

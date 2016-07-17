@@ -16,7 +16,7 @@ Panel::Panel(int height, int width) :iControl(width), nullFocuse(1, "")
 		setHight(height);
 		setMaxWidth(width);
 		_layer = 0;
-		iControl::setLocation(0, 0);
+		setLocation(0, 0);
 	}
 
 void Panel::AddControler(iControl& control, int newLeft, int newTop)
@@ -77,8 +77,8 @@ void Panel::mousePressed(int x, int y, bool isLeft)
 		for (int i = 0; i < controlers.size(); i++)
 		{
 			if ((x >= controlers[i]->getLeft() - getLeft()) && (x <= (controlers[i]->getLeft() - getLeft() + controlers[i]->getMaxWidth())))
-			if (y >= controlers[i]->getTop() - getTop() && y <= (controlers[i]->getTop() - getTop() + controlers[i]->getHight()))
-				controlers[i]->mousePressed(x + getLeft(), y + getTop(), isLeft);
+				if (y >= controlers[i]->getTop() - getTop() && y <= (controlers[i]->getTop() - getTop() + controlers[i]->getHight()))
+					controlers[i]->mousePressed(x + getLeft(), y + getTop(), isLeft);
 		};
 	}
 }
