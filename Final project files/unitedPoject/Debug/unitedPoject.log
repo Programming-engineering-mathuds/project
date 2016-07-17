@@ -1,48 +1,9 @@
-﻿Build started 17/07/2016 19:41:55.
-     1>Project "C:\Users\Gonen\Source\Repos\project10\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\icontrol.h(77): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\icontrol.h(83): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\icontrol.h(95): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\panel.h(32): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project10\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
-         Debug\CheckBox.obj
-         Debug\CheckBoxLine.obj
-         Debug\CheckList.obj
-         Debug\ComboBox.obj
-         Debug\EventEngine.obj
-         Debug\Graphics.obj
-         Debug\iControl.obj
-         Debug\keyButton.obj
-         Debug\Label.obj
-         Debug\main.obj
-         Debug\MessageBox.obj
-         Debug\NumericBox.obj
-         Debug\Panel.obj
-         Debug\Radiolist.obj
-         Debug\TextBox.obj
-     1>TextBox.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'TextBox.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>Panel.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Panel.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>NumericBox.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'NumericBox.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>MessageBox.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'MessageBox.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>Label.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Label.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>keyButton.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'keyButton.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>iControl.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'iControl.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>Graphics.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'Graphics.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>EventEngine.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'EventEngine.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>ComboBox.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'ComboBox.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>CheckList.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CheckList.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-     1>CheckBox.obj : warning LNK4099: PDB 'vc120.pdb' was not found with 'CheckBox.obj' or at 'C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\vc120.pdb'; linking object as if no debug info
-         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project10\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Gonen\Source\Repos\project10\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+﻿Build started 17/07/2016 22:26:22.
+     1>Project "C:\Users\Gonen\Source\Repos\project11\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project11\Final project files\Debug\unitedPoject.exe
+     1>Done Building Project "C:\Users\Gonen\Source\Repos\project11\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.08
+Time Elapsed 00:00:00.09

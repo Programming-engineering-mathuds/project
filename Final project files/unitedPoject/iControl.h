@@ -99,6 +99,7 @@ public:
 	};
 	virtual void genericFunc1(){};
 	virtual void genericFunc2(){};
+	virtual void genericFunc3(int x,int y,bool arg){};
 	void Show(){ setVisible(); can_Get_Focus = couldGetFocus; };
 	void Hide(){ setInvisible(); can_Get_Focus = false; };
 	bool getVisible(){ return visible; };

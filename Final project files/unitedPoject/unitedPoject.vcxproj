@@ -27,7 +27,7 @@
     <ClInclude Include="MessageBox.h" />
     <ClInclude Include="NumericBox.h" />
     <ClInclude Include="Panel.h" />
-    <ClInclude Include="Radiolist.h" />
+    <ClInclude Include="RadioList.h" />
     <ClInclude Include="TextBox.h" />
   </ItemGroup>
   <ItemGroup>
@@ -45,7 +45,7 @@
     <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="NumericBox.cpp" />
     <ClCompile Include="Panel.cpp" />
-    <ClCompile Include="Radiolist.cpp" />
+    <ClCompile Include="RadioList.cpp" />
     <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

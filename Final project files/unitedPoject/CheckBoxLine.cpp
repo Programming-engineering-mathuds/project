@@ -1,6 +1,6 @@
 #include "CheckBoxLine.h"
 
-CheckBoxLine::CheckBoxLine(int width, string input) :keyButton(width), listener(*this)
+CheckBoxLine::CheckBoxLine(int width, string input) :keyButton(width)//, listener(*this)
 {
 	setLocation(0, 0);
 	string temp = input;
@@ -9,13 +9,14 @@ CheckBoxLine::CheckBoxLine(int width, string input) :keyButton(width), listener(
 	unPressedText = temp;
 	input.insert(0, "X   ");//X spaceX3
 	pressedText = input;
-	AddListener(listener);
+//	AddListener(listener);
 	setBorder(BorderType::Single);
 }
 
 void CheckBoxLine::press()
 {
 	SetValue(pressedText);
+	time(&timeOfPress);
 	pressed = true;
 }
 void CheckBoxLine::unPress()
