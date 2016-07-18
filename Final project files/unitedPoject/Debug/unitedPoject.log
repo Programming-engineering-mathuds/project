@@ -1,34 +1,134 @@
-﻿Build started 7/18/2016 6:57:23 PM.
-     1>Project "C:\Users\Erez\Source\Repos\project5\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CheckList.cpp main.cpp
-         CheckList.cpp
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\checklist.cpp(14): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\checklist.cpp(25): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
-         Compiling...
+﻿Build started 18/07/2016 20:16:07.
+     1>Project "C:\Users\Gonen\Source\Repos\project14\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Button.cpp CheckBoxLine.cpp CheckList.cpp ComboBox.cpp ComboLine.cpp EventEngine.cpp Graphics.cpp iControl.cpp keyButton.cpp Label.cpp main.cpp MessageBox.cpp NumericBox.cpp Panel.cpp RadioList.cpp TextBox.cpp
+         TextBox.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.cpp(27): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.cpp(54): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.cpp(63): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.cpp(96): warning C4018: '<=' : signed/unsigned mismatch
+         RadioList.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(8): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(13): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(24): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(53): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(58): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(63): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(113): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\radiolist.cpp(127): warning C4018: '<' : signed/unsigned mismatch
+         Panel.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.cpp(52): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.cpp(46): warning C4101: 'checkTextBox' : unreferenced local variable
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.cpp(77): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.cpp(89): warning C4018: '<' : signed/unsigned mismatch
+         NumericBox.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         MessageBox.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
          main.cpp
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         Label.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+         keyButton.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         iControl.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.cpp(36): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
+         Graphics.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\graphics.cpp(97): warning C4244: 'argument' : conversion from 'DWORD' to 'WORD', possible loss of data
+         EventEngine.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+         ComboLine.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         ComboBox.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(16): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(23): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(37): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(60): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(77): warning C4018: '<' : signed/unsigned mismatch
+         CheckList.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checklist.cpp(14): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checklist.cpp(25): warning C4018: '<' : signed/unsigned mismatch
+         CheckBoxLine.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         Button.cpp
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.cpp(21): warning C4018: '<' : signed/unsigned mismatch
          Generating Code...
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(103): warning C4715: 'iControl::getFocus' : not all control paths return a value
+     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(103): warning C4715: 'iControl::getFocus' : not all control paths return a value
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
          Debug\CheckBoxLine.obj
          Debug\CheckList.obj
          Debug\ComboBox.obj
@@ -44,12 +144,9 @@
          Debug\Panel.obj
          Debug\RadioList.obj
          Debug\TextBox.obj
-         unitedPoject.vcxproj -> C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\unitedPoject.tlog\unsuccessfulbuild".
-         Touching "Debug\unitedPoject.tlog\unitedPoject.lastbuildstate".
-     1>Done Building Project "C:\Users\Erez\Source\Repos\project5\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.exe
+     1>Done Building Project "C:\Users\Gonen\Source\Repos\project14\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.47
+Time Elapsed 00:00:24.19
