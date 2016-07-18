@@ -19,7 +19,6 @@ void ComboLine::unPress()
 
 void ComboLine::genericFunc1()
 {
-	if (isPressed()) unPress();
-	else press();
+	if (isPressed() == false)press();
 }
 

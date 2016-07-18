@@ -19,7 +19,7 @@ public:
 	~Label(){};
 
 	void SetValue(string value);
-
+	string getValue(){ return text; };
 	void handelInput(INPUT_RECORD input);
 	void putText();
 	virtual void draw(Graphics &g, int left, int top, size_t layer);

@@ -44,8 +44,9 @@ int main(int argc, char *argv[])
 	p.AddControler(test2, 0, 5);
 	p.AddControler(test3, 0, 8);
 	*/
-	Radiolist r(20, 20, { "test1", "test2", "test3" });
-	r.setBorder(BorderType::Double);
+	//Radiolist r(20, 20, { "test1", "test2", "test3" });
+	//r.setBorder(BorderType::Double);
+	ComboBox r(20, { "test1", "test2", "test3" });
 //	NumericBox  r(10, -10, 10);
 	//r.setBorder(BorderType::Double);
 	e.run(r);

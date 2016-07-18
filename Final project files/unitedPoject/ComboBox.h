@@ -17,7 +17,7 @@ struct ComboListener : public MouseListener
 	ComboListener(iControl &n) :_n(n){}
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
-		_n.genericFunc3(x, y, isLeft);
+		_n.genericFunc1();
 	}
 
 private:
@@ -40,7 +40,7 @@ class ComboBox : public Panel
 {
 	vector<ComboLine> boxList;
 	Label BoxHeader;
-	string label = "Please Select An Item";
+	Label label;
 
 	bool isOpen = false;
 	ComboLine *last = NULL;
@@ -60,6 +60,9 @@ public:
 
 	void openList();
 	void closeList();
+
+	void genericFunc1();
+	void genericFunc3(int x, int y, bool arg);
 
 	void getInput(KEY_EVENT_RECORD key) {};
 	void getMouse(MOUSE_EVENT_RECORD mer) {};

@@ -6,7 +6,7 @@
 
 using namespace std;
 
-ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 2), width), BoxHeader(23, label), listen(*this), button(5)
+ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 2), width),label(23,"Please Select An Item"), BoxHeader(23, label.getValue()), listen(*this), button(5)
 {
 	setLocation(0, 0);
 	button.AddListener(listen);
@@ -41,7 +41,7 @@ void ComboBox::openList()
 	if (hasPressed == false)
 	{
 		last = NULL;
-		BoxHeader.SetValue(label);
+		BoxHeader.SetValue(label.getValue());
 	}
 }
 
@@ -54,4 +54,26 @@ void  ComboBox::closeList()
 		boxList[i].Hide();
 	}
 	isOpen = false;
+}
+
+void ComboBox::genericFunc1()
+{
+	if (isOpen) closeList();
+	else openList();
+}
+
+void ComboBox::genericFunc3(int x, int y, bool arg)
+{
+	if (getVisible())
+	{
+		for (int i = 0; i < boxList.size(); i++)
+		{
+			if ((x >= boxList[i].getLeft() - getLeft()) && (x <= (boxList[i].getLeft() - getLeft() + boxList[i].getMaxWidth())))
+			if (y >= boxList[i].getTop() - getTop() && y <= (boxList[i].getTop() - getTop() + boxList[i].getHight()))
+			{
+				boxList[i].genericFunc1();
+				*last = boxList[i];
+			}
+		}
+	}
 }
