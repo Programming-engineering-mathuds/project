@@ -39,8 +39,8 @@ void ComboBox::openList()
 		boxList[i].Show();
 		if (boxList[i].isPressed())
 		{
-			*last = boxList[i];
-			index = i;
+			last = &boxList[i];
+			index = i;      //ERROR	
 			boxList[i].unPress();
 			hasPressed = true;
 		}
@@ -56,7 +56,6 @@ void ComboBox::openList()
 
 void  ComboBox::closeList()
 {
-	//BoxHeader.Show();
 	if (last != NULL) BoxHeader.SetValue(last->getValue());
 	for (int i = 0; i < boxList.size(); i++)
 	{
@@ -88,4 +87,9 @@ void ComboBox::genericFunc3(int x, int y, bool arg)
 			}
 		}
 	}
+}
+
+void ComboBox::draw(Graphics &g, int left, int top, size_t layer)
+{
+
 }

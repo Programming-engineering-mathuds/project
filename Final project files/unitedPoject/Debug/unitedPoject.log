@@ -1,42 +1,109 @@
-﻿Build started 18/07/2016 18:38:41.
+﻿Build started 18/07/2016 19:07:15.
      1>Project "C:\Users\Gonen\Source\Repos\project13\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ComboBox.cpp
-     1>cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-         ComboBox.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CheckBoxLine.cpp CheckList.cpp RadioList.cpp main.cpp
+         main.cpp
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.h(11): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.h(11): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkbox.h(8): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkbox.h(8): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.h(11): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.h(11): error C2238: unexpected token(s) preceding ';'
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\comboline.h(9): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\comboline.h(9): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.h(10): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.h(10): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\textbox.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\textbox.h(11): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\textbox.h(11): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\main.cpp(21): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\main.cpp(21): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\main.cpp(57): fatal error C1075: end of file found before the left brace '{' at 'c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(23)' was matched
+         RadioList.cpp
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.cpp(16): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.cpp(23): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.cpp(37): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.cpp(61): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\combobox.cpp(78): warning C4018: '<' : signed/unsigned mismatch
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gonen\Source\Repos\project13\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gonen\Source\Repos\project13\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gonen\Source\Repos\project13\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
-         Debug\CheckBox.obj
-         Debug\CheckBoxLine.obj
-         Debug\CheckList.obj
-         Debug\ComboBox.obj
-         Debug\ComboLine.obj
-         Debug\EventEngine.obj
-         Debug\Graphics.obj
-         Debug\iControl.obj
-         Debug\keyButton.obj
-         Debug\Label.obj
-         Debug\main.obj
-         Debug\MessageBox.obj
-         Debug\NumericBox.obj
-         Debug\Panel.obj
-         Debug\RadioList.obj
-         Debug\TextBox.obj
-         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project13\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Gonen\Source\Repos\project13\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.h(11): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.h(11): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(3): error C3254: 'CheckBoxLine' : class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(3): error C2838: '{ctor}' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(21): error C3254: 'CheckBoxLine' : class contains explicit override 'mousePressed' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(21): error C2838: 'mousePressed' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(42): error C3254: 'CheckBoxLine' : class contains explicit override 'draw' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(42): error C2838: 'draw' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(99): error C3254: 'CheckBoxLine' : class contains explicit override 'GetSelectedIndex' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(99): error C2838: 'GetSelectedIndex' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(104): error C3254: 'CheckBoxLine' : class contains explicit override 'SetSelectedIndex' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(104): error C2838: 'SetSelectedIndex' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(110): error C3254: 'CheckBoxLine' : class contains explicit override 'genericFunc3' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(110): error C2838: 'genericFunc3' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\radiolist.cpp(123): fatal error C1075: end of file found before the left brace '{' at 'c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(23)' was matched
+         CheckList.cpp
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.h(11): error C2059: syntax error : 'namespace'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.h(11): error C2238: unexpected token(s) preceding ';'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(6): error C3254: 'CheckBoxLine' : class contains explicit override '{ctor}' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(6): error C2838: '{ctor}' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(19): error C3254: 'CheckBoxLine' : class contains explicit override '{dtor}' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(19): error C2838: '{dtor}' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(19): error C2535: 'CheckBoxLine::~CheckBoxLine(void)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(32) : see declaration of 'CheckBoxLine::~CheckBoxLine'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(21): error C3254: 'CheckBoxLine' : class contains explicit override 'cListSize' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(21): error C2838: 'cListSize' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(23): error C3254: 'CheckBoxLine' : class contains explicit override 'GetSelectedIndices' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(23): error C2838: 'GetSelectedIndices' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(29): error C3254: 'CheckBoxLine' : class contains explicit override 'SelectedIndex' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(29): error C2838: 'SelectedIndex' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(31): error C3254: 'CheckBoxLine' : class contains explicit override 'DeselectIndex' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(31): error C2838: 'DeselectIndex' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(34): error C3254: 'CheckBoxLine' : class contains explicit override 'setCheckbox' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(34): error C2838: 'setCheckbox' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(47): error C3254: 'CheckBoxLine' : class contains explicit override 'draw' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(47): error C2838: 'draw' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(73): error C3254: 'CheckBoxLine' : class contains explicit override 'mousePressed' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(73): error C2838: 'mousePressed' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(75): error C3254: 'CheckBoxLine' : class contains explicit override 'keyDown' but does not derive from an interface that contains the function declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(75): error C2838: 'keyDown' : illegal qualified name in member declaration
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(75): error C2535: 'void CheckBoxLine::keyDown(int,char)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(43) : see declaration of 'CheckBoxLine::keyDown'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checklist.cpp(102): fatal error C1075: end of file found before the left brace '{' at 'c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(23)' was matched
+         CheckBoxLine.cpp
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.cpp(3): error C2535: 'CheckBoxLine::CheckBoxLine(int,std::string)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(31) : see declaration of 'CheckBoxLine::CheckBoxLine'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.cpp(17): error C2535: 'void CheckBoxLine::press(void)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(36) : see declaration of 'CheckBoxLine::press'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.cpp(23): error C2535: 'void CheckBoxLine::unPress(void)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(37) : see declaration of 'CheckBoxLine::unPress'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.cpp(29): error C2535: 'void CheckBoxLine::genericFunc1(void)' : member function already defined or declared
+                 c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(39) : see declaration of 'CheckBoxLine::genericFunc1'
+     1>c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.cpp(36): fatal error C1075: end of file found before the left brace '{' at 'c:\users\gonen\source\repos\project13\final project files\unitedpoject\checkboxline.h(23)' was matched
+         Generating Code...
+     1>Done Building Project "C:\Users\Gonen\Source\Repos\project13\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.51
+Time Elapsed 00:00:06.09

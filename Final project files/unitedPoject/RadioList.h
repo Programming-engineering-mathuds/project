@@ -38,7 +38,6 @@ public:
 	void AddControler(iControl& control, int left, int top){};
 
 	void mousePressed(int x, int y, bool isLeft);
-//	void keyDown(int keyCode, char charater);
 	void draw(Graphics &g, int left, int top, size_t layer);
 	size_t GetSelectedIndex();
 	void SetSelectedIndex(size_t index);
