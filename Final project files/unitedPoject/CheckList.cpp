@@ -79,7 +79,7 @@ void CheckList::keyDown(int keyCode, char charater) {
 	if (keyCode == VK_UP) {
 		for (i = 0; i < size; i++) {
 			if (List[i].isHover())	{
-				if (List[i].getCoords.Y - 1 > c.Y) {
+				if (List[i].getCoords().Y - 1 > c.Y) {
 					List[i].setHover();
 					List[i - 1].setHover();
 				}
@@ -89,7 +89,7 @@ void CheckList::keyDown(int keyCode, char charater) {
 	if (keyCode == VK_DOWN)	{
 		for (i = 0; i < size; i++) {
 			if (List[i].isHover()) {
-				if (List[i].getCoords.Y + 1 < c.Y + (size - 1)) {
+				if (List[i].getCoords().Y + 1 < c.Y + (size - 1)) {
 					List[i].setHover();
 					List[i + 1].setHover();
 				}

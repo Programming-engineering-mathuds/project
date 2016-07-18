@@ -32,7 +32,7 @@ public:
 	~CheckBoxLine(){};
 
 	bool isHover(){return Hover;};
-	bool setHover(){ if (Hover)Hover = false; else Hover = true; };
+	void setHover(){ if (Hover)Hover = false; else Hover = true; };
 	void press();
 	void unPress();
 	bool isPressed(){ return pressed; };

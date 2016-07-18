@@ -64,9 +64,12 @@ void Radiolist::draw(Graphics &g, int left, int top, size_t layer)
 			{
 				if (i != last)lines[i].unPress();
 			}
-			if (last!=-1)
-			index = last;
-			hold = &lines[last];   //  <--- You can access array -1 P_P then crashhhh
+			if (last != -1)
+			{
+
+				index = last;
+				hold = &lines[last];
+			}//  <--- You can access array -1 P_P then crashhhh
 		}
 		if (timer < 10)
 		if (timer < 2)timer++;
