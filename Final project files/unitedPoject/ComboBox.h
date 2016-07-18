@@ -52,11 +52,8 @@ public:
 	ComboBox(int width, vector<string> entries);
 	~ComboBox(){};
 
-	int cBoxSize();
 	size_t GetSelectedIndex();
 	void SetSelectedIndex(size_t index){};
-	bool getOpenState(){};
-	void toggleOpenState(){};
 
 	void openList();
 	void closeList();
