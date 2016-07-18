@@ -34,9 +34,10 @@ protected:
 	Graphics g;
 	static vector<iControl*> controls;
 	bool visible = true;
-
+	WORD currentConsoleAttr;
+	CONSOLE_SCREEN_BUFFER_INFO   csbi;
 public:
-	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){ setLocation(0, 0);};
+	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){setLocation(0, 0);	if (GetConsoleScreenBufferInfo(hndl, &csbi))currentConsoleAttr = csbi.wAttributes;};
 	virtual ~iControl(){};
 
 	virtual void invisible(){};
@@ -56,7 +57,8 @@ public:
 	size_t getLayer() { return _layer; };
 	void setForeground(Color color){ g.setForeground(color); };
 	void setBackground(Color color){ g.setBackground(color); };
-	
+	void returnColor(){ SetConsoleTextAttribute(hndl, currentConsoleAttr); };
+	WORD getCurrentConsoleAttr(){ return currentConsoleAttr; };
 	bool canGetFocus(){ return can_Get_Focus; };
 	void setCanGetFocus(bool focus){ can_Get_Focus = focus; couldGetFocus = focus; };
 	bool isFocused(){ return focused; };

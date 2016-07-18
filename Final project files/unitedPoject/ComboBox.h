@@ -19,21 +19,21 @@ class ComboBox : public Panel
 	bool isOpen = false;
 public:
 	ComboBox(int width, vector<string> entries);
-	~ComboBox();
+	~ComboBox(){};
 
 	int cBoxSize();
 	size_t GetSelectedIndex();
-	void SetSelectedIndex(size_t index);
-	bool getOpenState();
-	void toggleOpenState();
+	void SetSelectedIndex(size_t index){};
+	bool getOpenState(){};
+	void toggleOpenState(){};
 
 	void getInput(KEY_EVENT_RECORD key) {};
 	void getMouse(MOUSE_EVENT_RECORD mer) {};
-	void handelInput(INPUT_RECORD input);
+	void handelInput(INPUT_RECORD input){};
 
 	void getAllControls(vector < iControl * > *controls) {};
-	void mousePressed(int x, int y, bool isLeft);
-	void keyDown(int keyCode, char charater);
-	void draw(Graphics &g, int left, int top, size_t layer);
+	void mousePressed(int x, int y, bool isLeft){};
+	void keyDown(int keyCode, char charater){};
+	void draw(Graphics &g, int left, int top, size_t layer){};
 };
 

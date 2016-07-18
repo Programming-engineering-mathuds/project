@@ -41,4 +41,5 @@ public:
 	void setTime(size_t t){ timeOfPress = t; };
 	void setTime(time_t  t){ timeOfPress = t; };
 	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN)genericFunc1(); time(&timeOfPress); };
+	void draw(Graphics &g, int left, int top, size_t layer);
 };
