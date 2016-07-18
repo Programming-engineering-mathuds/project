@@ -43,6 +43,7 @@ void Panel::draw(Graphics &g, int junk, int junk2, size_t p)
 {
 	if (getVisible())
 	{
+		iControl::setColor();
 		iControl::setLocation(left, top);
 		if (p == getLayer()){
 			Panel::frame(getHight());
@@ -56,11 +57,13 @@ void Panel::draw(Graphics &g, int junk, int junk2, size_t p)
 				controlers[i]->setWidthSetFlag();
 			}
 
-			if (p == controlers[i]->getLayer()){
+			if (p == controlers[i]->getLayer())
+			{
 				controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), p);
 			}
 
 		}
+		iControl::returnColor();
 	}
 }
 

@@ -60,6 +60,8 @@ public:
 	void setForeground(Color color){ g.setForeground(color); textColor = color; };
 	void setBackground(Color color){ g.setBackground(color); BackColor = color; };
 	void returnColor(){ SetConsoleTextAttribute(hndl, currentConsoleAttr); };
+	void setColor(){ g.setForeground(textColor); g.setBackground(BackColor); }
+
 	WORD getCurrentConsoleAttr(){ return currentConsoleAttr; };
 
 	bool canGetFocus(){ return can_Get_Focus; };

@@ -26,7 +26,10 @@ void Button::notify(int x, int y, bool isLeft)
 
 void Button::draw(Graphics &g, int left, int top, size_t layer)
 {
-	if (getVisible())Label::draw(g, left, top, layer);
+	if (getVisible())
+	{
+		Label::draw(g, left, top, layer);
+	}
 }
 
 void Button::getInput(INPUT_RECORD in)

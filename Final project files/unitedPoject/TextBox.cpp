@@ -88,6 +88,7 @@ void TextBox::draw(Graphics &g, int left, int top, size_t layer)
 			SetConsoleCursorInfo(hndl, &cci);
 			SetConsoleCursorPosition(hndl, { curCoord.X - 1, curCoord.Y });
 		}
+
 	}
 }
 
