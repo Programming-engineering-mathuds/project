@@ -82,7 +82,6 @@ void ComboBox::genericFunc3(int x, int y, bool arg)
 				boxList[i].genericFunc1();
 				last = &boxList[i];
 				index = i;
-				//BoxHeader.SetValue(boxList[i].getValue());
 				closeList();
 			}
 		}
@@ -91,5 +90,15 @@ void ComboBox::genericFunc3(int x, int y, bool arg)
 
 void ComboBox::draw(Graphics &g, int left, int top, size_t layer)
 {
-
+	for (int i = 0; i < boxList.size(); i++)
+	{
+		if (boxList[i].getPressByKey())
+		{
+			last = &boxList[i];
+			index = i;
+			closeList();
+			boxList[i].setPressbykey(false);
+		}
+	}
+	Panel::draw(g, left, top, layer);
 }
