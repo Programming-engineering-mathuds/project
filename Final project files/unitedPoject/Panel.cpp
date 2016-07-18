@@ -28,7 +28,10 @@ void Panel::AddControler(iControl& control, int newLeft, int newTop)
 		cout << "There is a Controler out of Boundries";
 		return;
 	}
-
+	if (control.getBorder() == BorderType::None)
+	{
+		control.setLocation(control.getLeft() + 2, control.getTop());
+	}
 	add(&control);
 	setStaticControlList(controlers);
 	if (control.canGetFocus() && weHaveFocus == 0)
@@ -61,6 +64,7 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 			if (p == controlers[i]->getLayer())
 			{
 				if (controlers[i]->isFocused() && dynamic_cast<TextBox*>(controlers[i]) != NULL) Temp = dynamic_cast<TextBox*>(controlers[i]);
+				else if (controlers[i]->getLeft()==0) controlers[i]->draw(g, controlers[i]->getLeft()+1, controlers[i]->getTop(), p);
 				else controlers[i]->draw(g, controlers[i]->getLeft(), controlers[i]->getTop(), p);
 			}
 
