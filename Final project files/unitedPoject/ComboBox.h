@@ -3,20 +3,51 @@
 #include "panel.h"
 #include <string>
 #include <stdio.h>
-#include "CheckBox.h"
+#include "ComboLine.h"
 #include "vector"
 #include "Label.h"
+#include "keyButton.h"
 
 using namespace std;
 
+
+class ComboBox;
+struct ComboListener : public MouseListener
+{
+	ComboListener(iControl &n) :_n(n){}
+	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	{
+		_n.genericFunc3(x, y, isLeft);
+	}
+
+private:
+	iControl &_n;
+};
+
+struct ComboLineListener : public MouseListener
+{
+	ComboLineListener(iControl &n) :_n(n){}
+	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	{
+		_n.genericFunc3(x, y, isLeft);
+	}
+
+private:
+	iControl &_n;
+};
+
 class ComboBox : public Panel
 {
-	vector<CheckBox> cBox;
-	Label cBoxHeader;
-	string label;
-	int size; // Number of cells in a Combobox List
-	int cBoxMaxWidth;
+	vector<ComboLine> boxList;
+	Label BoxHeader;
+	string label = "Please Select An Item";
+
 	bool isOpen = false;
+	ComboLine *last = NULL;
+	ComboLine *current = NULL;
+	keyButton button;
+	ComboListener listen;
+	vector<ComboLineListener> listListen;
 public:
 	ComboBox(int width, vector<string> entries);
 	~ComboBox(){};
@@ -26,6 +57,9 @@ public:
 	void SetSelectedIndex(size_t index){};
 	bool getOpenState(){};
 	void toggleOpenState(){};
+
+	void openList();
+	void closeList();
 
 	void getInput(KEY_EVENT_RECORD key) {};
 	void getMouse(MOUSE_EVENT_RECORD mer) {};

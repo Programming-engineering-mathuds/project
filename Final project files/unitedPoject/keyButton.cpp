@@ -10,3 +10,18 @@ void keyButton::keyDown(int keyCode, char charater)
 		}
 	}
 }
+
+void keyButton::draw(Graphics &g, int left, int top, size_t layer)
+{
+	if (isFocused())
+	{
+		g.setBackground(textColor);
+		g.setForeground(BackColor);
+	}
+	Button::draw(g, left, top, layer);
+	if (isFocused())
+	{
+		g.setBackground(BackColor);
+		g.setForeground(textColor);
+	}
+}

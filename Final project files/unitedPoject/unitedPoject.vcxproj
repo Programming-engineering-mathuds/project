@@ -17,6 +17,7 @@
     <ClInclude Include="CheckBoxLine.h" />
     <ClInclude Include="CheckList.h" />
     <ClInclude Include="ComboBox.h" />
+    <ClInclude Include="ComboLine.h" />
     <ClInclude Include="ConsoleBackground.h" />
     <ClInclude Include="ConsoleForeground.h" />
     <ClInclude Include="EventEngine.h" />
@@ -36,6 +37,7 @@
     <ClCompile Include="CheckBoxLine.cpp" />
     <ClCompile Include="CheckList.cpp" />
     <ClCompile Include="ComboBox.cpp" />
+    <ClCompile Include="ComboLine.cpp" />
     <ClCompile Include="EventEngine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="iControl.cpp" />

@@ -31,12 +31,5 @@ void CheckBoxLine::genericFunc1()
 	else press();
 }
 
-void CheckBoxLine::draw(Graphics &g, int left, int top, size_t layer)
-{
-	if (isFocused())
-	{
-
-	}
-}
 
 

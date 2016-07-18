@@ -36,6 +36,8 @@ protected:
 	bool visible = true;
 	WORD currentConsoleAttr;
 	CONSOLE_SCREEN_BUFFER_INFO   csbi;
+	Color textColor = Color::White;
+	Color BackColor = Color::Black;
 public:
 	iControl(int width) :maxWidth(width), pos(COORD{ 0, 0 }), mPos(COORD{ 0, 0 }), top(0), left(0){setLocation(0, 0);	if (GetConsoleScreenBufferInfo(hndl, &csbi))currentConsoleAttr = csbi.wAttributes;};
 	virtual ~iControl(){};
@@ -55,8 +57,8 @@ public:
 	void setLocation(int x, int y);
 	void setLayer(size_t layer) { _layer = layer; };
 	size_t getLayer() { return _layer; };
-	void setForeground(Color color){ g.setForeground(color); };
-	void setBackground(Color color){ g.setBackground(color); };
+	void setForeground(Color color){ g.setForeground(color); textColor = color; };
+	void setBackground(Color color){ g.setBackground(color); BackColor = color; };
 	void returnColor(){ SetConsoleTextAttribute(hndl, currentConsoleAttr); };
 	WORD getCurrentConsoleAttr(){ return currentConsoleAttr; };
 	bool canGetFocus(){ return can_Get_Focus; };

@@ -7,31 +7,19 @@
 #include "vector"
 #include <ctime>
 using namespace std;
-/*
-struct CheckListener : public MouseListener
-{
-	CheckListener(iControl &n) :_n(n){}
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
-	{
-		_n.genericFunc1();
-	}
-private:
-	iControl &_n;
-};
-*/
-class CheckBoxLine : public keyButton
+
+class ComboLine : public keyButton
 {
 	bool Hover = false;
 	bool pressed = false;
-//	CheckListener listener;
-	string pressedText;
-	string unPressedText;
+	//	CheckListener listener;
+
 	time_t timeOfPress;
 public:
-	CheckBoxLine(int width, string input);
-	~CheckBoxLine(){};
+	ComboLine(int width, string input);
+	~ComboLine(){};
 
-	bool isHover(){return Hover;};
+	bool isHover(){ return Hover; };
 	void setHover(){ if (Hover)Hover = false; else Hover = true; };
 	void press();
 	void unPress();
@@ -41,5 +29,4 @@ public:
 	void setTime(size_t t){ timeOfPress = t; };
 	void setTime(time_t  t){ timeOfPress = t; };
 	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN)genericFunc1(); time(&timeOfPress); };
-
 };
