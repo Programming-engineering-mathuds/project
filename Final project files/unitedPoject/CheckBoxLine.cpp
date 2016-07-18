@@ -32,4 +32,20 @@ void CheckBoxLine::genericFunc1()
 }
 
 
-
+void CheckBoxLine::keyDown(int keyCode, char charater)
+{
+	if (keyCode == VK_RETURN || keyCode == VK_SPACE)
+	{ 
+		genericFunc1(); time(&timeOfPress); 
+	}
+	if (keyCode == VK_DOWN && NEXT != NULL)
+	{
+		setFocus(*this);
+		setFocus(*NEXT);
+	}
+	if (keyCode == VK_UP && PREV != NULL)
+	{
+		setFocus(*this);
+		setFocus(*PREV);
+	}
+}

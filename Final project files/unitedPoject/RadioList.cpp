@@ -12,6 +12,11 @@ Radiolist::Radiolist(int height, int width, vector<string> options) :Panel(heigh
 	}
 	for (int i = 0; i < lines.size(); i++)
 	{
+		if (i < lines.size() - 1)lines[i].setNEXT(lines[i + 1]);
+		if (i != 0)lines[i].setPREV(lines[i - 1]);
+	}
+	for (int i = 0; i < lines.size(); i++)
+	{
 		lines[i].AddListener(listen[i]);
 		Panel::AddControler(lines[i], 0, ((getHight() / lines.size()) * i)+1);
 	}
