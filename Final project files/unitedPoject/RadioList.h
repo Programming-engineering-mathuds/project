@@ -43,5 +43,6 @@ public:
 	void SetSelectedIndex(size_t index);
 	void genericFunc3(int x, int y, bool arg);
 	void getAllLines(vector<CheckBoxLine> &lines);
+	CheckBoxLine *getIndexLine(int lineIndex);
 
 };

@@ -10,18 +10,7 @@
 #include "RadioList.h"
 
 using namespace std;
-class Checklist;
-struct CheckListListener : public MouseListener
-{
-	CheckListListener(iControl &n) :_n(n){}
-	void  MousePressed(Button &b, int x, int y, bool isLeft)
-	{
-		_n.genericFunc3(x, y, isLeft);
-	}
 
-private:
-	iControl &_n;
-};
 class Checklist : public Radiolist
 {
 	vector<CheckBoxLine> lines;
