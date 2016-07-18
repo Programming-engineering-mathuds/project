@@ -6,7 +6,7 @@
 
 using namespace std;
 
-ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 2), width),label(23,"Please Select An Item"), BoxHeader(23, label.getValue()), listen(*this), button(5)
+ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 2), width),label("Please Select An Item"), BoxHeader(23, label), listen(*this), button(5)
 {
 	setLocation(0, 0);
 	button.AddListener(listen);
@@ -41,7 +41,7 @@ void ComboBox::openList()
 	if (hasPressed == false)
 	{
 		last = NULL;
-		BoxHeader.SetValue(label.getValue());
+		BoxHeader.SetValue(label);
 	}
 }
 

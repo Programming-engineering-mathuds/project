@@ -40,7 +40,7 @@ class ComboBox : public Panel
 {
 	vector<ComboLine> boxList;
 	Label BoxHeader;
-	Label label;
+	string label;
 
 	bool isOpen = false;
 	ComboLine *last = NULL;
