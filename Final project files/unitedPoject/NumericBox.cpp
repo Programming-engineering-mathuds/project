@@ -2,6 +2,7 @@
 
 NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_button(3), minus_button(3), screen(2, ""), minus(*this), plus(*this), minValue(min), maxValue(max)
 {
+	if (width < 13)setMaxWidth(13);
 	setCanGetFocus(false);
 	setLayer(1);
 	plus_button.setLayer(1);

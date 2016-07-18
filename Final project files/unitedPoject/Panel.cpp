@@ -46,6 +46,7 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 {
 	if (getVisible())
 	{
+		iControl::setColor();
 		TextBox *checkTextBox;
 		TextBox *Temp=NULL;
 		iControl::setLocation(left, top);
@@ -70,6 +71,7 @@ void Panel::draw(Graphics &g,int junk, int junk2, size_t p)
 
 		}
 		if (Temp != NULL && Temp->isFocused() == TRUE && p == Temp->getLayer()) Temp->draw(g, Temp->getLeft(), Temp->getTop(), p);
+		iControl::returnColor();
 	}
 }
 

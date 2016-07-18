@@ -1,4 +1,4 @@
-﻿Build started 7/18/2016 10:16:12 PM.
+﻿Build started 7/18/2016 10:28:45 PM.
      1>Project "C:\Users\Erez\Source\Repos\project6\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -39,4 +39,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.04
+Time Elapsed 00:00:01.25
