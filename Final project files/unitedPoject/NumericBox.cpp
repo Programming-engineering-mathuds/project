@@ -17,7 +17,7 @@ NumericBox::NumericBox(int width, int min, int max) :Panel(3, width), plus_butto
 	minus_button.setHight(1);
 	minus_button.setMaxWidth(3);
 	minus_button.SetValue("-");
-
+	setBorder(BorderType::Single);
 	screen.setLayer(1);
 	if (min <= 0 && max >= 0) SetValue(0);
 	else{SetValue(max);}
