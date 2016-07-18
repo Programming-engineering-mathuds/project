@@ -12,6 +12,7 @@ class ComboLine : public keyButton
 {
 	bool Hover = false;
 	bool pressed = false;
+	bool pressedBykey = false;
 	//	CheckListener listener;
 
 	time_t timeOfPress;
@@ -25,8 +26,10 @@ public:
 	void unPress();
 	bool isPressed(){ return pressed; };
 	void genericFunc1();
+	void setPressbykey(bool value){ pressedBykey = value; };
+	bool getPressByKey(){ return pressedBykey; };
 	time_t  getTime(){ return timeOfPress; };
 	void setTime(size_t t){ timeOfPress = t; };
 	void setTime(time_t  t){ timeOfPress = t; };
-	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN || keyCode == VK_SPACE){ genericFunc1(); time(&timeOfPress); } };
+	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN || keyCode == VK_SPACE){ genericFunc1(); time(&timeOfPress); pressedBykey = true; } };
 };
