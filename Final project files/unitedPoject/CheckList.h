@@ -1,34 +1,47 @@
 #pragma once
-#include "CheckBox.h"
-#include "panel.h"
-#include <Windows.h>
-#include <string>
+
 #include <stdio.h>
-#include <iostream>
-#include "vector"
+#include "iControl.h"
+#include "ConsoleForeground.h"
+#include "ConsoleBackground.h"
+#include "Panel.h"
 #include "CheckBoxLine.h"
+#include <ctime>
 
 using namespace std;
-
-class CheckList : private Panel
+class Checklist;
+struct CheckListener : public MouseListener
 {
+	CheckListener(iControl &n) :_n(n){}
+	void  MousePressed(Button &b, int x, int y, bool isLeft)
+	{
+		_n.genericFunc3(x, y, isLeft);
+	}
+
 private:
-	vector<CheckBoxLine> List;
-	size_t where_am_i;
-	int size; // Number of cells in a Check List
+	iControl &_n;
+};
+class Checklist : public Panel
+{
+	vector<CheckListener> listen;
+	CheckBoxLine *hold;
+	int index;
+	vector<CheckBoxLine> lines;
+	double seconds;
+	int  timer = 0;
+	int last = -1;
+	bool used = false;
 public:
-	CheckList(int height, int width, vector<string> entries);
-	~CheckList();
+	Checklist(int height, int width, vector<string> options);
+	~Checklist(){};
 
-	int cListSize();
-	void setCheckbox(int x, int y);
+	void AddControler(iControl& control, int left, int top){};
 
-	vector<size_t> GetSelectedIndices();
-	void SelectedIndex(size_t index);
-	void DeselectIndex(size_t index);
-
-	void getAllControls(vector < iControl * > *controls) {};
 	void mousePressed(int x, int y, bool isLeft);
-	void keyDown(int keyCode, char charater);
+	//	void keyDown(int keyCode, char charater);
 	void draw(Graphics &g, int left, int top, size_t layer);
+	size_t GetSelectedIndex();
+	void SetSelectedIndex(size_t index);
+	void genericFunc3(int x, int y, bool arg);
+
 };

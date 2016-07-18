@@ -1,101 +1,122 @@
-#include "CheckList.h"
-#include "vector"
+#include "Checklist.h"
 
-
-//Constructor
-CheckList::CheckList(int height, int width, vector<string> entries) : Panel(height, width) 
+Checklist::Checklist(int height, int width, vector<string> options) :Panel(height, width)
 {
-	Panel::setCanGetFocus(true);
-	size = entries.size();
-	for (int i = 0; i < entries.size(); i++) {
-		CheckBoxLine tempBox(width, entries[i]);
-		tempBox.setCanGetFocus(true);
-		AddControler(tempBox, 0 , i);
-		List.push_back(tempBox);
+	setLocation(0, 0);
+	hold = NULL;
+
+	for (int i = 0; i < options.size(); i++)
+	{
+		lines.push_back(CheckBoxLine(5, options[i]));
+		listen.push_back(CheckListener(*this));
+	}
+	for (int i = 0; i < lines.size(); i++)
+	{
+		lines[i].AddListener(listen[i]);
+		Panel::AddControler(lines[i], 0, ((getHight() / lines.size()) * i) + 1);
 	}
 }
 
-//Destructor
-CheckList::~CheckList() {}
-
-int CheckList::cListSize() { return sizeOfList(); }
-
-vector<size_t> CheckList::GetSelectedIndices() {
-	vector<size_t> tempIndexVector;
-	for (int i = 0; i < size; i++)	tempIndexVector.push_back(List[i].isPressed());
-	return tempIndexVector;
-}
-
-void CheckList::SelectedIndex(size_t index) { for (int i = 0; i < size; i++)	if (i == index) List[i].press(); }
-
-void CheckList::DeselectIndex(size_t index) { for (int i = 0; i < size; i++) if (i == index) List[i].unPress(); }
-
-void CheckList::setCheckbox(int x, int y)
+void Checklist::mousePressed(int x, int y, bool isLeft)
 {
-	COORD c = List[0].getCoords();
-	
-	for (int i = 0; i < List.size(); i++) 	{
-		if ((y >= c.Y) && (y <= (c.Y + List.size() - 1)) && (x >= c.X) && (x <= c.X + getMaxWidth())) {
-			if (i == y - c.Y) {
-				if (List[i].isPressed()) DeselectIndex(i);
-				else SelectedIndex(i);
+	if (getVisible())
+	{
+		for (int i = 0; i < lines.size(); i++)
+		{
+			if ((x >= lines[i].getLeft() - getLeft()) && (x <= (lines[i].getLeft() - getLeft() + lines[i].getMaxWidth())))
+			if (y >= lines[i].getTop() - getTop() && y <= (lines[i].getTop() - getTop() + lines[i].getHight()))
+			{
+				index = i;
+				last = i;
+				hold = &lines[i];
 			}
 		}
 	}
+	for (int i = 0; i < lines.size(); i++)
+	{
+		if (i != index) lines[i].unPress();
+	}
+	Panel::mousePressed(x, y, isLeft);
 }
+void Checklist::draw(Graphics &g, int left, int top, size_t layer)
+{
+	if (getVisible())
+	if (layer == _layer)
+	{
+		int diff = 0;
+		if (timer > 0)
+		{
+			struct tm y2k = { 0 };
+			y2k.tm_hour = 0;   y2k.tm_min = 0; y2k.tm_sec = 0;
+			y2k.tm_year = 100; y2k.tm_mon = 0; y2k.tm_mday = 1;
 
-void CheckList::draw(Graphics &g, int left, int top, size_t layer) {
-	if (getVisible()) {
-		g.moveTo(left, top);
-		COORD c = { left, top };
-		
-		for (int i = 0; i < size; i++) {
-			SetConsoleCursorPosition(hndl, c);
-			if (List[i].isHover()) {
-				setBackground(Color::White);
-				setForeground(Color::Black);
-				if (!List[i].isPressed()) g.write("[ ] ");
-				else g.write("[X] ");
-				g.write(List[i].getValue());
-			}
-			else {
-				setBackground(Color::Black);
-				setForeground(Color::White);
-				if (!List[i].isPressed()) g.write("[ ] ");
-				else g.write("[X] ");
-				g.write(List[i].getValue());
-			}
-			c = { left, ++top };
-		}	
-	}	
-}
-
-void CheckList::mousePressed(int x, int y, bool isLeft) { if (getVisible()) setCheckbox(x, y); }
-
-void CheckList::keyDown(int keyCode, char charater) {
-	int i;
-	COORD c = List[0].getCoords();
-
-	if (keyCode == VK_UP) {
-		for (i = 0; i < size; i++) {
-			if (List[i].isHover())	{
-				if (List[i].getCoords().Y - 1 > c.Y) {
-					List[i].setHover();
-					List[i - 1].setHover();
+			for (int i = 0; i < lines.size(); i++)
+			{
+				seconds = difftime(lines[i].getTime(), mktime(&y2k));
+				if (seconds>diff)
+				{
+					diff = seconds;
+					last = i;
 				}
 			}
+			if (last != -1)
+			for (int i = 0; i < lines.size(); i++)
+			{
+				if (i != last)lines[i].unPress();
+			}
+			if (last != -1)
+			{
+
+				index = last;
+				hold = &lines[last];
+			}
 		}
+		if (timer < 10)
+		if (timer < 2)timer++;
+		Panel::draw(g, left, top, layer);
 	}
-	if (keyCode == VK_DOWN)	{
-		for (i = 0; i < size; i++) {
-			if (List[i].isHover()) {
-				if (List[i].getCoords().Y + 1 < c.Y + (size - 1)) {
-					List[i].setHover();
-					List[i + 1].setHover();
-				}
+}
+/*
+void Radiolist::keyDown(int keyCode, char charater)
+{
+for (int i = 0; i < lines.size(); i++)
+{
+if (lines[i].isFocused())
+if (keyCode == VK_RETURN)
+{
+index = i;
+hold = &lines[i];
+for (int i = 0; i < lines.size(); i++)
+{
+if (i != index) lines[i].unPress();
+}
+lines[i].genericFunc1();
+}
+}
+}
+*/
+size_t Checklist::GetSelectedIndex()
+{
+	return index;
+}
+
+void Checklist::SetSelectedIndex(size_t index)
+{
+	hold = &lines[index];
+	Checklist::index = index;
+}
+
+void Checklist::genericFunc3(int x, int y, bool arg)
+{
+	if (getVisible())
+	{
+		for (int i = 0; i < lines.size(); i++)
+		{
+			if ((x >= lines[i].getLeft() - getLeft()) && (x <= (lines[i].getLeft() - getLeft() + lines[i].getMaxWidth())))
+			if (y >= lines[i].getTop() - getTop() && y <= (lines[i].getTop() - getTop() + lines[i].getHight()))
+			{
+				lines[i].genericFunc1();
 			}
 		}
 	}
-	if ((keyCode == 0x58) || (keyCode == VK_SPACE) || (keyCode == VK_RETURN)) { for (i = 0; i < List.size(); i++)	{} }
-	else printf("key released\n");
 }
