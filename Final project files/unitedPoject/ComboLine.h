@@ -10,6 +10,8 @@ using namespace std;
 
 class ComboLine : public keyButton
 {
+	ComboLine* NEXT = NULL;
+	ComboLine* PREV = NULL;
 	bool Hover = false;
 	bool pressed = false;
 	bool pressedBykey = false;
@@ -31,5 +33,9 @@ public:
 	time_t  getTime(){ return timeOfPress; };
 	void setTime(size_t t){ timeOfPress = t; };
 	void setTime(time_t  t){ timeOfPress = t; };
-	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN || keyCode == VK_SPACE){ genericFunc1(); time(&timeOfPress); pressedBykey = true; } };
+	void keyDown(int keyCode, char charater);
+
+	void setNEXT(ComboLine &newNEXT){ NEXT = &newNEXT; };
+	void setPREV(ComboLine &newPREV){ PREV = &newPREV; };
+
 };

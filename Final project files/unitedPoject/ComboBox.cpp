@@ -22,6 +22,11 @@ ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 
 	Panel::AddControler(BoxHeader, (button.getMaxWidth()) + 3, 1);
 	for (int i = 0; i < boxList.size(); i++)
 	{
+		if (i < boxList.size()-1)boxList[i].setNEXT(boxList[i + 1]);
+		if(i!=0)boxList[i].setPREV(boxList[i - 1]);
+	}
+	for (int i = 0; i < boxList.size(); i++)
+	{
 		boxList[i].AddListener(listListen[i]);
 		Panel::AddControler(boxList[i], 0, ((getHight() / (boxList.size()+1)) * (i+1)) + 1);
 		boxList[i].Hide();
@@ -64,8 +69,19 @@ void  ComboBox::closeList()
 
 void ComboBox::genericFunc1()
 {
-	if (isOpen) closeList();
-	else openList();
+	if (isOpen)
+	{
+		closeList();
+		for (int i = 0; i < boxList.size(); i++)
+		if (boxList[i].isFocused()) setFocus(boxList[i]);
+		setFocus(button);
+	}
+	else
+	{
+		openList();
+		setFocus(button);
+		setFocus(boxList[0]);
+	}
 }
 
 void ComboBox::genericFunc3(int x, int y, bool arg)
@@ -80,7 +96,7 @@ void ComboBox::genericFunc3(int x, int y, bool arg)
 				boxList[i].genericFunc1();
 				last = &boxList[i];
 				index = i;
-				closeList();
+				genericFunc1();
 			}
 		}
 	}
@@ -94,7 +110,7 @@ void ComboBox::draw(Graphics &g, int left, int top, size_t layer)
 		{
 			last = &boxList[i];
 			index = i;
-			closeList();
+			genericFunc1();
 			boxList[i].setPressbykey(false);
 		}
 	}
