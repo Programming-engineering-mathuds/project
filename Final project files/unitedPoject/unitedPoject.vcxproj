@@ -13,7 +13,6 @@
   <ItemGroup>
     <ClInclude Include="BorderType.h" />
     <ClInclude Include="Button.h" />
-    <ClInclude Include="CheckBox.h" />
     <ClInclude Include="CheckBoxLine.h" />
     <ClInclude Include="CheckList.h" />
     <ClInclude Include="ComboBox.h" />
@@ -33,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
-    <ClCompile Include="CheckBox.cpp" />
     <ClCompile Include="CheckBoxLine.cpp" />
     <ClCompile Include="CheckList.cpp" />
     <ClCompile Include="ComboBox.cpp" />

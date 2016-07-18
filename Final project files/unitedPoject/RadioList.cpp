@@ -120,3 +120,14 @@ void Radiolist::genericFunc3(int x, int y, bool arg)
 		}
 	}
 }
+
+void Radiolist::getAllLines(vector<CheckBoxLine> &outsideLines)
+{
+	outsideLines.clear();
+	for (int i = 0; i < lines.size(); i++)
+	{
+		outsideLines.push_back(lines[i]);
+
+	}
+}
+;

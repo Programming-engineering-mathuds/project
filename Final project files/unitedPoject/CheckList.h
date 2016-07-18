@@ -7,12 +7,13 @@
 #include "Panel.h"
 #include "CheckBoxLine.h"
 #include <ctime>
+#include "RadioList.h"
 
 using namespace std;
 class Checklist;
-struct CheckListener : public MouseListener
+struct CheckListListener : public MouseListener
 {
-	CheckListener(iControl &n) :_n(n){}
+	CheckListListener(iControl &n) :_n(n){}
 	void  MousePressed(Button &b, int x, int y, bool isLeft)
 	{
 		_n.genericFunc3(x, y, isLeft);
@@ -21,27 +22,17 @@ struct CheckListener : public MouseListener
 private:
 	iControl &_n;
 };
-class Checklist : public Panel
+class Checklist : public Radiolist
 {
-	vector<CheckListener> listen;
-	CheckBoxLine *hold;
-	int index;
 	vector<CheckBoxLine> lines;
-	double seconds;
-	int  timer = 0;
-	int last = -1;
-	bool used = false;
+	vector<CheckBoxLine> slectedLines;
+
 public:
 	Checklist(int height, int width, vector<string> options);
 	~Checklist(){};
-
-	void AddControler(iControl& control, int left, int top){};
-
+	
 	void mousePressed(int x, int y, bool isLeft);
-	//	void keyDown(int keyCode, char charater);
+
 	void draw(Graphics &g, int left, int top, size_t layer);
-	size_t GetSelectedIndex();
-	void SetSelectedIndex(size_t index);
-	void genericFunc3(int x, int y, bool arg);
 
 };
