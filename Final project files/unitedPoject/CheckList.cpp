@@ -8,6 +8,12 @@ Checklist::Checklist(int height, int width, vector<string> options) :Radiolist(h
 void Checklist::draw(Graphics &g, int left, int top, size_t layer)
 {
 	getAllLines(lines);
+	selectedLines.clear();
+	for (int i = 0; i < lines.size(); i++)
+	{
+		if (lines[i].isPressed()) selectedLines.push_back(true);
+		else selectedLines.push_back(false);
+	}
 	if (getVisible())
 	if (layer == Radiolist::_layer)
 	{
@@ -17,18 +23,22 @@ void Checklist::draw(Graphics &g, int left, int top, size_t layer)
 
 void Checklist::mousePressed(int x, int y, bool isLeft)
 {
-	if (getVisible())
-	{
-		for (int i = 0; i < lines.size(); i++)
-		{
-			CheckBoxLine * line = getIndexLine(i);
-			if ((x >= line->getLeft() - getLeft()) && (x <= line->getLeft() - getLeft() + line->getMaxWidth()))
-			if (y >= line->getTop() - getTop() && y <= (line->getTop() - getTop() + line->getHight()))
-			{
-				if (line->isPressed())line->unPress();
-				else line->press();
-			}
-		}
-	}
 	Panel::mousePressed(x, y, isLeft);
+}
+
+vector<size_t> Checklist::GetSelectedIndices()
+{
+	return selectedLines;
+}
+
+void Checklist::SelectIndex(size_t index)
+{
+	CheckBoxLine* line = getIndexLine(index);
+	if (!line->isPressed()) line->press();
+}
+
+void Checklist::DeselectIndex(size_t index)
+{
+	CheckBoxLine* line = getIndexLine(index);
+	if (line->isPressed()) line->unPress();
 }
