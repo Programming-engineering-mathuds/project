@@ -130,4 +130,11 @@ void Radiolist::getAllLines(vector<CheckBoxLine> &outsideLines)
 
 	}
 }
+
+CheckBoxLine *Radiolist::getIndexLine(int lineIndex)
+{
+	return &lines[lineIndex];
+}
+
+
 ;
