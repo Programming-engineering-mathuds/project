@@ -48,6 +48,7 @@ class ComboBox : public Panel
 	keyButton button;
 	ComboListener listen;
 	vector<ComboLineListener> listListen;
+	int index = -1;
 public:
 	ComboBox(int width, vector<string> entries);
 	~ComboBox(){};

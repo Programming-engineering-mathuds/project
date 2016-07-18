@@ -33,13 +33,14 @@ ComboBox::ComboBox(int width, vector<string> entries) : Panel((entries.size() * 
 void ComboBox::openList()
 {
 	bool hasPressed = false;
-	BoxHeader.Hide();
+	//BoxHeader.Hide();
 	for (int i = 0; i < boxList.size(); i++)
 	{
 		boxList[i].Show();
 		if (boxList[i].isPressed())
 		{
 			*last = boxList[i];
+			index = i;
 			boxList[i].unPress();
 			hasPressed = true;
 		}
@@ -48,13 +49,14 @@ void ComboBox::openList()
 	if (hasPressed == false)
 	{
 		last = NULL;
+		index = -1;
 		BoxHeader.SetValue(label);
 	}
 }
 
 void  ComboBox::closeList()
 {
-	BoxHeader.Show();
+	//BoxHeader.Show();
 	if (last != NULL) BoxHeader.SetValue(last->getValue());
 	for (int i = 0; i < boxList.size(); i++)
 	{
@@ -79,7 +81,10 @@ void ComboBox::genericFunc3(int x, int y, bool arg)
 			if (y >= boxList[i].getTop() - getTop() && y <= (boxList[i].getTop() - getTop() + boxList[i].getHight()))
 			{
 				boxList[i].genericFunc1();
-				*last = boxList[i];
+				last = &boxList[i];
+				index = i;
+				//BoxHeader.SetValue(boxList[i].getValue());
+				closeList();
 			}
 		}
 	}
