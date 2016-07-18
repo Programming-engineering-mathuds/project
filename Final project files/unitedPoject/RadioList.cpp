@@ -56,7 +56,7 @@ void Radiolist::draw(Graphics &g, int left, int top, size_t layer)
 				if (seconds>diff)
 				{
 					diff = seconds;
-					last = i;   ///  <--- never enter this part so Last allways stay -1
+					last = i;   
 				}
 			}
 			if (last!=-1)
@@ -69,7 +69,7 @@ void Radiolist::draw(Graphics &g, int left, int top, size_t layer)
 
 				index = last;
 				hold = &lines[last];
-			}//  <--- You can access array -1 P_P then crashhhh
+			}
 		}
 		if (timer < 10)
 		if (timer < 2)timer++;

@@ -44,7 +44,7 @@ class ComboBox : public Panel
 
 	bool isOpen = false;
 	ComboLine *last = NULL;
-	ComboLine *current = NULL;
+//	ComboLine *current = NULL;
 	keyButton button;
 	ComboListener listen;
 	vector<ComboLineListener> listListen;
@@ -61,13 +61,12 @@ public:
 	void genericFunc1();
 	void genericFunc3(int x, int y, bool arg);
 
-	void getInput(KEY_EVENT_RECORD key) {};
-	void getMouse(MOUSE_EVENT_RECORD mer) {};
-	void handelInput(INPUT_RECORD input){};
-
-	void getAllControls(vector < iControl * > *controls) {};
-	void mousePressed(int x, int y, bool isLeft){};
-	void keyDown(int keyCode, char charater){};
-	void draw(Graphics &g, int left, int top, size_t layer){};
+//	void getInput(KEY_EVENT_RECORD key) {};
+//	void getMouse(MOUSE_EVENT_RECORD mer) {};
+//	void handelInput(INPUT_RECORD input){};
+//
+	//void mousePressed(int x, int y, bool isLeft){};
+//	void keyDown(int keyCode, char charater){};
+//	void draw(Graphics &g, int left, int top, size_t layer){};
 };
 

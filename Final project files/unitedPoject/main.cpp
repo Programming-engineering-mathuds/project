@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 	//Radiolist r(20, 20, { "test1", "test2", "test3" });
 	//r.setBorder(BorderType::Double);
 	ComboBox r(20, { "test1", "test2", "test3" });
+	r.setBorder(BorderType::Single);
 //	NumericBox  r(10, -10, 10);
 	//r.setBorder(BorderType::Double);
 	e.run(r);
