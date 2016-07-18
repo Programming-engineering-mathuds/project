@@ -40,6 +40,6 @@ public:
 	time_t  getTime(){ return timeOfPress; };
 	void setTime(size_t t){ timeOfPress = t; };
 	void setTime(time_t  t){ timeOfPress = t; };
-	void keyDown(int keyCode, char charater) {if (keyCode == VK_RETURN || keyCode == VK_SPACE){ genericFunc1(); time(&timeOfPress); };
+	void keyDown(int keyCode, char charater) { if (keyCode == VK_RETURN || keyCode == VK_SPACE){ genericFunc1(); time(&timeOfPress); } };
 
 };
