@@ -1,23 +1,25 @@
-﻿Build started 18/07/2016 20:56:17.
-     1>Project "C:\Users\Gonen\Source\Repos\project14\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
+﻿Build started 7/18/2016 7:56:25 PM.
+     1>Project "C:\Users\Erez\Source\Repos\project5\Final project files\unitedPoject\unitedPoject.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\unitedPoject.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ComboBox.cpp
          ComboBox.cpp
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(16): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(23): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(35): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(58): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(75): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\gonen\source\repos\project14\final project files\unitedpoject\combobox.cpp(91): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(81): warning C4042: 'newControls' : has bad storage class
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(87): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\icontrol.h(99): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\panel.h(33): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\comboline.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\keybutton.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\button.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(16): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(23): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(35): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(58): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(75): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\erez\source\repos\project5\final project files\unitedpoject\combobox.cpp(91): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.lib" /MACHINE:X86 Debug\Button.obj
          Debug\CheckBoxLine.obj
          Debug\CheckList.obj
          Debug\ComboBox.obj
@@ -33,9 +35,12 @@
          Debug\Panel.obj
          Debug\RadioList.obj
          Debug\TextBox.obj
-         unitedPoject.vcxproj -> C:\Users\Gonen\Source\Repos\project14\Final project files\Debug\unitedPoject.exe
-     1>Done Building Project "C:\Users\Gonen\Source\Repos\project14\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
+         unitedPoject.vcxproj -> C:\Users\Erez\Source\Repos\project5\Final project files\Debug\unitedPoject.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\unitedPoject.tlog\unsuccessfulbuild".
+         Touching "Debug\unitedPoject.tlog\unitedPoject.lastbuildstate".
+     1>Done Building Project "C:\Users\Erez\Source\Repos\project5\Final project files\unitedPoject\unitedPoject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.83
+Time Elapsed 00:00:01.11

@@ -14,7 +14,7 @@ using namespace std;
 class Checklist : public Radiolist
 {
 	vector<CheckBoxLine> lines;
-	vector<CheckBoxLine> slectedLines;
+	vector<size_t> selectedLines;
 
 public:
 	Checklist(int height, int width, vector<string> options);
@@ -23,5 +23,9 @@ public:
 	void mousePressed(int x, int y, bool isLeft);
 
 	void draw(Graphics &g, int left, int top, size_t layer);
+
+	vector<size_t> GetSelectedIndices();
+	void SelectIndex(size_t index);
+	void DeselectIndex(size_t index);
 
 };
