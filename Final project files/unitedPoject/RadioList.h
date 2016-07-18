@@ -30,6 +30,7 @@ class Radiolist : public Panel
 	double seconds;
 	int  timer = 0;
 	int last = -1;
+	bool used = false;
 public:
 	Radiolist(int height, int width, vector<string> options);
 	~Radiolist(){};
