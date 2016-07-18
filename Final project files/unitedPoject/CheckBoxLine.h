@@ -21,6 +21,7 @@ private:
 */
 class CheckBoxLine : public keyButton
 {
+	bool Hover = false;
 	bool pressed = false;
 //	CheckListener listener;
 	string pressedText;
@@ -30,6 +31,8 @@ public:
 	CheckBoxLine(int width, string input);
 	~CheckBoxLine(){};
 
+	bool isHover(){return Hover;};
+	bool setHover(){ if (Hover)Hover = false; else Hover = true; };
 	void press();
 	void unPress();
 	bool isPressed(){ return pressed; };

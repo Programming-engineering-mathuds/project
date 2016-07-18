@@ -20,6 +20,7 @@ public:
 	Panel(int height, int width);
 	~Panel(){};
 	void AddControler(iControl& control, int left, int top);
+	int Panel::sizeOfList() { return controlers.size(); };
 	void frame(int size);
 	void draw(Graphics &g, int left, int top, size_t layer);
 	void mousePressed(int x, int y, bool isLeft);

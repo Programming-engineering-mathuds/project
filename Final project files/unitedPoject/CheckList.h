@@ -6,13 +6,14 @@
 #include <stdio.h>
 #include <iostream>
 #include "vector"
+#include "CheckBoxLine.h"
 
 using namespace std;
 
-class CheckList : public Panel
+class CheckList : private Panel
 {
 private:
-	vector<CheckBox> cList;
+	vector<CheckBoxLine> List;
 	size_t where_am_i;
 	int size; // Number of cells in a Check List
 public:
@@ -25,10 +26,6 @@ public:
 	vector<size_t> GetSelectedIndices();
 	void SelectedIndex(size_t index);
 	void DeselectIndex(size_t index);
-
-	void getInput(KEY_EVENT_RECORD key) {};
-	void getMouse(MOUSE_EVENT_RECORD mer) {};
-	void handelInput(INPUT_RECORD input);
 
 	void getAllControls(vector < iControl * > *controls) {};
 	void mousePressed(int x, int y, bool isLeft);

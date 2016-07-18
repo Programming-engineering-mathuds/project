@@ -27,6 +27,7 @@ public:
 	~Button(){};
 
 	void SetValue(string value);
+	string getValue(){ return text; };
 	void AddListener(MouseListener &listener);
 	void notify(int x, int y, bool isLeft);
 	virtual void draw(Graphics &g, int left, int top, size_t layer);
