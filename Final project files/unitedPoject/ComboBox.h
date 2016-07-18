@@ -1,7 +1,6 @@
 #pragma once
 #include <Windows.h>
 #include "panel.h"
-#include <string>
 #include <stdio.h>
 #include "ComboLine.h"
 #include "vector"
@@ -39,8 +38,9 @@ private:
 class ComboBox : public Panel
 {
 	vector<ComboLine> boxList;
-	Label BoxHeader;
 	string label;
+	Label BoxHeader;
+
 
 	bool isOpen = false;
 	ComboLine *last = NULL;
