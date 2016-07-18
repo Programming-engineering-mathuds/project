@@ -50,13 +50,13 @@ void Label::draw(Graphics &g, int left, int top, size_t layer)
 {
 	if (getVisible())
 	{
-		setColor();
+		//setColor();
 		if (layer != _layer) return;
 		iControl::g = g;
 		COORD cur = { left, top };
 		setCoords(cur);
 		putText();
 		frame(1);
-		returnColor();
+		//returnColor();
 	}
 }
